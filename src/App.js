@@ -7,6 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
+          If this is printed, it means it works
           This is a test  <code>src/App.js</code> this is a test.
         </p>
         <a
