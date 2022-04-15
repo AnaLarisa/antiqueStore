@@ -11,7 +11,6 @@ const limit = 30;
 
 class Client extends Component {
   componentDidMount() {
-    test();
     addResponseMessage('Welcome to our store!');
     addResponseMessage('Are you looking for anything in particular?');
     
@@ -21,7 +20,7 @@ class Client extends Component {
      this.fetchAuthToken(uid).then(
        result => {
          console.log('auth token fetched', result);
-         CometChatr.login(result.authToken)
+         CometChat.login(result.authToken)
          .then( user => {
            console.log("Login successfully:", { user });
            this.createMessageListener();
