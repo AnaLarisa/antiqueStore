@@ -11,6 +11,7 @@ const limit = 30;
 
 class Client extends Component {
   componentDidMount() {
+    test();
     addResponseMessage('Welcome to our store!');
     addResponseMessage('Are you looking for anything in particular?');
     
@@ -20,7 +21,7 @@ class Client extends Component {
      this.fetchAuthToken(uid).then(
        result => {
          console.log('auth token fetched', result);
-         CometChat.login(result.authToken)
+         CometChatr.login(result.authToken)
          .then( user => {
            console.log("Login successfully:", { user });
            this.createMessageListener();
@@ -56,6 +57,18 @@ class Client extends Component {
           addResponseMessage(message.text);
         }
       })
+    );
+  }
+
+  test(){
+    CometChat.login("supportshop","327b4def648bf619f2079a54b22723f57607188b").then(
+      user => {
+        addResponseMessage("s a dat login");
+      },
+      error =>{
+        addResponseMessage("nu s a dat login");
+      }
+
     );
   }
 

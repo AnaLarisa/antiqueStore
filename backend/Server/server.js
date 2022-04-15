@@ -1,12 +1,13 @@
 const express = require('express');
 const axios = require('axios');
 const app = express();
+const path = require("path");
 
 const appID = '{207431578c11ee0f}';
 const apiKey = '{327b4def648bf619f2079a54b22723f57607188b}';
 const agentUID = '{supportshop}';
 
-const url = 'https://api.cometchat.com/v1';
+const url = '{https://app.cometchat.com/app/207431578c11ee0f}';
 
 const headers = {
   'Content-Type': 'application/json',
@@ -17,7 +18,7 @@ const headers = {
 app.get('/api/create', (req, res) => {
   const data = {
     uid: new Date().getTime(),
-    name: 'support-antiqueStore',
+    name: 'customer',
   };
   axios
     .post(`${url}/users`, JSON.stringify(data), {
@@ -29,9 +30,9 @@ app.get('/api/create', (req, res) => {
           console.log('Success:' + JSON.stringify(token));
           res.json(token);
         })
-        .catch(error => console.error('Error:', error));
+        .catch(error => console.error('Error: requestAuthToken', error));
     })
-    .catch(error => console.error('Error:', error));
+    .catch(error => console.error('Error: post', error));
 });
 
 app.get('/api/auth', (req, res) => {
@@ -73,7 +74,17 @@ app.get('/api/users', (req, res) => {
     .catch(error => console.error('Error:', error));
 });
 
-const PORT = process.env.PORT || 8000;
-app.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}`);
+const publicPath = path.join(__dirname,"../../client/build");
+
+
+const port = process.env.PORT || 3000;
+
+app.use(express.static(publicPath));
+
+app.get('*', (req,res) =>{
+  res.sendFile(path.join(publicPath,'../../client/src/index.js'));
+});
+
+app.listen(port, () => {
+  console.log(`Listening on port ${port}`);
 });

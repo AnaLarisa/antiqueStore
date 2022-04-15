@@ -1,6 +1,6 @@
 const config = {
   appID: '{207431578c11ee0f}',
-  agentUID: '{customer}',
+  agentUID: '{supportshop}',
 }
 
 export default config;
