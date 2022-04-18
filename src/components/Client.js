@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Widget, addResponseMessage, addUserMessage, dropMessages} from 'react-chat-widget';
 import {CometChat} from '@cometchat-pro/chat';
 
-import config from './config';
+import config from '../config';
 import 'react-chat-widget/lib/styles.css';
 
 const agentUID = config.agentUID;

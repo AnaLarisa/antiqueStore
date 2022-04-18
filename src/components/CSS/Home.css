@@ -1,0 +1,25 @@
+.under {
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    bottom: 0; 
+    left: 0;
+    background-image: url("bookshelves.jpg") !important;
+    background-size: 1500px;
+    background-position:center;
+}
+
+.over {
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    bottom: 0; 
+    left: 0;
+    background: rgba(54, 54, 54, 0.74);
+    color: white;
+}
+
+h1 {
+    padding-top: 200px;
+    padding-bottom:50px;
+}
