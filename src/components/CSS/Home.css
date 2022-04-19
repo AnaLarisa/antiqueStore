@@ -23,3 +23,12 @@ h1 {
     padding-top: 200px;
     padding-bottom:50px;
 }
+
+.conversation-container > .header {
+    background-color: red;
+}
+
+.message > .response {
+    background-color: black;
+    color: white;
+}
