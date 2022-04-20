@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import {CometChat} from '@cometchat-pro/chat';
 import MDSpinner from "react-md-spinner";
-import config from '../config';
+import config from './config';
 
 const agentUID = config.agentUID;
 const AGENT_MESSAGE_LISTENER_KEY = 'agent-listener'
