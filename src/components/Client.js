@@ -156,7 +156,8 @@ class Client extends Component {
   render() {
     return (
       <div className='App'>
-        <Widget
+        <Widget 
+
           handleNewUserMessage={this.handleNewUserMessage}
           title='My E-commerce Live Chat'
           subtitle='Ready to help you'

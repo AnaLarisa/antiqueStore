@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import './CSS/Home.css';
 import "./CSS/Navbar.css";
 import {Widget} from 'react-chat-widget';
+import './CSS/styles.css'
 
 function Home() {
     const [isOpen, setIsOpen] = useState(false);
