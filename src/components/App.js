@@ -23,7 +23,7 @@ const App = () => {
             <Route path="/donate" element={<Donate/>} />
             <Route path="/mycart" element={<MyCart/>} />
             <Route path="/service" element={<Service/>} />
-            <Route path='/client' component={Client} />
+            <Route path='/client' element={<Client />} />
             <Route path='/agent' component={Agent} />
           </Routes>
         </div>
