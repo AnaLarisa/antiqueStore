@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import 'react-router-dom'
 import {Link} from 'react-router-dom';
 import './CSS/Home.css';
-import "./CSS/Navbar.css";
+import "./CSS/NavBar.css";
 
-function Service() {
+function MyCart() {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <div className="under">
@@ -16,7 +16,7 @@ function Service() {
                 <div className={`nav-items ${isOpen && "open"}`}>
                     <Link to ="/home">Home</Link>
                     <Link to="/donate">Donate</Link>
-                    <Link to="/mycart">My Cart</Link>
+                    <Link to="/service">Service</Link>
                     <Link to="/login">Login</Link>
                 </div>
                 <div
@@ -26,11 +26,11 @@ function Service() {
                     <div className="bar"></div>
                 </div>
             </div>
-                <h1>Service</h1>
+                <h1>My Cart</h1>
             </div>
         </div>
 
     )
 }
 
-export default Service;
+export default MyCart;

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import 'react-router-dom'
 import {Link} from 'react-router-dom';
-import './CSS/Home.css';
-import "./CSS/Navbar.css";
+import './CSS/Home.css'; 
+import "./CSS/NavBar.css";
 
-function MyCart() {
+function Donate() {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <div className="under">
@@ -15,7 +15,7 @@ function MyCart() {
                 <span>STORE</span></span>
                 <div className={`nav-items ${isOpen && "open"}`}>
                     <Link to ="/home">Home</Link>
-                    <Link to="/donate">Donate</Link>
+                    <Link to="/mycart">My Cart</Link>
                     <Link to="/service">Service</Link>
                     <Link to="/login">Login</Link>
                 </div>
@@ -26,11 +26,11 @@ function MyCart() {
                     <div className="bar"></div>
                 </div>
             </div>
-                <h1>My Cart</h1>
+                <h1>Donate here </h1>
             </div>
         </div>
 
     )
 }
 
-export default MyCart;
+export default Donate;

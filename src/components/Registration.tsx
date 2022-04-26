@@ -19,7 +19,7 @@ function Registration() {
     });
 
     useEffect(() => {
-        const retriveContacts = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+        const retriveContacts = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)!);
         if (retriveContacts) setInfo(retriveContacts);
     }, [])
 
@@ -27,7 +27,7 @@ function Registration() {
         localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(Info))
     },[Info])
 
-    let register = (e) =>{
+    let register = (e: { preventDefault: () => void; }) =>{
         e.preventDefault()
 
         if (!Info.name || !Info.email || !Info.password || !Info.profession) {
