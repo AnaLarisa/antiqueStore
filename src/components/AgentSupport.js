@@ -3,12 +3,13 @@ import React, {Component} from 'react';
 import {CometChat} from '@cometchat-pro/chat';
 import MDSpinner from "react-md-spinner";
 import config from '../config';
+import { Link } from 'react-router-dom';
 
 const agentUID = config.agentUID;
 const AGENT_MESSAGE_LISTENER_KEY = 'agent-listener'
 const limit = 30;
 
-class Agent extends Component {
+class AgentSupport extends Component {
 
   state = {
     customers: [],
@@ -140,45 +141,61 @@ class Agent extends Component {
 
   render() {
     return(
-      <div className='container-fluid'>
-        <div className='row'>
-          <div className='col-md-2'></div>
-          <div className="col-md-8 h-100pr border rounded">
-            <div className='row'>
-              <div className='col-lg-4 col-xs-12 bg-light' style={{ height: 658 }}>
-              <div className='row p-3'><h2>Customer List</h2></div>
-              <div className='row ml-0 mr-0 h-75 bg-white border rounded' style={{ height: '100%', overflow:'auto' }}>
-              <CustomerList {...this.state} selectCustomer={this.selectCustomer}/>
-              </div>
-              </div>
-              <div className='col-lg-8 col-xs-12 bg-light'  style={{ height: 658 }}>
-                <div className='row p-3 bg-white'>
-                  <h2>Who you gonna chat with?</h2>
+      <div className="under">
+        <div className="over">
+          <div className="Navbar">
+            <link rel="stylesheet" type="text/css" href="//fonts googleapis.com/css?family=Irish+Grover" />
+            <span className="nav-logo"><span>ANTIQUE</span><br/>
+            <span>STORE</span></span>
+            <div className={`nav-items`}>
+              <Link to ="/donate">Donate</Link>
+              <Link to="/mycart">My Cart</Link>
+            </div>
+            <div className={`nav-toggle`}>
+              <div className="bar"></div>
+            </div>
+          </div>
+        <div className='container-fluid'>
+          <div className='row'>
+            <div className='col-md-2'></div>
+            <div className="col-md-8 h-100pr border rounded">
+              <div className='row'>
+                <div className='col-lg-4 col-xs-12 bg-light' style={{ height: 658 }}>
+                <div className='row p-3'><h2>Customer List</h2></div>
+                <div className='row ml-0 mr-0 h-75 bg-white border rounded' style={{ height: '100%', overflow:'auto' }}>
+                <CustomerList {...this.state} selectCustomer={this.selectCustomer}/>
                 </div>
-                <div className='row pt-5 bg-white' style={{ height: 530, overflow:'auto' }}>
-                <ChatBox {...this.state} />
                 </div>
-                <div className="row bg-light" style={{ bottom: 0, width: '100%' }}>
-                <form className="row m-0 p-0 w-100" onSubmit={this.handleSubmit}>
-    
-                <div className="col-9 m-0 p-1">
-                  <input id="text" 
-                    className="mw-100 border rounded form-control" 
-                    type="text" 
-                    name="text" 
-                    ref="message"
-                    placeholder="Type a message..."/>
+                <div className='col-lg-8 col-xs-12 bg-light'  style={{ height: 658 }}>
+                  <div className='row p-3 bg-white'>
+                    <h2>Who you gonna chat with?</h2>
+                  </div>
+                  <div className='row pt-5 bg-white' style={{ height: 530, overflow:'auto' }}>
+                  <ChatBox {...this.state} />
+                  </div>
+                  <div className="row bg-light" style={{ bottom: 0, width: '100%' }}>
+                  <form className="row m-0 p-0 w-100" onSubmit={this.handleSubmit}>
+      
+                  <div className="col-9 m-0 p-1">
+                    <input id="text" 
+                      className="mw-100 border rounded form-control" 
+                      type="text" 
+                      name="text" 
+                      ref="message"
+                      placeholder="Type a message..."/>
+                  </div>
+                  <div className="col-3 m-0 p-1">
+                    <button className="btn btn-outline-secondary rounded border w-100" 
+                      title="Send" 
+                      style={{ paddingRight: 16 }}>Send</button>
+                  </div>
+                  </form>
+                  </div>  
                 </div>
-                <div className="col-3 m-0 p-1">
-                  <button className="btn btn-outline-secondary rounded border w-100" 
-                    title="Send" 
-                    style={{ paddingRight: 16 }}>Send</button>
-                </div>
-                </form>
-                </div>  
               </div>
             </div>
           </div>
+        </div>
         </div>
       </div>
     )
@@ -242,4 +259,4 @@ class CustomerList extends Component {
   }
 }
 
-export default Agent;
+export default AgentSupport;

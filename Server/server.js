@@ -3,11 +3,11 @@ const axios = require('axios');
 const app = express();
 const path = require("path");
 
-const appID = '{207431578c11ee0f}';
-const apiKey = '{327b4def648bf619f2079a54b22723f57607188b}';
-const agentUID = '{supportshop}';
+const appID = '{208217638ad90a1c}';
+const apiKey = '{1e559c254d43bdd5f3ff7edd103ed637fe630ff3}';
+const agentUID = '{ecommence-agent}';
 
-const url = '{https://app.cometchat.com/app/207431578c11ee0f}';
+const url = '{https://app.cometchat.com/app/208217638ad90a1c}';
 
 const headers = {
   'Content-Type': 'application/json',

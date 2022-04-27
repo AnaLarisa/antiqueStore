@@ -7,7 +7,7 @@ import Home from './Home'
 import Donate from './Donate'
 import MyCart from './MyCart'
 import Client from './Client';
-import Agent from './Agent';
+import AgentSupport from './AgentSupport';
 import Service from './Service';
 
 const App = () => {
@@ -24,7 +24,7 @@ const App = () => {
             <Route path="/mycart" element={<MyCart/>} />
             <Route path="/service" element={<Service/>} />
             <Route path='/client' element={<Client />} />
-            <Route path='/agent' component={Agent} />
+            <Route path='/agent' element={<AgentSupport />} />
           </Routes>
         </div>
       </React.Fragment>
