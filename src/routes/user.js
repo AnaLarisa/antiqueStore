@@ -1,4 +1,3 @@
-import CryptoJS from "jsonwebtoken";
 const User = require("../models/User");
 
 const {
