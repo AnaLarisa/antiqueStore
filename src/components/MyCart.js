@@ -3,6 +3,8 @@ import 'react-router-dom'
 import {Link} from 'react-router-dom';
 import './CSS/Home.css';
 import "./CSS/Navbar.css";
+import "./CSS/MyCart.css";
+import book from './images/book.png';
 
 function MyCart() {
     const [isOpen, setIsOpen] = useState(false);
@@ -26,9 +28,50 @@ function MyCart() {
                     <div className="bar"></div>
                 </div>
             </div>
-                <h1>My Cart</h1>
-            </div>
+            <div className="container">
+                <h1></h1>
+                <div className="cart">
+                    <div className="products">
+                        <div className="product">
+                            <img src={book}/>
+                            <div className="product-info">
+                                <h3 className="product-name">Book</h3>
+                                <h4 className="product-price">1,000</h4>
+                                <p className="product-remove">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                <span className="remove">Remove</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div className="product">
+                            <img src={book}/>
+                            <div className="product-info">
+                                <h3 className="product-name">Book 2</h3>
+                                <h4 className="product-price">1,000</h4>
+                                <p className="product-remove">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                <span className="remove">Remove</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                        <div className="cart-total">
+                            <p>
+                                <span>Total Price</span>
+                                <span>3,000</span>
+                            </p>
+                            <p>
+                                <span>Number of Items</span>
+                                <span>2</span>
+                            </p>
+                            <a href="#">Proceed to Checkout</a>
+                        
+                        </div>
+                    </div>
+                </div>
         </div>
+    </div>
+
 
     )
 }
