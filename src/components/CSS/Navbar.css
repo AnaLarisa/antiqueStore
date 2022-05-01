@@ -6,8 +6,8 @@
     background: #261600;
   }
   
-  .Navbar > .nav-logo {
-    font-family: "Irish Grover" ; 
+ div span.nav-logo {
+    font-family: "Irish Grover" !important; 
     font-size: 24px; 
     font-style: normal; 
     font-variant: normal; 

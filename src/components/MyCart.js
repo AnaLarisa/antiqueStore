@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import 'react-router-dom'
 import {Link} from 'react-router-dom';
-import './CSS/Home.css';
 import "./CSS/Navbar.css";
 import "./CSS/MyCart.css";
 import book from './images/book.png';
+import "./CSS/font-awesome-4.7.0/css/font-awesome.min.css";
 
 function MyCart() {
     const [isOpen, setIsOpen] = useState(false);
@@ -33,7 +33,9 @@ function MyCart() {
                 <div className="cart">
                     <div className="products">
                         <div className="product">
-                            <img src={book}/>
+                            <div className = "image">
+                                <img src={book}/>
+                            </div>
                             <div className="product-info">
                                 <h3 className="product-name">Book</h3>
                                 <h4 className="product-price">1,000</h4>
@@ -44,7 +46,9 @@ function MyCart() {
                             </div>
                         </div>
                         <div className="product">
-                            <img src={book}/>
+                            <div className = "image">
+                                <img src={book}/>
+                            </div>
                             <div className="product-info">
                                 <h3 className="product-name">Book 2</h3>
                                 <h4 className="product-price">1,000</h4>

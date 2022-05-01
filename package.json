@@ -8,7 +8,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "axios": "^0.26.1",
-    "bootstrap": "^4.2.1",
+    "bootstrap": "^4.6.1",
     "express": "^4.17.3",
     "react": "^16.7.0",
     "react-chat-widget": "^2.1.5",
