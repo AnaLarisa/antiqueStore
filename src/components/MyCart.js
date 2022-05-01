@@ -28,7 +28,7 @@ function MyCart() {
                     <div className="bar"></div>
                 </div>
             </div>
-            <div className="container">
+            <div className={`container ${isOpen && "hide"}`}>
                 <h1></h1>
                 <div className="cart">
                     <div className="products">

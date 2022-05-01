@@ -53,6 +53,10 @@
   .Navbar > .nav-toggle {
     display: none;
   }
+
+  .hide {
+    display: none;
+  }
   
   @media (max-width: 700px) {
     .Navbar > .nav-items {
@@ -127,7 +131,7 @@
     .nav-toggle.open > .bar::after {
       transform: rotate(-45deg) translate(26px, 26px);
     }
-  
+
   
   }
   

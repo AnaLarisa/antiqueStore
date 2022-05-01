@@ -26,10 +26,11 @@ function Donate() {
                     <div className="bar"></div>
                 </div>
             </div>
+            <div className={`${isOpen && "hide"}`}>
                 <h1>Donate here </h1>
             </div>
+            </div>
         </div>
-
     )
 }
 
