@@ -34,7 +34,7 @@ function MyCart() {
                     <div className="products">
                         <div className="product">
                             <div className = "image">
-                                <img src={book}/>
+                                <img className = "book" src={book}/>
                             </div>
                             <div className="product-info">
                                 <h3 className="product-name">Book</h3>
@@ -47,7 +47,7 @@ function MyCart() {
                         </div>
                         <div className="product">
                             <div className = "image">
-                                <img src={book}/>
+                                <img className = "book" src={book}/>
                             </div>
                             <div className="product-info">
                                 <h3 className="product-name">Book 2</h3>

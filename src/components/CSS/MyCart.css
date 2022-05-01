@@ -82,13 +82,15 @@
 
 .image {
 	padding: 10px;
-	height:180px;
-	width:140px;
+	height:100%;
+	width:180px;
+	margin-left:0px;
 }
 
-img {
-	height:inherit;
-	width:inherit;
+.book {
+	height:100%;
+	width:100%;
+	margin-left:0px;
 }
 
 .cart-total{
