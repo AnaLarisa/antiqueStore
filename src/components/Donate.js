@@ -4,9 +4,13 @@ import {Link} from 'react-router-dom';
 import './CSS/Home.css'; 
 import "./CSS/Navbar.css";
 import "./CSS/Donate.css";
+import { DateTimePickerComponent} from '@syncfusion/ej2-react-calendars';
 
 function Donate() {
     const [isOpen, setIsOpen] = useState(false);
+    const dateValue = new Date();
+    const minDate = dateValue;
+    const maxDate = new Date((new Date()).setMonth(dateValue.getMonth()+3));
     return (
         <div className="under">
             <div className="over">
@@ -37,30 +41,13 @@ function Donate() {
                         <div class = "card-content">
                             <h3>Schedule</h3>
                             <form>
-                                    <select name = "days" className="donate">
-                                        <option value = "day-select">Select Day</option>
-                                        <option value = "sunday">Sunday</option>
-                                        <option value = "monday">Monday</option>
-                                        <option value = "tuesday">Tuesday</option>
-                                        <option value = "wednesday">Wednesday</option>
-                                        <option value = "thursday">Thursday</option>
-                                        <option value = "friday">Friday</option>
-                                        <option value = "saturday">Saturday</option>
-                                    </select>
-
-                                    <select name = "hours" className="donate">
-                                        <option value = "hour-select">Select Hour</option>
-                                        <option value = "10">10: 00</option>
-                                        <option value = "10">12: 00</option>
-                                        <option value = "10">14: 00</option>
-                                        <option value = "10">16: 00</option>
-                                        <option value = "10">18: 00</option>
-                                        <option value = "10">20: 00</option>
-                                        <option value = "10">22: 00</option>
-                                    </select>
-                                    <input type = "text" className="donate" placeholder="Phone Number"/>
-                                    <input type = "number" className="donate" placeholder="Number of Books" min = "1"/>
-                                    <input type = "submit" className="donate" value = "SCHEDULE"/>
+                                <div style={{paddingInline:'50px'}}>
+                                    <DateTimePickerComponent placeholder="Choose a date and time" value={dateValue} min={minDate} max={maxDate}format="dd-MMM-yyyy HH:mm"></DateTimePickerComponent>
+                                </div>
+                                <input type = "text" className="donate" placeholder="Full Name"/>
+                                <input type = "text" className="donate" placeholder="Phone Number"/>
+                                <input type = "number" className="donate" placeholder="Number of Books" min = "1"/>
+                                <input type = "submit" className="donate" value = "SCHEDULE"/>
                             </form>
                         </div>
                     </div>
