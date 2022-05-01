@@ -21,7 +21,8 @@ function Client(){
       //You can now call login function.
       let uid = localStorage.getItem("cc-uid");
       if (uid === null) {
-        // create new user
+        // create new user 
+        // momentan e de test, teoretic daca nu este logat user-ul, acesta nu va fii automat creat
         const uid = "user" + new Date().getSeconds().toString();
         const user = new window.CometChatWidget.CometChat.User(uid);
         user.setName(uid);
@@ -45,9 +46,11 @@ function Client(){
           });
         });
       } else {
+        //login-ul efectiv
         window.CometChatWidget.login({
           uid: uid,
         }).then((user) => {
+          //launch la widget
           window.CometChatWidget.launch({
             widgetID: wid,
             roundedCorners: "true",
@@ -62,6 +65,7 @@ function Client(){
       }
     });
   }, []);
+  //daca nu s a facut conectarea, sa arate cercul ca se incarca
   if (load) {
     return (
         <div className="under">
@@ -86,6 +90,7 @@ function Client(){
     </div>
     );
   }
+  //altfel, sa arate docked ul nostru
   return (
     <div className="App">
       <div className="under">
