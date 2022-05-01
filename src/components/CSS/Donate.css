@@ -1,0 +1,87 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.banner{
+    padding:70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card-container{
+    display: grid;
+    grid-template-columns: 420px 520px;
+}
+.card-img{
+    background: url("donate.jpg") center/cover no-repeat;
+}
+.banner h2{
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+.card-content{
+    background: #fff;
+    height: 450px;
+    align-items: center;
+}
+.card-content h3{
+    text-align: center;
+    color: #000;
+    padding: 25px 0 10px 0;
+    font-size: 26px;
+    font-weight: 500;
+}
+
+form select.donate{
+    display: block;
+    width: 80%;
+    margin: 15px 12px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #eee;
+    font-weight: 300;
+    margin-left:10%;
+}
+form input.donate {
+    display: block;
+    margin: 15px 12px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #eee;
+    font-weight: 300;
+}
+form input.donate[type = text], form input[type = number], form input::placeholder, select{
+    color: #9a9a9a;
+    width:300px;
+    padding: 10px;
+    margin-left:20%;
+}
+form input.donate[type = submit]{
+    color: #fff;
+    background: #532e0c;
+    padding: 12px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    width:300px;
+    margin-left:20%;
+    margin-top:30px;
+}
+form input.donate[type = submit]:hover{
+    opacity: 0.9;
+}
+@media(max-width: 992px){
+    .card-container{
+        grid-template-columns: 100%;
+        width: 420px;
+    }
+    .card-img{
+        height: 450px;
+    }
+}
