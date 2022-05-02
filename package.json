@@ -21,7 +21,6 @@
   },
   "scripts": {
     "start": "react-scripts start"
-
   },
   "eslintConfig": {
     "extends": "react-app"
