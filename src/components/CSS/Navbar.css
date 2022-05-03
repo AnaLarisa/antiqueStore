@@ -6,8 +6,8 @@
     background: #261600;
   }
   
-  .Navbar > .nav-logo {
-    font-family: "Irish Grover"; 
+ div span.nav-logo {
+    font-family: "Irish Grover" !important; 
     font-size: 24px; 
     font-style: normal; 
     font-variant: normal; 
@@ -51,6 +51,10 @@
   }
   
   .Navbar > .nav-toggle {
+    display: none;
+  }
+
+  .hide {
     display: none;
   }
   
@@ -127,7 +131,7 @@
     .nav-toggle.open > .bar::after {
       transform: rotate(-45deg) translate(26px, 26px);
     }
-  
+
   
   }
   

@@ -3,9 +3,14 @@ import 'react-router-dom'
 import {Link} from 'react-router-dom';
 import './CSS/Home.css'; 
 import "./CSS/Navbar.css";
+import "./CSS/Donate.css";
+import { DateTimePickerComponent} from '@syncfusion/ej2-react-calendars';
 
 function Donate() {
     const [isOpen, setIsOpen] = useState(false);
+    const dateValue = new Date();
+    const minDate = dateValue;
+    const maxDate = new Date((new Date()).setMonth(dateValue.getMonth()+3));
     return (
         <div className="under">
             <div className="over">
@@ -26,10 +31,30 @@ function Donate() {
                     <div className="bar"></div>
                 </div>
             </div>
-                <h1>Donate here </h1>
+            <div className={`${isOpen && "hide"}`}>
+                <section class = "banner">
+                    <h2>SCHEDULE THE DONATION</h2>
+                    <div class = "card-container">
+                        <div class = "card-img">
+                        </div>
+
+                        <div class = "card-content">
+                            <h3>Schedule</h3>
+                            <form>
+                                <div style={{paddingInline:'50px'}}>
+                                    <DateTimePickerComponent placeholder="Choose a date and time" value={dateValue} min={minDate} max={maxDate}format="dd-MMM-yyyy HH:mm"></DateTimePickerComponent>
+                                </div>
+                                <input type = "text" className="donate" placeholder="Full Name"/>
+                                <input type = "text" className="donate" placeholder="Phone Number"/>
+                                <input type = "number" className="donate" placeholder="Number of Books" min = "1"/>
+                                <input type = "submit" className="donate" value = "SCHEDULE"/>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </div>
             </div>
         </div>
-
     )
 }
 
