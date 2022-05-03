@@ -1,4 +1,8 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
+import {useSelector} from "react-redux";
+import { useNavigate } from 'react-router-dom';
+import StripeCheckout from 'react-stripe-checkout';
+import {userRequest} from "../requestMethods";
 import 'react-router-dom'
 import {Link} from 'react-router-dom';
 import "./CSS/Navbar.css";
@@ -6,8 +10,33 @@ import "./CSS/MyCart.css";
 import book from './images/book.png';
 import "./CSS/font-awesome-4.7.0/css/font-awesome.min.css";
 
+const KEY = process.env.REACT_APP_STRIPE;
+
 function MyCart() {
     const [isOpen, setIsOpen] = useState(false);
+    const cart = useSelector((state)=> state.cart );
+    const [stripeToken, setStripeToken] = useState(null);
+    const navigate = useNavigate();
+
+    const onToken = (token) => {
+        setStripeToken(token);
+    };
+
+    useEffect(() => {
+        const makeRequest = async () => {
+            try{
+                const res = await userRequest.post("/checkout/payment", {
+                    tokenId: stripeToken.id,
+                    amount: cart.total * 100,
+                });
+                navigate("/success", {
+                    stripeData: res.data,
+                    recipes: cart, });
+            }catch {}
+        };
+        stripeToken && makeRequest();
+    }, [stripeToken, cart.total, navigate]);
+    
     return (
         <div className="under">
             <div className="over">
@@ -68,8 +97,16 @@ function MyCart() {
                                 <span>Number of Items</span>
                                 <span>2</span>
                             </p>
-                            <a href="#">Proceed to Checkout</a>
-                        
+                            <StripeCheckout name="AntiqueStore"
+                                            image = "https://media.istockphoto.com/photos/image-of-open-antique-book-on-wooden-table-with-glitter-overlay-picture-id873507500?b=1&k=20&m=873507500&s=170667a&w=0&h=jHslAXdeW5Ob6D9I0zyiLGChrluxKg2S35Z_SHS_Kfc="
+                                            billingAddress
+                                            shippingAddress
+                                            description={`Your total is $${cart.total}`}
+                                            amount={cart.total*100}
+                                            token={onToken}
+                                            stripeKey={KEY}>
+                                <button>Proceed to Checkout</button>
+                            </StripeCheckout>
                         </div>
                     </div>
                 </div>
