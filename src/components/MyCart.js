@@ -1,5 +1,5 @@
-import React, { useState , useEffect} from "react";
-import {useSelector} from "react-redux";
+import React, {useEffect, useState} from "react";
+import { useSelector } from "react-redux";
 import { useNavigate } from 'react-router-dom';
 import StripeCheckout from 'react-stripe-checkout';
 import {userRequest} from "../requestMethods";
@@ -25,7 +25,7 @@ function MyCart() {
     useEffect(() => {
         const makeRequest = async () => {
             try{
-                const res = await userRequest.post("/checkout/payment", {
+                const res = await userRequest.post("/mycart/payment", {
                     tokenId: stripeToken.id,
                     amount: cart.total * 100,
                 });
@@ -112,7 +112,6 @@ function MyCart() {
                 </div>
         </div>
     </div>
-
 
     )
 }
