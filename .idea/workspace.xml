@@ -1,265 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="060d6d48-7f24-4ff8-ac96-5a7ca7eba641" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/contexts/BookContext.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/apiCalls.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/cartRedux.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/store.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/userRedux.js" afterDir="false" />
+    <list default="true" id="060d6d48-7f24-4ff8-ac96-5a7ca7eba641" name="Changes" comment="added stripe-payment">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/cors/CONTRIBUTING.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/cors/HISTORY.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/cors/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/cors/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/cors/lib/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/cors/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/express/History.md" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/express/History.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/express/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/express/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/express/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/express/Readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/express/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/express/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/express/lib/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/express/lib/application.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/express/lib/express.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/express/lib/express.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/express/lib/middleware/init.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/express/lib/middleware/init.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/express/lib/middleware/query.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/express/lib/middleware/query.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/express/lib/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/express/lib/request.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/express/lib/response.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/express/lib/response.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/express/lib/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/express/lib/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/express/lib/router/layer.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/express/lib/router/layer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/express/lib/router/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/express/lib/router/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/express/lib/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/express/lib/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/express/lib/view.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/express/lib/view.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/express/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/express/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/object-assign/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/object-assign/license" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/object-assign/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/object-assign/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/VERSION" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/VERSION" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/Error.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/Error.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/ResourceNamespace.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/ResourceNamespace.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/StripeMethod.basic.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/StripeMethod.basic.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/StripeMethod.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/StripeMethod.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/StripeResource.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/StripeResource.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/Webhooks.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/Webhooks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/autoPagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/autoPagination.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/crypto/CryptoProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/crypto/CryptoProvider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/crypto/NodeCryptoProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/crypto/NodeCryptoProvider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/crypto/SubtleCryptoProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/crypto/SubtleCryptoProvider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/makeRequest.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/makeRequest.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/multipart.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/multipart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/net/FetchHttpClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/net/FetchHttpClient.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/net/HttpClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/net/HttpClient.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/net/NodeHttpClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/net/NodeHttpClient.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/AccountLinks.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/AccountLinks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Accounts.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Accounts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/ApplePayDomains.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/ApplePayDomains.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/ApplicationFees.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/ApplicationFees.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Balance.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Balance.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/BalanceTransactions.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/BalanceTransactions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/BillingPortal/Configurations.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/BillingPortal/Configurations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/BillingPortal/Sessions.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/BillingPortal/Sessions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Charges.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Charges.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Checkout/Sessions.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Checkout/Sessions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/CountrySpecs.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/CountrySpecs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Coupons.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Coupons.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/CreditNotes.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/CreditNotes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Customers.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Customers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Disputes.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Disputes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/EphemeralKeys.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/EphemeralKeys.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Events.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Events.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/ExchangeRates.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/ExchangeRates.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/FileLinks.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/FileLinks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Files.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Files.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Identity/VerificationReports.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Identity/VerificationReports.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Identity/VerificationSessions.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Identity/VerificationSessions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/InvoiceItems.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/InvoiceItems.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Invoices.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Invoices.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/IssuerFraudRecords.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/IssuerFraudRecords.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Issuing/Authorizations.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Issuing/Authorizations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Issuing/Cardholders.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Issuing/Cardholders.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Issuing/Cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Issuing/Cards.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Issuing/Disputes.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Issuing/Disputes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Issuing/Transactions.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Issuing/Transactions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Mandates.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Mandates.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/OAuth.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/OAuth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/OrderReturns.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/OrderReturns.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Orders.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Orders.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/PaymentIntents.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/PaymentIntents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/PaymentLinks.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/PaymentLinks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/PaymentMethods.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/PaymentMethods.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Payouts.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Payouts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Plans.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Plans.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Prices.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Prices.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Products.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Products.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/PromotionCodes.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/PromotionCodes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Quotes.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Quotes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Radar/EarlyFraudWarnings.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Radar/EarlyFraudWarnings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Radar/ValueListItems.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Radar/ValueListItems.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Radar/ValueLists.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Radar/ValueLists.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Refunds.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Refunds.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Reporting/ReportRuns.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Reporting/ReportRuns.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Reporting/ReportTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Reporting/ReportTypes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Reviews.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/SKUs.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/SKUs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/SetupAttempts.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/SetupAttempts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/SetupIntents.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/SetupIntents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/ShippingRates.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/ShippingRates.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Sigma/ScheduledQueryRuns.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Sigma/ScheduledQueryRuns.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Sources.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Sources.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/SubscriptionItems.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/SubscriptionItems.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/SubscriptionSchedules.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/SubscriptionSchedules.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Subscriptions.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Subscriptions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/TaxCodes.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/TaxCodes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/TaxRates.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/TaxRates.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Terminal/Configurations.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Terminal/Configurations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Terminal/ConnectionTokens.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Terminal/ConnectionTokens.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Terminal/Locations.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Terminal/Locations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Terminal/Readers.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Terminal/Readers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/TestHelpers/Refunds.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/TestHelpers/Refunds.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/TestHelpers/Terminal/Readers.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/TestHelpers/Terminal/Readers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/TestHelpers/TestClocks.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/TestHelpers/TestClocks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Tokens.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Tokens.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Topups.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Topups.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Transfers.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/Transfers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/WebhookEndpoints.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/resources/WebhookEndpoints.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/stripe.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/stripe.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/lib/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/lib/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/.eslintrc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/AccountLinks.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/AccountLinks.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Accounts.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Accounts.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/AlipayAccounts.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/AlipayAccounts.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/ApplePayDomains.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/ApplePayDomains.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/ApplicationFees.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/ApplicationFees.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Applications.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Applications.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Balance.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Balance.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/BalanceTransactions.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/BalanceTransactions.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/BankAccounts.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/BankAccounts.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/BillingPortal/Configurations.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/BillingPortal/Configurations.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/BillingPortal/Sessions.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/BillingPortal/Sessions.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/BitcoinReceivers.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/BitcoinReceivers.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/BitcoinTransactions.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/BitcoinTransactions.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Capabilities.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Capabilities.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Cards.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Cards.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Charges.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Charges.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Checkout/Sessions.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Checkout/Sessions.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/ConnectCollectionTransfers.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/ConnectCollectionTransfers.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/CountrySpecs.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/CountrySpecs.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Coupons.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Coupons.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/CreditNoteLineItems.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/CreditNoteLineItems.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/CreditNotes.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/CreditNotes.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/CustomerBalanceTransactions.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/CustomerBalanceTransactions.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/CustomerSources.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/CustomerSources.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Customers.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Customers.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Discounts.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Discounts.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Disputes.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Disputes.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/EphemeralKeys.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/EphemeralKeys.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Events.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Events.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/ExchangeRates.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/ExchangeRates.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/ExternalAccounts.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/ExternalAccounts.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/FeeRefunds.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/FeeRefunds.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/FileLinks.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/FileLinks.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Files.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Files.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/FundingInstructions.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/FundingInstructions.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Identity/VerificationReports.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Identity/VerificationReports.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Identity/VerificationSessions.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Identity/VerificationSessions.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/InvoiceItems.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/InvoiceItems.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/InvoiceLineItems.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/InvoiceLineItems.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Invoices.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Invoices.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/IssuerFraudRecords.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/IssuerFraudRecords.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Issuing/Authorizations.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Issuing/Authorizations.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Issuing/CardDetails.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Issuing/CardDetails.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Issuing/Cardholders.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Issuing/Cardholders.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Issuing/Cards.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Issuing/Cards.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Issuing/Disputes.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Issuing/Disputes.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Issuing/Transactions.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Issuing/Transactions.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/LineItems.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/LineItems.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/LoginLinks.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/LoginLinks.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Mandates.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Mandates.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/OrderItems.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/OrderItems.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/OrderReturns.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/OrderReturns.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Orders.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Orders.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/PaymentIntents.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/PaymentIntents.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/PaymentLinks.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/PaymentLinks.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/PaymentMethods.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/PaymentMethods.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Payouts.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Payouts.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Persons.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Persons.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Plans.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Plans.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/PlatformTaxFees.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/PlatformTaxFees.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Prices.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Prices.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Products.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Products.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/PromotionCodes.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/PromotionCodes.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Quotes.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Quotes.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Radar/EarlyFraudWarnings.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Radar/EarlyFraudWarnings.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Radar/ValueListItems.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Radar/ValueListItems.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Radar/ValueLists.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Radar/ValueLists.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Recipients.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Recipients.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Refunds.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Refunds.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Reporting/ReportRuns.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Reporting/ReportRuns.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Reporting/ReportTypes.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Reporting/ReportTypes.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/ReserveTransactions.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/ReserveTransactions.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Reviews.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Reviews.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/SKUs.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/SKUs.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/SetupAttempts.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/SetupAttempts.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/SetupIntents.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/SetupIntents.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/ShippingRates.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/ShippingRates.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Sigma/ScheduledQueryRuns.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Sigma/ScheduledQueryRuns.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/SourceMandateNotifications.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/SourceMandateNotifications.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/SourceTransactions.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/SourceTransactions.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Sources.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Sources.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/SubscriptionItems.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/SubscriptionItems.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/SubscriptionSchedules.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/SubscriptionSchedules.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Subscriptions.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Subscriptions.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/TaxCodes.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/TaxCodes.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/TaxDeductedAtSources.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/TaxDeductedAtSources.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/TaxIds.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/TaxIds.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/TaxRates.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/TaxRates.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Terminal/Configurations.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Terminal/Configurations.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Terminal/ConnectionTokens.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Terminal/ConnectionTokens.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Terminal/Locations.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Terminal/Locations.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Terminal/Readers.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Terminal/Readers.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/TestHelpers/Refunds.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/TestHelpers/Refunds.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/TestHelpers/Terminal/Readers.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/TestHelpers/Terminal/Readers.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/TestHelpers/TestClocks.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/TestHelpers/TestClocks.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Tokens.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Tokens.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Topups.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Topups.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/TransferReversals.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/TransferReversals.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Transfers.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/Transfers.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/UsageRecordSummaries.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/UsageRecordSummaries.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/UsageRecords.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/UsageRecords.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/WebhookEndpoints.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/WebhookEndpoints.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/2020-08-27/index.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/Errors.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/Errors.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/OAuth.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/OAuth.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/Webhooks.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/Webhooks.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/crypto/crypto.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/crypto/crypto.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/lib.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/lib.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/net/net.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/net/net.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/shared.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/shared.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/test/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/test/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/stripe/types/test/typescriptTest.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/stripe/types/test/typescriptTest.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/.env" beforeDir="false" afterPath="$PROJECT_DIR$/src/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/MyCart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MyCart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Book.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/Book.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/Cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Order.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/Order.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/book.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/order.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/verifyToken.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/verifyToken.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -332,8 +83,16 @@
       <workItem from="1651580323061" duration="546000" />
       <workItem from="1651581844363" duration="304000" />
       <workItem from="1651582190949" duration="2636000" />
-      <workItem from="1651615753162" duration="1535000" />
+      <workItem from="1651615753162" duration="5768000" />
     </task>
+    <task id="LOCAL-00001" summary="added stripe-payment">
+      <created>1651617452591</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1651617452591</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -356,5 +115,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="added stripe-payment" />
+    <option name="LAST_COMMIT_MESSAGE" value="added stripe-payment" />
   </component>
 </project>

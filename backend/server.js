@@ -24,7 +24,7 @@ app.use("/auth", authRoute);
 app.use("/books", bookRoute);
 app.use("/carts", cartRoute);
 app.use("/orders", orderRoute);
-app.use("/checkout", stripeRoute);
+app.use("/mycart", stripeRoute);
 
 app.listen(process.env.PORT || 3000, () => {
     console.log("Backend server is running!");

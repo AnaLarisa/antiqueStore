@@ -2,17 +2,19 @@ import React, {useEffect, useState} from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from 'react-router-dom';
 import StripeCheckout from 'react-stripe-checkout';
-import {userRequest} from "../requestMethods";
 import 'react-router-dom'
 import {Link} from 'react-router-dom';
 import "./CSS/Navbar.css";
 import "./CSS/MyCart.css";
+import {userRequest} from "../requestMethods";
 import book from './images/book.png';
 import "./CSS/font-awesome-4.7.0/css/font-awesome.min.css";
 
-const KEY = process.env.REACT_APP_STRIPE;
+//const KEY = process.env.REACT_APP_STRIPE;
+const KEY = "pk_test_51JzmyRALRgt5fdLcNrrrBXZ5PdZeC52usIQz2SwgMritEJRGbHZmjs55UMIJvd4IG8uPm6gt7WeImjxWfIeUwAeB00y71hkmwJ";
 
 function MyCart() {
+    console.log(KEY);
     const [isOpen, setIsOpen] = useState(false);
     const cart = useSelector((state)=> state.cart );
     const [stripeToken, setStripeToken] = useState(null);
