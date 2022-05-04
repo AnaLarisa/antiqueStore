@@ -1,15 +1,13 @@
-
-// for mongoDB 
-
-const express = require('express');
+const express = require("express");
 const app = express();
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-const userRoute = require("../src/routes/user");
-const authRoute = require("../src/routes/auth");
-const bookRoute = require("../src/routes/book");
-const cartRoute = require("../src/routes/cart");
-const orderRoute = require("../src/routes/order");
+const userRoute = require("./routes/user");
+const authRoute = require("./routes/auth");
+const bookRoute = require("./routes/book");
+const cartRoute = require("./routes/cart");
+const orderRoute = require("./routes/order");
+const stripeRoute = require("./routes/stripe");
 
 dotenv.config();
 
@@ -21,12 +19,13 @@ mongoose
     });
 
 app.use(express.json());
-app.use("/api/users", userRoute);
-app.use("/api/auth", authRoute);
-app.use("/api/books", bookRoute);
-app.use("/api/carts", cartRoute);
-app.use("/api/orders", orderRoute);
+app.use("/users", userRoute);
+app.use("/auth", authRoute);
+app.use("/books", bookRoute);
+app.use("/carts", cartRoute);
+app.use("/orders", orderRoute);
+app.use("/mycart", stripeRoute);
 
-app.listen(process.env.PORT || 2000, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log("Backend server is running!");
 });

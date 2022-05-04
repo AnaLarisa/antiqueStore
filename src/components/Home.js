@@ -5,6 +5,8 @@ import './CSS/Home.css';
 import "./CSS/Navbar.css";
 import {Widget} from 'react-chat-widget';
 import './CSS/styles.css'
+import MainContent from "./MainContent.js";
+import './CSS/HomePage.css';
 
 function Home() {
     const [isOpen, setIsOpen] = useState(false);
@@ -30,8 +32,15 @@ function Home() {
                     <div className="bar"></div>
                 </div>
             </div>
-                <h1>Hello Welcome!!! </h1>
-                <h2><Link className='link' to='/login'>Log in</Link> if you already have an account, or <Link className='link' to='/registration'>register</Link> to get started</h2>
+            <div className={`${isOpen && "hide"}`}>
+                    <MainContent />
+                </div>
+                <div className='App'>
+                    <Widget
+                        title='My E-commerce Live Chat'
+                        subtitle='Ready to help you'
+                    />
+                </div>
             </div>
         </div>
 

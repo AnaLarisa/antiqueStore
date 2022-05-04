@@ -26,7 +26,9 @@ function Service() {
                     <div className="bar"></div>
                 </div>
             </div>
+            <div className={`${isOpen && "hide"}`}>
                 <h1>Service</h1>
+            </div>
             </div>
         </div>
 

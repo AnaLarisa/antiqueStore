@@ -11,6 +11,13 @@ function Login() {
 
     const [emaillog, setEmaillog] = useState(" ");
     const [passwordlog, setPasswordlog] = useState(" ");
+    // const dispatch = useDispatch();
+    // const { isFetching, error } = useSelector((state) => state.user);
+    //
+    // const handleClick = (e) => {
+    //     e.preventDefault();
+    //     login(dispatch, { username, password });
+    // };
 
     return (
         <form>
@@ -26,7 +33,7 @@ function Login() {
                             <h1 className='LHeader'>Login</h1>
                             <div>
                                 <img src={email} alt="emial" className='email' />
-                                <input type="email" placeholder='Enter Email-id' className='fill' onChange={(event) => setEmaillog(event.target.value) }/>
+                                <input type="email" placeholder='Enter Email-address' className='fill' onChange={(event) => setEmaillog(event.target.value) }/>
                             </div>
                             <div className='second-input'>
                                 <img src={lock} alt='password' className='email' />
