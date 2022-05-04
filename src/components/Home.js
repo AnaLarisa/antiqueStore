@@ -22,8 +22,6 @@ function Home() {
                     <Link to="/mycart">My Cart</Link>
                     <Link to="/service">Service</Link>
                     <Link to="/login">Login</Link>
-                    <Link to="/client">Client</Link>
-                    <Link to="/agent">Agent</Link>
                 </div>
                 <div
                     className={`nav-toggle ${isOpen && "open"}`}
@@ -34,12 +32,6 @@ function Home() {
             </div>
             <div className={`${isOpen && "hide"}`}>
                     <MainContent />
-                </div>
-                <div className='App'>
-                    <Widget
-                        title='My E-commerce Live Chat'
-                        subtitle='Ready to help you'
-                    />
                 </div>
             </div>
         </div>
