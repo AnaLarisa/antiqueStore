@@ -10,3 +10,64 @@ input.fill{
     border-radius: 60px;
     box-shadow: inset 0px 0px 25px 0px #888;
   }
+
+.modalBackground {
+    /*width: 100vw;
+    height: 100vh;*/
+    background-color: rgba(200, 200, 200);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalContainer {
+    width: 500px;
+    height: 500px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    margin-bottom: 100px;
+}
+
+.modalContainer .title {
+    display: inline-block;
+    text-align: center;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+.titleCloseBtn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.titleCloseBtn button {
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+.modalContainer .footer {
+    flex: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalContainer .footer button {
+    width: 150px;
+    height: 45px;
+    margin: 10px;
+    border: none;
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
+}

@@ -2,15 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="060d6d48-7f24-4ff8-ac96-5a7ca7eba641" name="Changes" comment="added stripe-payment">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Success.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/newUserRedux.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/stripe.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/stripe.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.env" beforeDir="false" afterPath="$PROJECT_DIR$/src/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CSS/Authentification.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CSS/Authentification.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/MyCart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MyCart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Registration.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/apiCalls.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/apiCalls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/userRedux.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/userRedux.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/requestMethods.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/requestMethods.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +56,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\FAC anul 3\sem 2\PAD\antiquestore-new\antiqueStore\src\components" />
       <recent name="C:\FAC anul 3\sem 2\PAD\antiquestore-new\antiqueStore\backend\routes" />
       <recent name="C:\FAC anul 3\sem 2\PAD\antiquestore-new\antiqueStore\backend" />
       <recent name="C:\FAC anul 3\sem 2\PAD\antiquestore-new\antiqueStore\src" />
@@ -83,7 +95,12 @@
       <workItem from="1651580323061" duration="546000" />
       <workItem from="1651581844363" duration="304000" />
       <workItem from="1651582190949" duration="2636000" />
-      <workItem from="1651615753162" duration="5768000" />
+      <workItem from="1651615753162" duration="6811000" />
+      <workItem from="1651651642778" duration="5645000" />
+      <workItem from="1651688438642" duration="4493000" />
+      <workItem from="1651738138011" duration="4436000" />
+      <workItem from="1651936750767" duration="12012000" />
+      <workItem from="1652003512612" duration="16891000" />
     </task>
     <task id="LOCAL-00001" summary="added stripe-payment">
       <created>1651617452591</created>

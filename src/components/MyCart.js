@@ -27,13 +27,13 @@ function MyCart() {
     useEffect(() => {
         const makeRequest = async () => {
             try{
-                const res = await userRequest.post("/mycart/payment", {
+                const res = await userRequest.post("/mycart/", {
                     tokenId: stripeToken.id,
                     amount: cart.total * 100,
                 });
                 navigate("/success", {
                     stripeData: res.data,
-                    recipes: cart, });
+                    books: cart, });
             }catch {}
         };
         stripeToken && makeRequest();
