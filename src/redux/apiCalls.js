@@ -1,5 +1,19 @@
 import { loginFailure, loginStart, loginSuccess } from "./userRedux";
 import { registerStart, registerSuccess, registerFailure } from "./newUserRedux";
+import {
+  getBookStart,
+  getBookSuccess,
+  getBookFailure,
+  deleteBookStart,
+  deleteBookSuccess,
+  deleteBookFailure,
+  updateBookStart,
+  updateBookSuccess,
+  updateBookFailure,
+  addBookStart,
+  addBookSuccess,
+  addBookFailure,
+} from "./productRedux";
 import { publicRequest } from "../requestMethods";
 
 export const login = async (dispatch, user) => {
@@ -19,5 +33,15 @@ export const register = async (dispatch, user) => {
     dispatch(registerSuccess(res.data));
   } catch (err) {
     dispatch(registerFailure());
+  }
+};
+
+export const getBooks = async (dispatch) => {
+  dispatch(getBookStart());
+  try {
+    const res = await publicRequest.get("/books");
+    dispatch(getBookSuccess(res.data));
+  } catch (err) {
+    dispatch(getBookFailure());
   }
 };

@@ -7,10 +7,12 @@ import {Widget} from 'react-chat-widget';
 import './CSS/styles.css'
 import MainContent from "./MainContent.js";
 import './CSS/HomePage.css';
+import {useCategoryContext, BookProvider} from "../contexts/BookContext";
 
 function Home() {
     const [isOpen, setIsOpen] = useState(false);
     return (
+
         <div className="under">
             <div className="over">
             <div className="Navbar">
@@ -33,7 +35,9 @@ function Home() {
                 </div>
             </div>
             <div className={`${isOpen && "hide"}`}>
+                <BookProvider>
                     <MainContent />
+                </BookProvider>
                 </div>
                 <div className='App'>
                     <Widget
@@ -43,7 +47,6 @@ function Home() {
                 </div>
             </div>
         </div>
-
     )
 }
 
