@@ -12,7 +12,7 @@ const Book = ({ item }) => {
         <div className="card_header">
             <h1>{item.title}</h1>
             <h2>{item.author}</h2>
-            <p className="price">{item.price}<span>$</span></p>
+            <p className="price">{item.price} Lei</p>
             <div className="btn">Add to cart</div>
         </div>
     </div>

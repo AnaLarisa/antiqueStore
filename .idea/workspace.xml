@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="060d6d48-7f24-4ff8-ac96-5a7ca7eba641" name="Changes" comment="added stripe-payment">
-      <change afterPath="$PROJECT_DIR$/src/components/Book.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/productRedux.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MainContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainContent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/product_data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/product_data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/contexts/BookContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/contexts/BookContext.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/apiCalls.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/apiCalls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Book.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Book.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Registration.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +94,8 @@
       <workItem from="1651936750767" duration="12012000" />
       <workItem from="1652003512612" duration="16891000" />
       <workItem from="1652044828044" duration="94000" />
-      <workItem from="1652044936654" duration="5734000" />
+      <workItem from="1652044936654" duration="6094000" />
+      <workItem from="1652204476187" duration="4455000" />
     </task>
     <task id="LOCAL-00001" summary="added stripe-payment">
       <created>1651617452591</created>
