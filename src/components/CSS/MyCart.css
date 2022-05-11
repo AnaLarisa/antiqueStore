@@ -156,3 +156,25 @@
 
 }
 
+button.checkout{
+    color: #fff;
+    background: #532e0c;
+    padding: 12px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top:30px;
+	display: block;
+    font-size: 15px;
+    outline: none;
+    font-weight: 300;
+	color: #9a9a9a;
+    width:200px;
+	margin: 0 auto;
+}
+
+.check{
+  text-align: center;
+}
+button.checkout:hover{
+    opacity: 0.9;
+}

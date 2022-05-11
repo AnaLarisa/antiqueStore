@@ -107,7 +107,7 @@ function MyCart() {
                                             amount={cart.total*100}
                                             token={onToken}
                                             stripeKey={KEY}>
-                                <button>Proceed to Checkout</button>
+                                <div classname = "check"><button className = "checkout">Proceed to Checkout</button></div>
                             </StripeCheckout>
                         </div>
                     </div>

@@ -56,7 +56,7 @@ function Registration() {
                                 <input type="password" placeholder='Enter Password' className='fill' value={Info.password} onChange={(e) => setInfo({...Info, password: e.target.value})}/>
                             </div>
                             <div className='login-btn'>
-                                <button type="submit">Register</button>
+                                <button className='login-btn' type="submit">Register</button>
                             </div>
                             <div className='reg-link'>
                                 <p>If Account exist then <Link className='link' to='/login'>Login!!!</Link></p>
