@@ -2,10 +2,26 @@ const router = require("express").Router();
 const User = require("../models/User");
 const CryptoJS = require("crypto-js");
 const jwt = require("jsonwebtoken");
+const { default: axios } = require("axios");
 
+function authenticate (email, password) {
+    return email === userInDB.email && password === userInDB.password
+      ? userInDB
+      : false
+  }
+
+const userInDB = {
+    id: 'agent',
+    email: 'arilazar5@gmail.com',
+    password: 'Blazar1253'
+  }
 
 //REGISTER
 router.post("/register", async (req, res) => {
+    const data = {
+        uid: new Date().getTime(),
+        name: req.body.username,
+    }
     const newUser = new User({
         username: req.body.username,
         email: req.body.email,
@@ -13,14 +29,38 @@ router.post("/register", async (req, res) => {
             req.body.password,
             process.env.PASS_SEC
         ).toString(),
+        uid: data.uid,
     });
 
+    
+    let user = authenticate('arilazar5@gmail.com', 'Blazar1253')
+    if (user) {
+        axios.post(`https://api-eu.cometchat.io/v2.0/users`, JSON.stringify(data),{
+            headers: {
+                'content-type': 'application/json',
+                'accept': 'application/json',
+                'apikey': '3a96c515af9a86e67ec716d23973b18b28d7081c',
+                'appid': '208328d714ad2a41'
+            } 
+        }).then(res=>{
+            console.log('success on adding user on cometchat');
+        })
+    }else {
+        res
+            .status(401)
+            .json({
+                message: 'Your email or password is wrong!'
+            })
+    }
+
     try {
+        
         const savedUser = await newUser.save();
         res.status(201).json(savedUser);
     } catch (err) {
         res.status(500).json(err);
     }
+    
 });
 
 //LOGIN

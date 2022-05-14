@@ -8,7 +8,8 @@ const UserSchema = new mongoose.Schema(
     isAdmin: {
       type: Boolean,
       default: false,
-    },
+    },  
+    uid: { type: String, require: true, unique: true},
   },
   { timestamps: true }
 );
