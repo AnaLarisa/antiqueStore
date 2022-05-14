@@ -33,27 +33,29 @@ router.post("/register", async (req, res) => {
     });
 
     
-    let user = authenticate('arilazar5@gmail.com', 'Blazar1253')
-    if (user) {
-        axios.post(`https://api-eu.cometchat.io/v2.0/users`, JSON.stringify(data),{
-            headers: {
-                'content-type': 'application/json',
-                'accept': 'application/json',
-                'apikey': '3a96c515af9a86e67ec716d23973b18b28d7081c',
-                'appid': '208328d714ad2a41'
-            } 
-        }).then(res=>{
-            console.log('success on adding user on cometchat');
-        })
-    }else {
-        res
-            .status(401)
-            .json({
-                message: 'Your email or password is wrong!'
-            })
-    }
+    
 
     try {
+
+        let user = authenticate('arilazar5@gmail.com', 'Blazar1253')
+        if (user) {
+            axios.post(`https://api-eu.cometchat.io/v2.0/users`, JSON.stringify(data),{
+                headers: {
+                    'content-type': 'application/json',
+                    'accept': 'application/json',
+                    'apikey': '3a96c515af9a86e67ec716d23973b18b28d7081c',
+                    'appid': '208328d714ad2a41'
+                } 
+            }).then(res=>{
+                console.log('success on adding user on cometchat');
+            })
+        }else {
+            res
+                .status(401)
+                .json({
+                    message: 'Your email or password is wrong!'
+                })
+        }
         
         const savedUser = await newUser.save();
         res.status(201).json(savedUser);
