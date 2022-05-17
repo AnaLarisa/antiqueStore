@@ -1,12 +1,13 @@
 import React, {useState} from 'react';
 import { useDispatch , useSelector} from "react-redux";
-import { login } from "../redux/apiCalls";
+import { login, userNameFromBackEnd } from "../redux/apiCalls";
 import Registration from './Registration';
 import {Link} from 'react-router-dom';
 import email from "./images/email.png";
 import lock from "./images/lock.png";
 import profile from "./images/icon.jpg";
 import "./CSS/Authentification.css";
+
 
 
 function Login() {

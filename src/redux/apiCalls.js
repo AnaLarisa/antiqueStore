@@ -16,10 +16,18 @@ import {
 } from "./productRedux";
 import { publicRequest } from "../requestMethods";
 
+import React from 'react';
+export const userNameFromBackEnd = React.createContext();
+export const userNameuid = React.createContext();
+
+
 export const login = async (dispatch, user) => {
   dispatch(loginStart());
   try {
     const res = await publicRequest.post("/auth/login", user);
+    userNameFromBackEnd.value = res.data.username;
+    userNameuid.value = res.data.uid;
+    console.log(userNameuid.value);
     dispatch(loginSuccess(res.data));
   } catch (err) {
     dispatch(loginFailure());

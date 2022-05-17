@@ -8,9 +8,15 @@ import './CSS/styles.css'
 import MainContent from "./MainContent.js";
 import './CSS/HomePage.css';
 import {useCategoryContext, BookProvider} from "../contexts/BookContext";
+import {userNameFromBackEnd, userNameuid} from "../redux/apiCalls";
+import cometChatMessageButton from "./cometChatButton";
+
 
 function Home() {
     const [isOpen, setIsOpen] = useState(false);
+    // console.log(userNameFromBackEnd.value); nume user
+    console.log(userNameuid.value);
+    cometChatMessageButton(userNameuid.value);
     return (
 
         <div className="under">
@@ -40,10 +46,7 @@ function Home() {
                 </BookProvider>
                 </div>
                 <div className='App'>
-                    <Widget
-                        title='My E-commerce Live Chat'
-                        subtitle='Ready to help you'
-                    />
+                    <div className="App"></div>
                 </div>
             </div>
         </div>
