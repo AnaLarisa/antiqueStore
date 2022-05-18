@@ -16,6 +16,7 @@ import cometChatMessageButton from "./cometChatButton";
 const KEY = "pk_test_51JzmyRALRgt5fdLcNrrrBXZ5PdZeC52usIQz2SwgMritEJRGbHZmjs55UMIJvd4IG8uPm6gt7WeImjxWfIeUwAeB00y71hkmwJ";
 
 function MyCart() {
+    console.log(sessionStorage.username);
     cometChatMessageButton(sessionStorage.userNameuid);
     console.log(KEY);
     const [isOpen, setIsOpen] = useState(false);

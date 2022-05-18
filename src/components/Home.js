@@ -17,6 +17,7 @@ function Home() {
     // console.log(sessionStorage.username);
     // console.log(sessionStorage.userNameuid);
     // console.log(sessionStorage.userRole);
+    // console.log(' login status ' + sessionStorage.loginStatus);
 
     cometChatMessageButton(sessionStorage.userNameuid);
     return (

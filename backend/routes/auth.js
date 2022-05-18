@@ -37,6 +37,10 @@ router.post("/register", async (req, res) => {
 
     try {
 
+        
+        
+        const savedUser = await newUser.save();
+        res.status(201).json(savedUser);
         let user = authenticate('arilazar5@gmail.com', 'Blazar1253')
         if (user) {
             axios.post(`https://api-eu.cometchat.io/v2.0/users`, JSON.stringify(data),{
@@ -56,9 +60,6 @@ router.post("/register", async (req, res) => {
                     message: 'Your email or password is wrong!'
                 })
         }
-        
-        const savedUser = await newUser.save();
-        res.status(201).json(savedUser);
     } catch (err) {
         res.status(500).json(err);
     }
@@ -70,7 +71,7 @@ router.post("/register", async (req, res) => {
 router.post("/login", async (req, res) => {
     try {
         const user = await User.findOne({ email: req.body.email });
-        !user && res.status(401).json("Wrong credentials!");
+        if(!user) {res.status(401).json("Wrong credentials!"); return;}
 
         const hashedPassword = CryptoJS.AES.decrypt(
             user.password,
@@ -78,8 +79,7 @@ router.post("/login", async (req, res) => {
         );
         const OriginalPassword = hashedPassword.toString(CryptoJS.enc.Utf8);
 
-        OriginalPassword !== req.body.password &&
-        res.status(401).json("Wrong credentials!");
+        if(OriginalPassword !== req.body.password){ res.status(401).json("Wrong credentials!"); return; }
 
         //creates a web token for the person that logs in to be able to manage the client database
         const accessToken = jwt.sign(
@@ -96,7 +96,7 @@ router.post("/login", async (req, res) => {
 
         res.status(200).json({...others, accessToken});
     } catch (err) {
-        res.status(500).json(err);
+        ƒres.status(500).json(err);
     }
     console.log(res.status);
 });

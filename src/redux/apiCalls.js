@@ -25,10 +25,12 @@ export const login = async (dispatch, user) => {
     sessionStorage.setItem('username',res.data.username);
     sessionStorage.setItem('userNameuid',res.data.uid);
     sessionStorage.setItem('userRole',res.data.isAdmin);
+    sessionStorage.setItem('loginStatus',true);
     console.log(sessionStorage.userRole);
     console.log(res.data.isAdmin);
     dispatch(loginSuccess(res.data));
   } catch (err) {
+    sessionStorage.setItem('loginStatus',false);
     dispatch(loginFailure());
   }
 };
