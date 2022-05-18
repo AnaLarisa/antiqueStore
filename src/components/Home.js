@@ -48,7 +48,7 @@ function Home() {
                 </BookProvider>
                 </div>
                 <div className='App'>
-                    <div className="App"></div>
+                    
                 </div>
             </div>
         </div>
