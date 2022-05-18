@@ -17,17 +17,16 @@ import {
 import { publicRequest } from "../requestMethods";
 
 import React from 'react';
-export const userNameFromBackEnd = React.createContext();
-export const userNameuid = React.createContext();
-
 
 export const login = async (dispatch, user) => {
   dispatch(loginStart());
   try {
     const res = await publicRequest.post("/auth/login", user);
-    userNameFromBackEnd.value = res.data.username;
-    userNameuid.value = res.data.uid;
-    console.log(userNameuid.value);
+    sessionStorage.setItem('username',res.data.username);
+    sessionStorage.setItem('userNameuid',res.data.uid);
+    sessionStorage.setItem('userRole',res.data.isAdmin);
+    console.log(sessionStorage.userRole);
+    console.log(res.data.isAdmin);
     dispatch(loginSuccess(res.data));
   } catch (err) {
     dispatch(loginFailure());

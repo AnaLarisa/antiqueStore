@@ -8,15 +8,17 @@ import './CSS/styles.css'
 import MainContent from "./MainContent.js";
 import './CSS/HomePage.css';
 import {useCategoryContext, BookProvider} from "../contexts/BookContext";
-import {userNameFromBackEnd, userNameuid} from "../redux/apiCalls";
 import cometChatMessageButton from "./cometChatButton";
 
 
 function Home() {
     const [isOpen, setIsOpen] = useState(false);
     // console.log(userNameFromBackEnd.value); nume user
-    console.log(userNameuid.value);
-    cometChatMessageButton(userNameuid.value);
+    // console.log(sessionStorage.username);
+    // console.log(sessionStorage.userNameuid);
+    // console.log(sessionStorage.userRole);
+
+    cometChatMessageButton(sessionStorage.userNameuid);
     return (
 
         <div className="under">
