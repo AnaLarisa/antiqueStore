@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 import 'react-router-dom'
 import {Link} from 'react-router-dom';
 import './CSS/Home.css';
@@ -11,28 +11,44 @@ import product_card from "./product_data.js"
 
 
 function Home() {
+    const[visible, setVisible] = useState(3);
+    const showMoreItems = () => {
+        setVisible((prevValue) => prevValue + 3);
+    };
+    useEffect(() =>{
+        fetch({Books})
+    }, []);
     const [isOpen, setIsOpen] = useState(false);
     const [searchTerm,setSearchTerm]=useState("");
+    function FilterByCathegory(cathegory) {
+        const Filtered = product_card.filter((item) => {
+            if(item.cathegory.toLowerCase()==cathegory) {
+                return item;
+            }
+        });
+        return Filtered;
+    }
     const Books = product_card.filter((item) => {
-        if(searchTerm ==""){
-            return item;
-        }
-        else if(item.product_name.toLowerCase().includes(searchTerm.toLowerCase())) {
+        if(item.product_name.toLowerCase().includes(searchTerm.toLowerCase())) {
             return item;
         }
     })
-    const Filtered = Books.map((item) =>
-        <div className="card" key={item.id}>
-            <div className="card_img">
-                <img src={require('./images/' + item.image +'.png')} />
+    function MapBooks(List) {
+        if(!List){List=[];}
+        const Filtered = List.map((item) =>
+            <div className="card" key={item.id}>
+                <div className="card_img">
+                    <img src={require('./images/' + item.image +'.png')} />
+                </div>
+                <div className="card_header">
+                    <h2>{item.product_name}</h2>
+                    <p className="price">{item.price}<span>{item.currency}</span></p>
+                    <div className="btn">Add to cart</div>
+                </div>
             </div>
-            <div className="card_header">
-                <h2>{item.product_name}</h2>
-                <p className="price">{item.price}<span>{item.currency}</span></p>
-                <div className="btn">Add to cart</div>
-            </div>
-        </div>
-     );
+        );
+        return Filtered;
+    }
     return (
         <div className="under">
             <div className="over">
@@ -66,8 +82,31 @@ function Home() {
                     <div className="bar"></div>
                 </div>
             </div>
-            <div className={`${(isOpen && "hide") || (!isOpen && "homeContent")}`}>
-                    {Filtered}
+            <div className={`${((isOpen ||searchTerm == "") && "hide" ) || (!isOpen && "homeContent")}`}>
+                    {MapBooks(Books)}
+
+                </div>
+                <div className={`${((isOpen ||searchTerm != "") && "hide" ) || (!isOpen && "FilteredContent")}`}>
+                    <div className = "cathegories">
+                        <h1>Drama</h1>
+                        {MapBooks(FilterByCathegory("drama"))}
+                    </div>
+                    <div className = "cathegories">
+                        <h1>Romance</h1>
+                        {MapBooks(FilterByCathegory("romance"))}
+                    </div>
+                    <div className = "cathegories">
+                        <h1>Fantasy</h1>
+                        {MapBooks(FilterByCathegory("fantasy"))}
+                    </div>
+                    <div className = "cathegories">
+                        <h1>Science-Fiction</h1>
+                        {MapBooks(FilterByCathegory("sf"))}
+                    </div>
+                    <div className = "cathegories">
+                        <h1>Mystery</h1>
+                        {MapBooks(FilterByCathegory("mistery"))}
+                    </div>
                 </div>
                 <div className='App'>
                     <Widget
