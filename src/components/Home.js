@@ -1,4 +1,4 @@
-import React, { useState , useEffect} from "react";
+import React, { useState , useEffect, useRef} from "react";
 import 'react-router-dom'
 import {Link} from 'react-router-dom';
 import './CSS/Home.css';
@@ -8,6 +8,7 @@ import './CSS/styles.css'
 import './CSS/HomePage.css';
 import { AiOutlineSearch } from "react-icons/ai";
 import product_card from "./product_data.js"
+import ScrollToTop from "./ScrollToTop";
 
 
 function Home() {
@@ -21,6 +22,19 @@ function Home() {
         .then((res) =>res.json())
         .then((data) => setItems(data));
     }, []);
+
+    const scrollToSection = (elementRef) => {
+        window.scrollTo({
+          top: elementRef.current.offsetTop,
+          behavior: "smooth",
+        });
+      };
+      const drama = useRef(null);
+      const romance = useRef(null);
+      const fantasy = useRef(null); 
+      const sf = useRef(null);
+      const mistery = useRef(null); 
+
     const [isOpen, setIsOpen] = useState(false);
     const [searchTerm,setSearchTerm]=useState("");
     function FilterByCategory(cathegory) {
@@ -93,7 +107,27 @@ function Home() {
 
                 </div>
                 <div className={`${((isOpen ||searchTerm != "") && "hide" ) || (!isOpen && "filteredContent")}`}>
-                    <div className = "categories">
+                <ScrollToTop />
+                <div className="hero">
+                    <ul>
+                    <li onClick={() => scrollToSection(drama)} className="link">
+                        Drama
+                    </li>
+                    <li onClick={() => scrollToSection(romance)} className="link">
+                        Romance
+                    </li>
+                    <li onClick={() => scrollToSection(fantasy)} className="link">
+                        Fantasy
+                    </li>
+                    <li onClick={() => scrollToSection(sf)} className="link">
+                        Science Fiction
+                    </li>
+                    <li onClick={() => scrollToSection(mistery)} className="link">
+                        Mistery
+                    </li>
+                    </ul>
+                </div>
+                    <div ref={drama} className = "categories">
                         <p className="text">Drama</p>
                         <div className="homeContent">
                             {MapBooks(FilterByCategory("drama"))}
@@ -103,7 +137,7 @@ function Home() {
                         </div>   
                     </div>
 
-                    <div className = "categories">
+                    <div ref={romance} className = "categories">
                         <p className="text">Romance</p>
                         <div className="homeContent">
                             {MapBooks(FilterByCategory("romance"))}
@@ -113,7 +147,7 @@ function Home() {
                         </div>
                     </div>
 
-                    <div className = "categories">
+                    <div ref={fantasy} className = "categories">
                         <p className="text">Fantasy</p>
                         <div className="homeContent">
                             {MapBooks(FilterByCategory("fantasy"))}
@@ -123,7 +157,7 @@ function Home() {
                         </div>
                     </div>
 
-                    <div className = "categories">
+                    <div ref={sf} className = "categories">
                         <p className="text">Science-Fiction</p>
                         <div className="homeContent">
                             {MapBooks(FilterByCategory("sf"))}
@@ -133,7 +167,7 @@ function Home() {
                         </div>
                     </div>
 
-                    <div className = "categories">
+                    <div ref={mistery} className = "categories">
                         <p className="text">Mistery</p>
                         <div className="homeContent">
                             {MapBooks(FilterByCategory("mistery"))}

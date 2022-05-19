@@ -169,3 +169,48 @@
     color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
   }
+
+  .hero {
+    padding-top:20px;
+    height: 60px;
+    background-color: transparent;
+  }
+
+  .link {
+    float: center;
+    width: 200px;
+    text-decoration: none;
+    display: inline;
+    padding: 20px 20px;
+    font-weight: 700;
+    font-size:medium;
+    cursor: pointer;
+    color:#261600;
+    background-color:rgba(255, 255, 255, 0.5);
+    margin:20px;
+  }
+
+
+/* scroll to top button */
+.top-btn-position {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+}
+
+.top-btn-style {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 2px solid rgb(255, 255, 255);
+  background-color: #261600;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.top-btn-style:hover {
+  animation: none;
+  background-color: rgb(255, 255, 255);
+  color: #261600;
+  border: 3px solid #fff;
+}
