@@ -106,28 +106,40 @@ function Home() {
                     <div className = "categories">
                         <p className="text">Romance</p>
                         <div className="homeContent">
-                        {MapBooks(FilterByCategory("romance"))}
+                            {MapBooks(FilterByCategory("romance"))}
+                            <div className="loadMore">
+                                <button className="loadMoreBtn" onClick={showMoreItems}>Load More</button>
+                            </div>
                         </div>
                     </div>
 
                     <div className = "categories">
                         <p className="text">Fantasy</p>
                         <div className="homeContent">
-                        {MapBooks(FilterByCategory("fantasy"))}
+                            {MapBooks(FilterByCategory("fantasy"))}
+                            <div className="loadMore">
+                                <button className="loadMoreBtn" onClick={showMoreItems}>Load More</button>
+                            </div>
                         </div>
                     </div>
 
                     <div className = "categories">
                         <p className="text">Science-Fiction</p>
                         <div className="homeContent">
-                        {MapBooks(FilterByCategory("sf"))}
+                            {MapBooks(FilterByCategory("sf"))}
+                            <div className="loadMore">
+                                <button className="loadMoreBtn" onClick={showMoreItems}>Load More</button>
+                            </div>
                         </div>
                     </div>
 
                     <div className = "categories">
                         <p className="text">Mistery</p>
                         <div className="homeContent">
-                        {MapBooks(FilterByCategory("mistery"))}
+                            {MapBooks(FilterByCategory("mistery"))}
+                            <div className="loadMore">
+                                <button className="loadMoreBtn" onClick={showMoreItems}>Load More</button>
+                            </div>
                         </div>
                     </div>
 
