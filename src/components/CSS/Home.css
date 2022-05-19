@@ -6,6 +6,8 @@
     left: 0;
     background-image: url("bookshelves.jpg") !important;
     background-size: 1500px;
+    background-repeat:repeat-y;
+    height:10000px;
     background-position:center;
 }
 

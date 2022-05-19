@@ -138,11 +138,6 @@
 
 
 
-
-
-
-
-
   .wrapper {
     position: relative;
     display: flex;
@@ -150,6 +145,8 @@
   }
   
   .search {
+    font-size:smaller;
+    font-weight: 500;
     border: 1px solid grey;
     border-radius: 5px;
     height: 25px;
@@ -162,7 +159,7 @@
     color:#261600;
   }
   .search:hover, .search:focus {
-    border: 1px solid #009688;
+    border: 1px solid #964300cc;
     background-color: white;
   }
   

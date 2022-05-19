@@ -11,16 +11,19 @@ import product_card from "./product_data.js"
 
 
 function Home() {
+    const[items, setItems] =useState([]);
     const[visible, setVisible] = useState(3);
     const showMoreItems = () => {
         setVisible((prevValue) => prevValue + 3);
     };
     useEffect(() =>{
         fetch({Books})
+        .then((res) =>res.json())
+        .then((data) => setItems(data));
     }, []);
     const [isOpen, setIsOpen] = useState(false);
     const [searchTerm,setSearchTerm]=useState("");
-    function FilterByCathegory(cathegory) {
+    function FilterByCategory(cathegory) {
         const Filtered = product_card.filter((item) => {
             if(item.cathegory.toLowerCase()==cathegory) {
                 return item;
@@ -35,7 +38,7 @@ function Home() {
     })
     function MapBooks(List) {
         if(!List){List=[];}
-        const Filtered = List.map((item) =>
+        const Filtered = List.slice(0, visible).map((item) =>
             <div className="card" key={item.id}>
                 <div className="card_img">
                     <img src={require('./images/' + item.image +'.png')} />
@@ -60,7 +63,7 @@ function Home() {
                     <AiOutlineSearch
                     style={{
                         position: 'absolute',
-                        top: '8px',
+                        top: '5px',
                         left: '8px',
                         width: '14px',
                       }}
@@ -84,29 +87,50 @@ function Home() {
             </div>
             <div className={`${((isOpen ||searchTerm == "") && "hide" ) || (!isOpen && "homeContent")}`}>
                     {MapBooks(Books)}
+                    <div className="loadMore">
+                        <button className="loadMoreBtn" onClick={showMoreItems}>Load More</button>
+                    </div>
 
                 </div>
-                <div className={`${((isOpen ||searchTerm != "") && "hide" ) || (!isOpen && "FilteredContent")}`}>
-                    <div className = "cathegories">
-                        <h1>Drama</h1>
-                        {MapBooks(FilterByCathegory("drama"))}
+                <div className={`${((isOpen ||searchTerm != "") && "hide" ) || (!isOpen && "filteredContent")}`}>
+                    <div className = "categories">
+                        <p className="text">Drama</p>
+                        <div className="homeContent">
+                            {MapBooks(FilterByCategory("drama"))}
+                            <div className="loadMore">
+                                <button className="loadMoreBtn" onClick={showMoreItems}>Load More</button>
+                            </div>
+                        </div>   
                     </div>
-                    <div className = "cathegories">
-                        <h1>Romance</h1>
-                        {MapBooks(FilterByCathegory("romance"))}
+
+                    <div className = "categories">
+                        <p className="text">Romance</p>
+                        <div className="homeContent">
+                        {MapBooks(FilterByCategory("romance"))}
+                        </div>
                     </div>
-                    <div className = "cathegories">
-                        <h1>Fantasy</h1>
-                        {MapBooks(FilterByCathegory("fantasy"))}
+
+                    <div className = "categories">
+                        <p className="text">Fantasy</p>
+                        <div className="homeContent">
+                        {MapBooks(FilterByCategory("fantasy"))}
+                        </div>
                     </div>
-                    <div className = "cathegories">
-                        <h1>Science-Fiction</h1>
-                        {MapBooks(FilterByCathegory("sf"))}
+
+                    <div className = "categories">
+                        <p className="text">Science-Fiction</p>
+                        <div className="homeContent">
+                        {MapBooks(FilterByCategory("sf"))}
+                        </div>
                     </div>
-                    <div className = "cathegories">
-                        <h1>Mystery</h1>
-                        {MapBooks(FilterByCathegory("mistery"))}
+
+                    <div className = "categories">
+                        <p className="text">Mistery</p>
+                        <div className="homeContent">
+                        {MapBooks(FilterByCategory("mistery"))}
+                        </div>
                     </div>
+
                 </div>
                 <div className='App'>
                     <Widget
