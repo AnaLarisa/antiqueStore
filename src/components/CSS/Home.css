@@ -7,7 +7,7 @@
     background-image: url("bookshelves.jpg") !important;
     background-size: 1500px;
     background-repeat:repeat-y;
-    height:10000px;
+    height:3335px;
     background-position:center;
 }
 
@@ -19,6 +19,7 @@
     left: 0;
     background: rgba(60, 52, 36, 0.644);
     color: white;
+    height:fit-content;
 }
 
 h1 {
