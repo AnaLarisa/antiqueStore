@@ -9,6 +9,7 @@ import MyCart from './MyCart'
 import Client from './Client';
 import AgentSupport from './AgentSupport';
 import Service from './Service';
+import AddBook from './AddBook';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
             <Route path="/service" element={<Service/>} />
             <Route path='/client' element={<Client />} />
             <Route path='/agent' element={<AgentSupport />} />
+            <Route path='/addbook' element={<AddBook />} />
           </Routes>
         </div>
       </React.Fragment>

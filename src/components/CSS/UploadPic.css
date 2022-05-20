@@ -1,0 +1,33 @@
+.img-holder{
+    margin: auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+    margin-top: 1rem;
+  }
+  .img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
+  #input[type="file"] {
+      display: none;
+  }
+  .label{
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+ .image-upload{
+     color:#ff574a;
+     border: none;
+     outline: none;
+     box-shadow: 0 5px 10px rgba(244,67,54,0.5);
+     padding:15px 60px;
+     cursor:pointer;
+     border-radius:30px;
+     margin-bottom: -50px;
+     font-weight: 600;
+     font-size: 16px;
+ }
