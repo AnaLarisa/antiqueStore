@@ -10,8 +10,19 @@ import { AiOutlineSearch } from "react-icons/ai";
 import product_card from "./product_data.js"
 import ScrollToTop from "./ScrollToTop";
 
+import {useCategoryContext, BookProvider} from "../contexts/BookContext";
+import cometChatMessageButton from "./cometChatButton";
 
 function Home() {
+
+    // console.log(userNameFromBackEnd.value); nume user
+    // console.log(sessionStorage.username);
+    // console.log(sessionStorage.userNameuid);
+    // console.log(sessionStorage.userRole);
+    // console.log(' login status ' + sessionStorage.loginStatus);
+
+    cometChatMessageButton(sessionStorage.userNameuid);
+
     const[items, setItems] =useState([]);
     const[visible, setVisible] = useState(3);
     const showMoreItems = () => {
@@ -67,6 +78,7 @@ function Home() {
         return Filtered;
     }
     return (
+
         <div className="under">
             <div className="over">
             <div className="Navbar">
@@ -174,11 +186,10 @@ function Home() {
                             </div>
                         </div>
                     </div>
-
+                <div className='App'></div>
                 </div>
             </div>
         </div>
-
     )
 }
 

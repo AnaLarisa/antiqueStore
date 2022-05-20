@@ -10,6 +10,8 @@ import { registerLicense } from '@syncfusion/ej2-base';
 // Registering Syncfusion license key
 registerLicense('ORg4AjUWIQA/Gnt2VVhhQlFaclhJW3xKYVF2R2FJe1Rycl9DZUwgOX1dQl9hSXtTckVlXX1bd3VSQ2c=');
 
+
+
 ReactDOM.render(
     <Provider store = {store}>
         <App />

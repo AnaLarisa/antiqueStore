@@ -1,25 +1,31 @@
 import React from 'react';
 import './CSS/App.css';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Home from './Home';
+import Donate from './Donate';
+import MyCart from './MyCart';
 import Login from './Login';
 import Registration from './Registration';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './Home'
-import Donate from './Donate'
-import MyCart from './MyCart'
 import Client from './Client';
 import AgentSupport from './AgentSupport';
 import Service from './Service';
 import AddBook from './AddBook';
 
+import { useSelector } from "react-redux";
+
+import { userRole } from "../redux/apiCalls";
+
 const App = () => {
+  const user = useSelector((state) => state.user.currentUser);
+
   return (
     <Router>
       <React.Fragment>
         <div className="App">
           <Routes>
-            <Route path="/" element={<Home/>} />
-            <Route path="/login" element={<Login/>}/>
-            <Route path="/registration" element={<Registration/>}/>
+            <Route exact path="/" element={<Home/>} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/registration" element={<Registration />}  />
             <Route path="/home" element={<Home/>} />
             <Route path="/donate" element={<Donate/>} />
             <Route path="/mycart" element={<MyCart/>} />

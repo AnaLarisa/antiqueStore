@@ -56,7 +56,6 @@ function AgentSupport(){
     );
   }
   return (
-    <div id="cometchat" style={{ margin: "0 auto", width: "60%" }}>
       <div className="under">
         <div className="over">
         <div className="Navbar">
@@ -71,10 +70,10 @@ function AgentSupport(){
                 <div className="bar"></div>
             </div>
         </div>
-            <h1>Client Side</h1>
+            <p></p>
+            <div id="cometchat" style={{ margin: "0 auto", width: "60%" }}></div>
         </div>
       </div>
-    </div>
   );
 };
 export default AgentSupport;   

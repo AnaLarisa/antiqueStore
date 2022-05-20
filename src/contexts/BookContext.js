@@ -22,7 +22,7 @@ const BookProvider = ({ children }) => {
 
     useEffect(async () => {
         try {
-            const res = await axios.get(`http://localhost:3000/books`);
+            const res = await axios.get('http://localhost:2000/books');
             setBooks(res.data);
         } catch (err) {
             console.warn(err);
