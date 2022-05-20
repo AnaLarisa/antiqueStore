@@ -67,7 +67,7 @@ function Home() {
         return Filtered;
     }
     return (
-        <div className="under">
+        <div className="under" style ={{height:"3375px"}}>
             <div className="over">
             <div className="Navbar">
                 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Irish+Grover" />
@@ -101,12 +101,12 @@ function Home() {
             </div>
             <div className={`${((isOpen ||searchTerm == "") && "hide" ) || (!isOpen && "homeContent")}`}>
                     {MapBooks(Books)}
-                    <div className="loadMore">
+                    <div className={`${(Books.length!=0)?"loadMore":"hide"}`}>
                         <button className="loadMoreBtn" onClick={showMoreItems}>Load More</button>
                     </div>
 
                 </div>
-                <div className={`${((isOpen ||searchTerm != "") && "hide" ) || (!isOpen && "filteredContent")}`}>
+                <div className={`${((isOpen ||searchTerm != "") && "hide" ) || (!isOpen && "filteredContent")}`} >
                 <ScrollToTop />
                 <div className="hero">
                     <ul>
