@@ -15,6 +15,9 @@ import { useSelector } from "react-redux";
 
 import { userRole } from "../redux/apiCalls";
 
+localStorage.setItem('userRole',"notSet");
+
+
 const App = () => {
   const user = useSelector((state) => state.user.currentUser);
 

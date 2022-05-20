@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from 'react-router-dom';
 import StripeCheckout from 'react-stripe-checkout';
 import 'react-router-dom'
-import {Link} from 'react-router-dom';
+import {Link, Navigate} from 'react-router-dom';
 import "./CSS/Navbar.css";
 import "./CSS/MyCart.css";
 import {userRequest} from "../requestMethods";
@@ -16,8 +16,17 @@ import cometChatMessageButton from "./cometChatButton";
 const KEY = "pk_test_51JzmyRALRgt5fdLcNrrrBXZ5PdZeC52usIQz2SwgMritEJRGbHZmjs55UMIJvd4IG8uPm6gt7WeImjxWfIeUwAeB00y71hkmwJ";
 
 function MyCart() {
-    console.log(sessionStorage.username);
-    cometChatMessageButton(sessionStorage.userNameuid);
+
+    if(localStorage.userRole === "notSet"){
+        return <Navigate to="/login"/>
+    }
+    if(localStorage.userRole === "admin")
+    {
+        return <Navigate to="/AgentSupport"/>
+    }
+
+    console.log(localStorage.username);
+    cometChatMessageButton(localStorage.userNameuid);
     console.log(KEY);
     const [isOpen, setIsOpen] = useState(false);
     const cart = useSelector((state)=> state.cart );
@@ -53,7 +62,6 @@ function MyCart() {
                 <div className={`nav-items ${isOpen && "open"}`}>
                     <Link to ="/home">Home</Link>
                     <Link to="/donate">Donate</Link>
-                    <Link to="/service">Service</Link>
                     <Link to="/login">Login</Link>
                 </div>
                 <div

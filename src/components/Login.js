@@ -9,8 +9,6 @@ import profile from "./images/icon.jpg";
 import "./CSS/Authentification.css";
 
 
-
-
 function Login() {
     const [emaillog, setEmaillog] = useState(" ");
     const [passwordlog, setPasswordlog] = useState(" ");
@@ -24,6 +22,7 @@ function Login() {
         e.preventDefault();
         login(dispatch, { email: emaillog, password: passwordlog });
         //if(e.value!=null) // nu stiu ce conditie sa spun aici ca sa verifice daca e okay logarea (daca returneaza ceva serverul nostru)
+        //if(localStorage.loginStatus == true)    
             setModal(true);
     };
 

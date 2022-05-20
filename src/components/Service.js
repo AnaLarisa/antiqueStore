@@ -1,11 +1,24 @@
 import React, { useState } from "react";
 import 'react-router-dom'
-import {Link} from 'react-router-dom';
+import {Link, Navigate} from 'react-router-dom';
 import './CSS/Home.css';
 import "./CSS/Navbar.css";
 
 function Service() {
     const [isOpen, setIsOpen] = useState(false);
+    
+    if(localStorage.userRole === "notSet"){
+        return <Navigate to="/login"/>
+    }
+    if(localStorage.userRole === "admin")
+    {
+        return <Navigate to="/AgentSupport"/>
+    }
+    if(localStorage.userRole === "user")
+    {
+        return <Navigate to="/home"/>
+    }
+
     return (
         <div className="under">
             <div className="over">

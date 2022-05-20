@@ -8,6 +8,7 @@ const BookSchema = new mongoose.Schema(
         genre: { type: String, required: true },
         price: { type: Number, required: true },
         inStock: { type: Boolean, default: true },
+        cathegory: { type: String, required:true },
     },
     { timestamps: true }
 );

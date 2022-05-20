@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import 'react-router-dom'
-import {Link} from 'react-router-dom';
+import {Link, Navigate} from 'react-router-dom';
 import './CSS/Home.css'; 
 import "./CSS/Navbar.css";
 import "./CSS/Donate.css";
@@ -13,8 +13,16 @@ function Donate() {
     const dateValue = new Date();
     const minDate = dateValue;
     const maxDate = new Date((new Date()).setMonth(dateValue.getMonth()+3));
+    console.log("donate " + localStorage.userRole)
+    if(localStorage.userRole === "notSet"){
+        return <Navigate to="/login"/>
+    }
+    if(localStorage.userRole === "admin")
+    {
+        return <Navigate to="/AgentSupport"/>
+    }
 
-    cometChatMessageButton(sessionStorage.userNameuid);
+    cometChatMessageButton(localStorage.userNameuid);
     return (
         <div className="under">
             <div className="over">

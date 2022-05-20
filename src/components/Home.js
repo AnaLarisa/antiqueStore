@@ -1,6 +1,6 @@
 import React, { useState , useEffect, useRef} from "react";
 import 'react-router-dom'
-import {Link} from 'react-router-dom';
+import {Link, Navigate} from 'react-router-dom';
 import './CSS/Home.css';
 import "./CSS/Navbar.css";
 import {Widget} from 'react-chat-widget';
@@ -10,18 +10,24 @@ import { AiOutlineSearch } from "react-icons/ai";
 import product_card from "./product_data.js"
 import ScrollToTop from "./ScrollToTop";
 
+
 import {useCategoryContext, BookProvider} from "../contexts/BookContext";
 import cometChatMessageButton from "./cometChatButton";
 
 function Home() {
 
+    if(localStorage.userRole === "admin")
+    {
+        return <Navigate to="/AgentSupport"/>
+    }
+
     // console.log(userNameFromBackEnd.value); nume user
     // console.log(sessionStorage.username);
     // console.log(sessionStorage.userNameuid);
-    // console.log(sessionStorage.userRole);
+    console.log("home " + localStorage.userRole);
     // console.log(' login status ' + sessionStorage.loginStatus);
 
-    cometChatMessageButton(sessionStorage.userNameuid);
+    cometChatMessageButton(localStorage.userNameuid);
 
     const[items, setItems] =useState([]);
     const[visible, setVisible] = useState(3);
@@ -99,7 +105,6 @@ function Home() {
                 <div className={`nav-items ${isOpen && "open"}`}>
                     <Link to ="/donate">Donate</Link>
                     <Link to="/mycart">My Cart</Link>
-                    <Link to="/service">Service</Link>
                     <Link to="/login">Login</Link>
                 </div>
                 <div

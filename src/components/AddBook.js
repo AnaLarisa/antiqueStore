@@ -2,11 +2,22 @@ import React, {useState} from 'react'
 import "./CSS/AddBook.css";
 import UploadPic from "./UploadPic";
 import Tilt from 'react-vanilla-tilt'
-import {Link} from 'react-router-dom';
+import {Link, Navigate} from 'react-router-dom';
 import './CSS/Home.css';
 import "./CSS/Navbar.css";
+import { addBooks } from "../redux/apiCalls";
+import { useDispatch , useSelector} from "react-redux";
+
 
 function AddBook() {
+
+    if(localStorage.userRole === "notSet"){
+        return <Navigate to="/login"/>
+    }
+    if(localStorage.userRole === "user")
+    {
+        return <Navigate to="/service"/>
+    }
 
     const [isOpen, setIsOpen] = useState(false);
     const [namelog, setNamelog] = useState(" ");
@@ -14,6 +25,19 @@ function AddBook() {
     const [pricelog, setPricelog] = useState(" ");
     const [cathegorylog, setCathegorylog] = useState(" ");
     const [descriptionlog, setDescriptionlog] = useState("default");
+
+
+    const { isFetching, error } = useSelector((state) => state.user);
+
+    const dispatch = useDispatch();
+
+    const handleClick = (e) =>{
+
+        e.preventDefault();
+
+        addBooks(dispatch, { title: namelog, author: authorlog, price: pricelog, desc: descriptionlog })
+
+    };
 
     return (
         <div className="under">
@@ -39,7 +63,7 @@ function AddBook() {
                     <div className="upload_pic">
                         <UploadPic/>
                         <div className='bt'>
-                            <button type="submit" className='btbt'>Add Book</button>
+                            <button type="submit" className='btbt' onClick={handleClick}>Add Book</button>
                         </div>
                     </div>
                     <div>

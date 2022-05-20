@@ -1,7 +1,7 @@
 import React, {Component, useEffect, useState} from 'react';
 
 import MDSpinner from "react-md-spinner";
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 
 const agentUID = process.env.REACT_APP_AGENT_ID;
 const appID = process.env.REACT_APP_ID;
@@ -10,6 +10,14 @@ const AUTH_KEY = process.env.REACT_APP_AUTH_KEY;
 const wid = process.env.REACT_APP_W2;
 
 function AgentSupport(){
+  if(localStorage.userRole === "notSet"){
+        return <Navigate to="/login"/>
+    }
+    if(localStorage.userRole === "user")
+    {
+        return <Navigate to="/home"/>
+    }
+
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     window.CometChatWidget.init({

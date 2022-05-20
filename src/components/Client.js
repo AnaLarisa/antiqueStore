@@ -2,10 +2,19 @@ import React, {Component, useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 import cometChatMessageButton from './cometChatButton';
 
+import {getBooks} from '../redux/apiCalls';
+
+import { useDispatch , useSelector} from "react-redux";
 
 
 function Client(){
   cometChatMessageButton(sessionStorage.userNameuid);
+
+
+
+  const dispatch = useDispatch();
+
+  getBooks(dispatch);
 
   return (
     <div className="under">
