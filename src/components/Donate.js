@@ -19,9 +19,8 @@ function Donate() {
                 <span className="nav-logo"><span>ANTIQUE</span><br/>
                 <span>STORE</span></span>
                 <div className={`nav-items ${isOpen && "open"}`}>
-                    <Link to ="/home">Home</Link>
+                    <Link to ="/">Home</Link>
                     <Link to="/mycart">My Cart</Link>
-                    <Link to="/service">Service</Link>
                     <Link to="/login">Login</Link>
                 </div>
                 <div

@@ -8,7 +8,6 @@ import Donate from './Donate'
 import MyCart from './MyCart'
 import Client from './Client';
 import AgentSupport from './AgentSupport';
-import Service from './Service';
 import AddBook from './AddBook';
 
 const App = () => {
@@ -17,16 +16,14 @@ const App = () => {
       <React.Fragment>
         <div className="App">
           <Routes>
-            <Route path="/" element={<Home/>} />
+            <Route path="/" element={<Client/>} />
             <Route path="/login" element={<Login/>}/>
             <Route path="/registration" element={<Registration/>}/>
-            <Route path="/home" element={<Home/>} />
             <Route path="/donate" element={<Donate/>} />
             <Route path="/mycart" element={<MyCart/>} />
-            <Route path="/service" element={<Service/>} />
-            <Route path='/client' element={<Client />} />
             <Route path='/agent' element={<AgentSupport />} />
             <Route path='/addbook' element={<AddBook />} />
+            <Route path="/home" element={<Home/>} />
           </Routes>
         </div>
       </React.Fragment>
