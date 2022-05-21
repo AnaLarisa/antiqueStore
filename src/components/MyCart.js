@@ -22,7 +22,7 @@ function MyCart() {
     }
     if(localStorage.userRole === "admin")
     {
-        return <Navigate to="/AgentSupport"/>
+        return <Navigate to="/agent"/>
     }
 
     console.log(localStorage.username);

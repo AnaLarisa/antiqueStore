@@ -6,9 +6,9 @@ import "./CSS/Navbar.css";
 
 function Service() {
     const [isOpen, setIsOpen] = useState(false);
-    
+
     if(localStorage.userRole === "notSet"){
-        return <Navigate to="/login"/>
+        return <Navigate to="/home"/>
     }
     if(localStorage.userRole === "admin")
     {

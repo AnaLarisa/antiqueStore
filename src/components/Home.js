@@ -18,13 +18,13 @@ function Home() {
 
     if(localStorage.userRole === "admin")
     {
-        return <Navigate to="/AgentSupport"/>
+        return <Navigate to="/agent"/>
     }
 
     // console.log(userNameFromBackEnd.value); nume user
     // console.log(sessionStorage.username);
     // console.log(sessionStorage.userNameuid);
-    console.log("home " + localStorage.userRole);
+    // console.log("home " + localStorage.userRole);
     // console.log(' login status ' + sessionStorage.loginStatus);
 
     cometChatMessageButton(localStorage.userNameuid);

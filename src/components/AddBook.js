@@ -5,7 +5,7 @@ import Tilt from 'react-vanilla-tilt'
 import {Link, Navigate} from 'react-router-dom';
 import './CSS/Home.css';
 import "./CSS/Navbar.css";
-import { addBooks } from "../redux/apiCalls";
+import { addBook } from "../redux/apiCalls";
 import { useDispatch , useSelector} from "react-redux";
 
 
@@ -35,7 +35,7 @@ function AddBook() {
 
         e.preventDefault();
 
-        addBooks(dispatch, { title: namelog, author: authorlog, price: pricelog, desc: descriptionlog })
+        addBook(dispatch, { title: namelog, author: authorlog, price: pricelog, desc: descriptionlog, genre: cathegorylog })
 
     };
 

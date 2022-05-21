@@ -40,7 +40,8 @@ router.post("/addBook", verifyTokenAndAdmin, async (req, res) => {
         title: req.body.title,
         author: req.body.author,
         desc: req.body.disc,
-        price: req.body.price
+        price: req.body.price,
+        genre: req.body.genre
     });
     console.log("fist function book");
     try {

@@ -71,7 +71,7 @@ function AgentSupport(){
             <span className="nav-logo"><span>ANTIQUE</span><br/>
             <span>STORE</span></span>
             <div className={`nav-items`}>
-                <Link to ="/donate">Donate</Link>
+                <Link to ="/addbook">Add Book</Link>
                 <Link to="/mycart">My Cart</Link>
             </div>
             <div className={`nav-toggle`}>

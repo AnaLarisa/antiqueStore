@@ -24,6 +24,7 @@ export const login = async (dispatch, user) => {
     const res = await publicRequest.post("/auth/login", user);
     localStorage.setItem('username',res.data.username);
     localStorage.setItem('userNameuid',res.data.uid);
+    localStorage.setItem('userEmail',res.data.email);
     if(res.data.isAdmin == true)
       localStorage.setItem('userRole',"admin");
     else
@@ -58,7 +59,7 @@ export const getBooks = async (dispatch) => {
   }
 };
 
-export const addBooks = async (dispatch, book) => {
+export const addBook = async (dispatch, book) => {
   dispatch(addBookStart());
   try{
     const res = await publicRequest.get("/books/addBook", book);

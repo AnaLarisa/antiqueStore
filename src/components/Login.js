@@ -18,12 +18,16 @@ function Login() {
     const [modal, setModal] = useState(false);
     
 
+
     const handleClick = (e) => {
         e.preventDefault();
         login(dispatch, { email: emaillog, password: passwordlog });
+        console.log(localStorage.loginStatus);
         //if(e.value!=null) // nu stiu ce conditie sa spun aici ca sa verifice daca e okay logarea (daca returneaza ceva serverul nostru)
-        //if(localStorage.loginStatus == true)    
+        // if(localStorage.loginStatus == true)    
             setModal(true);
+        // else if(localStorage.loginStatus == false)
+            // localStorage.removeItem('loginStatus');
     };
 
     return (
