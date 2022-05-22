@@ -36,7 +36,8 @@ function Donate() {
     var template = {
         user_name: localStorage.username,
         user_email: localStorage.userEmail,
-        message: "Name :" + name + " Number of books: " + nrBook
+        message: `Name : ${name}, 
+             Number of books:  ${nrBook}`
     };
 
     const handleClick = (e) => {
