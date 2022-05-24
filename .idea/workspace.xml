@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="060d6d48-7f24-4ff8-ac96-5a7ca7eba641" name="Changes" comment="added stripe-payment">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_2_2022_8_17_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_2_2022_8_17_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/requestMethods.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/requestMethods.js" afterDir="false" />
+    <list default="true" id="d9cf7a0a-dba1-4e9f-9dc1-f623bfd6edc3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/backend/routes/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/book.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/stripe.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/stripe.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,14 +11,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="28R9XSHg1mjKPRCY0rb5VuzCU55" />
+  <component name="ProjectId" id="29ct7cydetsGPWfKi1z7mGcVrFw" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -29,99 +22,29 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.general" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\FAC anul 3\sem 2\PAD\antiquestore-new\antiqueStore\src" />
-      <recent name="C:\FAC anul 3\sem 2\PAD\antiquestore-new\antiqueStore\src\components" />
-      <recent name="C:\FAC anul 3\sem 2\PAD\antiquestore-new\antiqueStore\backend\routes" />
-      <recent name="C:\FAC anul 3\sem 2\PAD\antiquestore-new\antiqueStore\backend" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="Book.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/components/Book.js" working-dir="$PROJECT_DIR$/src/components">
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Node.js.Book.js" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="060d6d48-7f24-4ff8-ac96-5a7ca7eba641" name="Changes" comment="" />
-      <created>1651168570974</created>
+      <changelist id="d9cf7a0a-dba1-4e9f-9dc1-f623bfd6edc3" name="Changes" comment="" />
+      <created>1653424044201</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1651168570974</updated>
-      <workItem from="1651168573702" duration="3826000" />
-      <workItem from="1651232204508" duration="909000" />
-      <workItem from="1651233150545" duration="96000" />
-      <workItem from="1651233254365" duration="5387000" />
-      <workItem from="1651490983947" duration="1431000" />
-      <workItem from="1651492456491" duration="2121000" />
-      <workItem from="1651509802588" duration="6301000" />
-      <workItem from="1651580323061" duration="546000" />
-      <workItem from="1651581844363" duration="304000" />
-      <workItem from="1651582190949" duration="2636000" />
-      <workItem from="1651615753162" duration="6811000" />
-      <workItem from="1651651642778" duration="5645000" />
-      <workItem from="1651688438642" duration="4493000" />
-      <workItem from="1651738138011" duration="4436000" />
-      <workItem from="1651936750767" duration="12012000" />
-      <workItem from="1652003512612" duration="16891000" />
-      <workItem from="1652044828044" duration="94000" />
-      <workItem from="1652044936654" duration="6094000" />
-      <workItem from="1652204476187" duration="4455000" />
-      <workItem from="1652724388626" duration="2139000" />
-      <workItem from="1652804500749" duration="525000" />
-      <workItem from="1652805081404" duration="823000" />
-      <workItem from="1653117734659" duration="1623000" />
-      <workItem from="1653421593586" duration="122000" />
+      <updated>1653424044201</updated>
+      <workItem from="1653424046072" duration="2057000" />
     </task>
-    <task id="LOCAL-00001" summary="added stripe-payment">
-      <created>1651617452591</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1651617452591</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnknownFeatures">
-    <option featureType="com.intellij.fileTypeFactory" implementationName="*.env" />
-  </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added stripe-payment" />
-    <option name="LAST_COMMIT_MESSAGE" value="added stripe-payment" />
   </component>
 </project>
