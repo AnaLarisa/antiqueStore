@@ -16,12 +16,21 @@ import {
 } from "./productRedux";
 import { publicRequest } from "../requestMethods";
 
+import React from 'react';
+
 export const login = async (dispatch, user) => {
   dispatch(loginStart());
   try {
     const res = await publicRequest.post("/auth/login", user);
+    sessionStorage.setItem('username',res.data.username);
+    sessionStorage.setItem('userNameuid',res.data.uid);
+    sessionStorage.setItem('userRole',res.data.isAdmin);
+    sessionStorage.setItem('loginStatus',true);
+    console.log(sessionStorage.userRole);
+    console.log(res.data.isAdmin);
     dispatch(loginSuccess(res.data));
   } catch (err) {
+    sessionStorage.setItem('loginStatus',false);
     dispatch(loginFailure());
   }
 };

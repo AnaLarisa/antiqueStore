@@ -11,6 +11,9 @@ import AgentSupport from './AgentSupport';
 import Service from './Service';
 import { useSelector } from "react-redux";
 
+import { userRole } from "../redux/apiCalls";
+
+
 const App = () => {
   const user = useSelector((state) => state.user.currentUser);
 

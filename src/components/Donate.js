@@ -5,12 +5,16 @@ import './CSS/Home.css';
 import "./CSS/Navbar.css";
 import "./CSS/Donate.css";
 import { DateTimePickerComponent} from '@syncfusion/ej2-react-calendars';
+import cometChatMessageButton from "./cometChatButton";
+
 
 function Donate() {
     const [isOpen, setIsOpen] = useState(false);
     const dateValue = new Date();
     const minDate = dateValue;
     const maxDate = new Date((new Date()).setMonth(dateValue.getMonth()+3));
+
+    cometChatMessageButton(sessionStorage.userNameuid);
     return (
         <div className="under">
             <div className="over">
@@ -52,6 +56,9 @@ function Donate() {
                         </div>
                     </div>
                 </section>
+                <div className='App'>
+                    
+                </div>
             </div>
             </div>
         </div>

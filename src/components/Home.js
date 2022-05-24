@@ -8,9 +8,18 @@ import './CSS/styles.css'
 import MainContent from "./MainContent.js";
 import './CSS/HomePage.css';
 import {useCategoryContext, BookProvider} from "../contexts/BookContext";
+import cometChatMessageButton from "./cometChatButton";
+
 
 function Home() {
     const [isOpen, setIsOpen] = useState(false);
+    // console.log(userNameFromBackEnd.value); nume user
+    // console.log(sessionStorage.username);
+    // console.log(sessionStorage.userNameuid);
+    // console.log(sessionStorage.userRole);
+    // console.log(' login status ' + sessionStorage.loginStatus);
+
+    cometChatMessageButton(sessionStorage.userNameuid);
     return (
 
         <div className="under">
@@ -40,10 +49,7 @@ function Home() {
                 </BookProvider>
                 </div>
                 <div className='App'>
-                    <Widget
-                        title='My E-commerce Live Chat'
-                        subtitle='Ready to help you'
-                    />
+                    
                 </div>
             </div>
         </div>
