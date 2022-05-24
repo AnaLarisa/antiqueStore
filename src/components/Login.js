@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import { useDispatch , useSelector} from "react-redux";
 import { login } from "../redux/apiCalls";
 import Registration from './Registration';
@@ -7,37 +7,22 @@ import email from "./images/email.png";
 import lock from "./images/lock.png";
 import profile from "./images/icon.jpg";
 import "./CSS/Authentification.css";
-import {Axios} from "axios";
 
 
 function Login() {
     const [emaillog, setEmaillog] = useState(" ");
     const [passwordlog, setPasswordlog] = useState(" ");
-
     const dispatch = useDispatch();
     const { isFetching, error } = useSelector((state) => state.user);
 
     const [modal, setModal] = useState(false);
-    //const [user,setUser]=useState([]);
 
-    /*useEffect(() => {
-        fetchUser();
-    }, [])
-    useEffect(() => {
-        console.log(user)
-    }, [user])
-
-    const fetchUser=async()=>{
-        const response=await Axios('localhost:2000/auth/login');
-        setUser(response.data)
-    }*/
 
     const handleClick = (e) => {
         e.preventDefault();
         login(dispatch, { email: emaillog, password: passwordlog });
         //if(e.value!=null) // nu stiu ce conditie sa spun aici ca sa verifice daca e okay logarea (daca returneaza ceva serverul nostru)
-            setModal(true);
-
+        setModal(true);
     };
 
     return (
@@ -83,7 +68,7 @@ function Login() {
                                 <img src={lock} alt='password' className='email' />
                                 <input type="password" placeholder='Enter Password' className='fill' onChange={(event) => setPasswordlog(event.target.value) }/>
                             </div>
-                            {/* HERE WITH THE HELP OF LINK PROVIDED BY REACT-ROUTER WE CAN NAVIGATE TO OTHER PAGES 
+                            {/* HERE WITH THE HELP OF LINK PROVIDED BY REACT-ROUTER WE CAN NAVIGATE TO OTHER PAGES
                                 IN LINK WE HAVE TO PASS LOCATION OF THE NAVIGATING PAGE AS PATH IS DEFINED IN THE APP.JS*/}
                             <div className='login-btn'>
                                 <button type="submit" onClick={handleClick}>Login</button>
@@ -91,7 +76,7 @@ function Login() {
                             <div className='reg-link'>
                                 <p>Don't have an account? <Link className='link' to='/registration'>Register Now</Link></p>
                             </div>
-                            
+
                         </div>
 
                     </div>
@@ -100,8 +85,7 @@ function Login() {
         </form>
 
     );
-    
+
 }
 
 export default Login
-
