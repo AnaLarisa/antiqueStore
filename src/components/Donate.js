@@ -33,6 +33,8 @@ function Donate() {
     //     reply_to: '',
     // });
 
+    console.log(localStorage.userEmail);
+
     var template = {
         user_name: localStorage.username,
         user_email: localStorage.userEmail,

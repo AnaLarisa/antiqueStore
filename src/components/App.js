@@ -15,7 +15,7 @@ import { useSelector } from "react-redux";
 
 import { userRole } from "../redux/apiCalls";
 
-localStorage.setItem('userRole',"notSet");
+// localStorage.setItem('userRole',"notSet");
 localStorage.setItem('loginStatus', false);
 
 
