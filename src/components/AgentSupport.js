@@ -56,7 +56,7 @@ function AgentSupport(){
     );
   }
   return (
-    <div id="cometchat" style={{ margin: "0 auto", width: "60%" }}>
+    <div id="cometchat" style={{ marginTop: "100px", marginLeft:"300px" ,width: "60%" }}>
       <div className="under">
         <div className="over">
         <div className="Navbar">

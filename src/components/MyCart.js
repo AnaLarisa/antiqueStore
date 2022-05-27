@@ -8,6 +8,7 @@ import "./CSS/Navbar.css";
 import "./CSS/MyCart.css";
 import {userRequest} from "../requestMethods";
 import book from './images/book.png';
+import Popup from './Popup';
 import "./CSS/font-awesome-4.7.0/css/font-awesome.min.css";
 
 //const KEY = process.env.REACT_APP_STRIPE;
@@ -19,6 +20,7 @@ function MyCart() {
     const cart = useSelector((state)=> state.cart );
     const [stripeToken, setStripeToken] = useState(null);
     const navigate = useNavigate();
+    const [openModal, setOpenModal] = useState(false);
 
     const onToken = (token) => {
         setStripeToken(token);
@@ -106,8 +108,11 @@ function MyCart() {
                                             amount={cart.total*100}
                                             token={onToken}
                                             stripeKey={KEY}>
-                                <div classname = "check"><button className = "checkout">Proceed to Checkout</button></div>
+
+
+                                <div classname = "check"><button className = "checkout" onClick={() => setOpenModal(true)} >Proceed to Checkout</button></div>
                             </StripeCheckout>
+                            <Popup  open={openModal}  onClose={() => setOpenModal(false)} />
                         </div>
                     </div>
                 </div>
