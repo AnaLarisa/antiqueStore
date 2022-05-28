@@ -3,18 +3,31 @@ import { useSelector } from "react-redux";
 import { useNavigate } from 'react-router-dom';
 import StripeCheckout from 'react-stripe-checkout';
 import 'react-router-dom'
-import {Link} from 'react-router-dom';
+import {Link, Navigate} from 'react-router-dom';
 import "./CSS/Navbar.css";
 import "./CSS/MyCart.css";
 import {userRequest} from "../requestMethods";
 import book from './images/book.png';
 import Popup from './Popup';
 import "./CSS/font-awesome-4.7.0/css/font-awesome.min.css";
+import cometChatMessageButton from "./cometChatButton";
+
 
 //const KEY = process.env.REACT_APP_STRIPE;
 const KEY = "pk_test_51JzmyRALRgt5fdLcNrrrBXZ5PdZeC52usIQz2SwgMritEJRGbHZmjs55UMIJvd4IG8uPm6gt7WeImjxWfIeUwAeB00y71hkmwJ";
 
 function MyCart() {
+
+    if(localStorage.userRole === "notSet"){
+        return <Navigate to="/login"/>
+    }
+    if(localStorage.userRole === "admin")
+    {
+        return <Navigate to="/agent"/>
+    }
+
+    console.log(localStorage.username);
+    cometChatMessageButton(localStorage.userNameuid);
     console.log(KEY);
     const [isOpen, setIsOpen] = useState(false);
     const cart = useSelector((state)=> state.cart );
@@ -29,13 +42,13 @@ function MyCart() {
     useEffect(() => {
         const makeRequest = async () => {
             try{
-                const res = await userRequest.post("/mycart/payment", {
+                const res = await userRequest.post("/mycart/", {
                     tokenId: stripeToken.id,
                     amount: cart.total * 100,
                 });
                 navigate("/success", {
                     stripeData: res.data,
-                    recipes: cart, });
+                    books: cart, });
             }catch {}
         };
         stripeToken && makeRequest();
@@ -115,6 +128,7 @@ function MyCart() {
                             <Popup  open={openModal}  onClose={() => setOpenModal(false)} />
                         </div>
                     </div>
+                    <div className='App'></div>
                 </div>
         </div>
     </div>

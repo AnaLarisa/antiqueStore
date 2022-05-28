@@ -1,8 +1,9 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:3000/";
-//const TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOWE0MDBmOTdmOTg3MjRjMDQ1MjA5NiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0MTUxMzk0OCwiZXhwIjoxNjQxNzczMTQ4fQ.9pX8nFfflqCG9sUKwxeid5wOHM7m1sLZJ5z88EbYujo";
-const TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOWE0MDBmOTdmOTg3MjRjMDQ1MjA5NiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0MTUxMzk0OCwiZXhwIjoxNjQxNzczMTQ4fQ.9pX8nFfflqCG9sUKwxeid5wOHM7m1sLZJ5z88EbYujo";
+const HEROKU_URL = "https://backendantiquestore.herokuapp.com";
+const BASE_URL = "http://localhost:2000";
+const TOKEN = localStorage.acessToken;
+console.log("token from requestMethods " + TOKEN);
 //   JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser
 //     .accessToken || "";
 

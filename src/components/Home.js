@@ -1,6 +1,6 @@
 import React, { useState , useEffect, useRef} from "react";
 import 'react-router-dom'
-import {Link} from 'react-router-dom';
+import {Link, Navigate} from 'react-router-dom';
 import './CSS/Home.css';
 import "./CSS/Navbar.css";
 import {Widget} from 'react-chat-widget';
@@ -9,9 +9,34 @@ import './CSS/HomePage.css';
 import { AiOutlineSearch } from "react-icons/ai";
 import product_card from "./product_data.js"
 import ScrollToTop from "./ScrollToTop";
+import { useDispatch } from "react-redux";
+import {addCart} from "../redux/apiCalls";
 
+import {useCategoryContext, BookProvider} from "../contexts/BookContext";
+import cometChatMessageButton from "./cometChatButton";
 
 function Home() {
+
+    if(localStorage.userRole === "admin")
+    {
+        return <Navigate to="/agent"/>
+    }
+    //console.log("access token " + localStorage.acessToken);
+    
+    // adaugare in myCart
+    
+    //const dispatch = useDispatch();
+    // addCart(dispatch,{token: localStorage.acessToken, userId:localStorage._id, books :[ { bookId:"62738ee19ca50e50d09dd6e1", quantity:1 } ] })
+    
+
+    // console.log(userNameFromBackEnd.value); nume user
+    // console.log(sessionStorage.username);
+    // console.log(sessionStorage.userNameuid);
+    // console.log("home " + localStorage.userRole);
+    // console.log(' login status ' + sessionStorage.loginStatus);
+
+    cometChatMessageButton(localStorage.userNameuid);
+
     const[items, setItems] =useState([]);
     const[visible, setVisible] = useState(3);
     const showMoreItems = () => {
@@ -85,10 +110,7 @@ function Home() {
                 <div className={`nav-items ${isOpen && "open"}`}>
                     <Link to ="/donate">Donate</Link>
                     <Link to="/mycart">My Cart</Link>
-                    <Link to="/service">Service</Link>
                     <Link to="/login">Login</Link>
-                    <Link to="/client">Client</Link>
-                    <Link to="/agent">Agent</Link>
                 </div>
                 <div
                     className={`nav-toggle ${isOpen && "open"}`}
@@ -174,17 +196,10 @@ function Home() {
                             </div>
                         </div>
                     </div>
-
-                </div>
-                <div className='App'>
-                    <Widget
-                        title='My E-commerce Live Chat'
-                        subtitle='Ready to help you'
-                    />
+                <div className='App'></div>
                 </div>
             </div>
         </div>
-
     )
 }
 

@@ -9,12 +9,30 @@ const router = require("express").Router();
 
 //CREATE
 
-router.post("/", verifyToken, async (req, res) => {
-    const newCart = new Cart(req.body);
-
+router.post("/", verifyToken,async (req, res) => {
+    const newCart = new Cart({
+        userId:req.body.userId,
+        books:req.body.books
+    });
+    console.log("in backend")
     try {
         const savedCart = await newCart.save();
         res.status(200).json(savedCart);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+router.post("/addCart", verifyToken, async (req, res) => {
+    const newCart = new Cart({
+        userId:req.body.userId,
+        books:req.body.books
+    });
+    console.log("in backend")
+    try {
+        const savedCart = await newCart.save();
+        console.log("book added " + JSON.stringify(savedCart));
+        res.status(201).json(savedCart);
     } catch (err) {
         res.status(500).json(err);
     }
@@ -47,7 +65,7 @@ router.delete("/:id", verifyTokenAndAuthorization, async (req, res) => {
 });
 
 //GET USER CART
-router.get("/find/:userId", verifyTokenAndAuthorization, async (req, res) => {
+router.get("/getCart", verifyTokenAndAuthorization, async (req, res) => {
     try {
         const cart = await Cart.findOne({ userId: req.params.userId });
         res.status(200).json(cart);

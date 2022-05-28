@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@cometchat-pro/chat": "^1.0.3",
+    "@emailjs/browser": "^3.6.2",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-regular-svg-icons": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
@@ -11,8 +12,10 @@
     "@syncfusion/ej2-react-calendars": "^20.1.47",
     "axios": "^0.26.1",
     "bootstrap": "^4.2.1",
+    "cors": "^2.8.5",
     "crypto-js": "^4.1.1",
     "dotenv": "^16.0.0",
+    "emailjs-com": "^3.2.0",
     "express": "^4.18.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.3.1",

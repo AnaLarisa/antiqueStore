@@ -1,17 +1,27 @@
 import React from 'react';
 import './CSS/App.css';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Home from './Home';
+import Donate from './Donate';
+import MyCart from './MyCart';
 import Login from './Login';
 import Registration from './Registration';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './Home'
-import Donate from './Donate'
-import MyCart from './MyCart'
 import Client from './Client';
 import AgentSupport from './AgentSupport';
 import AddBook from './AddBook';
 import BookDetails from './BookDetails';
 
+import { useSelector } from "react-redux";
+
+import { userRole } from "../redux/apiCalls";
+
+// localStorage.setItem('userRole',"notSet");
+localStorage.setItem('loginStatus', false);
+
+
 const App = () => {
+  const user = useSelector((state) => state.user.currentUser);
+
   return (
     <Router>
       <React.Fragment>
