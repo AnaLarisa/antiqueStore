@@ -10,6 +10,7 @@ import Client from './Client';
 import AgentSupport from './AgentSupport';
 import AddBook from './AddBook';
 import BookDetails from './BookDetails';
+import DeleteBook from './DeleteBook';
 
 import { useSelector } from "react-redux";
 
@@ -36,6 +37,7 @@ const App = () => {
             <Route path='/addbook' element={<AddBook />} />
             <Route path="/home" element={<Home/>} />
             <Route path="/bookdetails" element={<BookDetails/>} />
+            <Route path='/deletebook' element={<DeleteBook />} />
           </Routes>
         </div>
       </React.Fragment>

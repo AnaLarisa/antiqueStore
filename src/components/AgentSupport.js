@@ -73,7 +73,7 @@ function AgentSupport(){
             <span>STORE</span></span>
             <div className={`nav-items`}>
                 <Link to ="/addbook">Add Book</Link>
-                <Link to="/mycart">My Cart</Link>
+                <Link to="/deletebook">Delete Book</Link>
             </div>
             <div className={`nav-toggle`}>
                 <div className="bar"></div>

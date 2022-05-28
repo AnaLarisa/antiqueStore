@@ -47,7 +47,8 @@ function AddBook() {
             <span className="nav-logo"><span>ANTIQUE</span><br/>
             <span>STORE</span></span>
             <div className={`nav-items ${isOpen && "open"}`}>
-                <Link to="/agent">Agent</Link>
+                <Link to="/agent">Support</Link>
+                <Link to="/deletebook">Delete Book</Link>
             </div>
             <div
                 className={`nav-toggle ${isOpen && "open"}`}
