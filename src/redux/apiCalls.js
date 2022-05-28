@@ -64,7 +64,7 @@ export const getBooks = async (dispatch) => {
 export const addBook = async (dispatch, book) => {
   dispatch(addBookStart());
   try{
-    const res = await publicRequest.get("/books/addBook", book);
+    const res = await publicRequest.post("/books/addBook", book);
     dispatch(addBookSuccess());
     console.log("added succesfully");
   }catch (err) {

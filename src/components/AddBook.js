@@ -35,7 +35,7 @@ function AddBook() {
 
         e.preventDefault();
 
-        addBook(dispatch, { title: namelog, author: authorlog, price: pricelog, desc: descriptionlog, genre: cathegorylog })
+        addBook(dispatch, { token: localStorage.acessToken, isAdmin:true, title: namelog, author: authorlog, price: pricelog, desc: descriptionlog, genre: cathegorylog })
 
     };
 

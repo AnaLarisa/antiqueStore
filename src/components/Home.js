@@ -28,7 +28,6 @@ function Home() {
     //const dispatch = useDispatch();
     // addCart(dispatch,{token: localStorage.acessToken, userId:localStorage._id, books :[ { bookId:"62738ee19ca50e50d09dd6e1", quantity:1 } ] })
     
-    // addCart(dispatch,{serId:localStorage._id, bookId:"62738ee19ca50e50d09dd6e1", quantity: 1});
 
     // console.log(userNameFromBackEnd.value); nume user
     // console.log(sessionStorage.username);

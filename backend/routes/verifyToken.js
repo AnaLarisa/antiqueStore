@@ -32,10 +32,12 @@ const verifyTokenAndAuthorization = (req, res, next) => {
 };
 
 const verifyTokenAndAdmin = (req, res, next) => {
-  verifyToken(req, res, () => {
-    if (req.user.isAdmin) {
+  console.log(JSON.stringify(req.body));
+  verifyToken(req, res, () => { 
+    if (req.body.isAdmin) {
       next();
     } else {
+      console.log('aici pica');
       res.status(403).json("You are not alowed to do that!");
     }
   });

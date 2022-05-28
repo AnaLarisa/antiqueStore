@@ -39,11 +39,11 @@ router.post("/addBook", verifyTokenAndAdmin, async (req, res) => {
     const newBook = new Book({
         title: req.body.title,
         author: req.body.author,
-        desc: req.body.disc,
+        desc: req.body.desc,
         price: req.body.price,
-        genre: req.body.genre
+        genre: req.body.genre,
+        img: "test"
     });
-    console.log("fist function book");
     try {
         const savedBook = await newBook.save();
         res.status(200).json(savedBook);
