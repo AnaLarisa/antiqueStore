@@ -60,25 +60,29 @@ function Registration() {
                                     </div>
                                 }
                             </div>
-                            <h1 className='RHeader'>Registration</h1>
+                            {!modal &&
                             <div>
-                                <img src={profile} alt="email" className='email' />
-                                <input type="text" placeholder='Enter Name' className='fill' id="username" name="username" onChange={(event) => setName(event.target.value) }/>
+                                <h1 className='RHeader'>Registration</h1>
+                                <div>
+                                    <img src={profile} alt="email" className='email' />
+                                    <input type="text" placeholder='Enter Name' className='fill' id="username" name="username" onChange={(event) => setName(event.target.value) }/>
+                                </div>
+                                <div className='mail-id'>
+                                    <img src={mail} alt="email" className='email' />
+                                    <input type="email" placeholder='Enter Email-address' className='fill' id="email" name="email" onChange={(event) => setEmail(event.target.value) }/>
+                                </div>
+                                <div className='mail-id'>
+                                    <img src={lock} alt="password" className='email' />
+                                    <input type="password" placeholder='Enter Password' className='fill' id="password" name="password" onChange={(event) => setPassword(event.target.value) }/>
+                                </div>
+                                <div className='login-btn'>
+                                    <button className='login-btn' type="submit">Register</button>
+                                </div>
+                                <div className='reg-link'>
+                                    <p>If Account exist then <Link className='link' to='/login'>Login!!!</Link></p>
+                                </div>
                             </div>
-                            <div className='mail-id'>
-                                <img src={mail} alt="email" className='email' />
-                                <input type="email" placeholder='Enter Email-address' className='fill' id="email" name="email" onChange={(event) => setEmail(event.target.value) }/>
-                            </div>
-                            <div className='mail-id'>
-                                <img src={lock} alt="password" className='email' />
-                                <input type="password" placeholder='Enter Password' className='fill' id="password" name="password" onChange={(event) => setPassword(event.target.value) }/>
-                            </div>
-                            <div className='login-btn'>
-                                <button className='login-btn' type="submit">Register</button>
-                            </div>
-                            <div className='reg-link'>
-                                <p>If Account exist then <Link className='link' to='/login'>Login!!!</Link></p>
-                            </div>
+                            }
                         </div>
                     </div>
                 </div>
