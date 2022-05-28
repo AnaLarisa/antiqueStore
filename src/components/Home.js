@@ -61,7 +61,7 @@ function Home() {
     const [searchTerm,setSearchTerm]=useState("");
     function FilterByCategory(cathegory) {
         const Filtered = product_card.filter((item) => {
-            if(item.cathegory.toLowerCase()==cathegory) {
+            if(item.cathegory.toLowerCase()===cathegory) {
                 return item;
             }
         });
@@ -119,9 +119,9 @@ function Home() {
                     <div className="bar"></div>
                 </div>
             </div>
-            <div className={`${((isOpen ||searchTerm == "") && "hide" ) || (!isOpen && "homeContent")}`}>
+            <div className={`${((isOpen ||searchTerm === "") && "hide" ) || (!isOpen && "homeContent")}`}>
                     {MapBooks(Books)}
-                    <div className="loadMore">
+                    <div className={`${(((Books.length!==0) && "loadMore") || "hide" )}`}>
                         <button className="loadMoreBtn" onClick={showMoreItems}>Load More</button>
                     </div>
 
