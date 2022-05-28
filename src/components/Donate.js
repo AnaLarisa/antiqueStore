@@ -14,7 +14,8 @@ function Donate() {
     const [name, setName] = useState(" ");
     const [nrBook, setNrBook] = useState(" ");
     const [isOpen, setIsOpen] = useState(false);
-    const dateValue = new Date();
+    var dateValue = new Date((new Date()).setHours((new Date()).getHours()+1));
+    dateValue = new Date(dateValue.setMinutes(0))
     const minDate = dateValue;
     const maxDate = new Date((new Date()).setMonth(dateValue.getMonth()+3));
     // console.log("donate " + localStorage.userRole)
