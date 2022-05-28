@@ -9,17 +9,17 @@ import './CSS/HomePage.css';
 import { AiOutlineSearch } from "react-icons/ai";
 import product_card from "./product_data.js"
 import ScrollToTop from "./ScrollToTop";
-import cometChatMessageButton from './cometChatButton';
-
 
 import {getBooks} from '../redux/apiCalls';
 
 import { useDispatch , useSelector} from "react-redux";
 
+const appID = process.env.REACT_APP_ID;
+const region = process.env.REACT_APP_REGION;
+const AUTH_KEY = process.env.REACT_APP_AUTH_KEY;
+const wid = process.env.REACT_APP_W1;
 
 function Client(){
-  cometChatMessageButton(sessionStorage.userNameuid);
-
   const[items, setItems] =useState([]);
     const[visible, setVisible] = useState(3);
     const showMoreItems = () => {
