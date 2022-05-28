@@ -17,11 +17,8 @@ function Home() {
     const showMoreItems = () => {
         setVisible((prevValue) => prevValue + 3);
     };
-    useEffect(() =>{
-        fetch({Books})
-        .then((res) =>res.json())
-        .then((data) => setItems(data));
-    }, []);
+
+
 
     const scrollToSection = (elementRef) => {
         window.scrollTo({
@@ -29,6 +26,7 @@ function Home() {
           behavior: "smooth",
         });
       };
+
       const drama = useRef(null);
       const romance = useRef(null);
       const fantasy = useRef(null); 
@@ -54,9 +52,9 @@ function Home() {
         if(!List){List=[];}
         const Filtered = List.slice(0, visible).map((item) =>
             <div className="card" key={item.id}>
-                <div className="card_img">
-                    <img src={require('./images/' + item.image +'.png')} />
-                </div>
+                    <div className="card_img">
+                        <Link to ="/bookdetails"><img src={require('./images/' + item.image +'.png')} /></Link> 
+                    </div>
                 <div className="card_header">
                     <h2>{item.product_name}</h2>
                     <p className="price">{item.price}<span>{item.currency}</span></p>
