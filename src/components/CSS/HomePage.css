@@ -115,7 +115,7 @@
     margin: 0 auto;
     padding-left:40px;
     padding-right:20px;
-    background:  #ffffff99;
+    background:  #ffffff3c;
     margin: 80px;
     padding-top:-20px;
     padding-bottom:20px;
@@ -171,14 +171,16 @@
   }
 
   .hero {
+    margin:20px;
     padding-top:20px;
-    height: 60px;
+    height: 0px;
     background-color: transparent;
   }
 
   .link {
     float: center;
     width: 200px;
+    height:10px;
     text-decoration: none;
     display: inline;
     padding: 20px 20px;
