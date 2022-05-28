@@ -64,9 +64,10 @@ function AgentSupport(){
     );
   }
   return (
+    <div id="cometchat" style={{ marginTop: "100px", marginLeft:"300px" ,width: "60%" }}>
       <div className="under">
         <div className="over">
-        <div className="Navbar">
+          <div className="Navbar">
             <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Irish+Grover" />
             <span className="nav-logo"><span>ANTIQUE</span><br/>
             <span>STORE</span></span>
@@ -77,11 +78,12 @@ function AgentSupport(){
             <div className={`nav-toggle`}>
                 <div className="bar"></div>
             </div>
+          </div>
+              <p></p>
+              <div id="cometchat" style={{ margin: "0 auto", width: "60%" }}></div>
+          </div>
         </div>
-            <p></p>
-            <div id="cometchat" style={{ margin: "0 auto", width: "60%" }}></div>
-        </div>
-      </div>
+    </div>
   );
 };
 export default AgentSupport;   

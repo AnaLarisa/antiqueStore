@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './CSS/UploadPic.css';
+import bookImg from "./images/upload.jpg"
 export class UploadPic extends Component {
   state={
-    profileImg:"https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+    bookImg
   }
   imageHandler = (e) => {
     const reader = new FileReader();
@@ -19,15 +20,14 @@ export class UploadPic extends Component {
 			<div>
 				
 					<div className="img-holder">
-						<img src={profileImg} alt="" id="img" className="img" />
+						<img src={bookImg} alt="" id="img" className="img" />
 					</div>
 					<input type="file" accept="image/*" name="image-upload" id="input" onChange={this.imageHandler} />
 					<div className="label">
-                        <label className="image-upload" htmlFor="input">
-						Upload
-					</label>
-                    </div>
-			
+            <label className="image-upload" htmlFor="input">
+						  Upload
+					  </label>
+          </div>
 			</div>
 		);
 	}

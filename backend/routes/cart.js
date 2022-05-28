@@ -31,8 +31,7 @@ router.post("/addCart", verifyToken, async (req, res) => {
     console.log("in backend")
     try {
         const savedCart = await newCart.save();
-        console.log("in try")
-        console.log(JSON.stringify(savedCart));
+        console.log("book added " + JSON.stringify(savedCart));
         res.status(201).json(savedCart);
     } catch (err) {
         res.status(500).json(err);

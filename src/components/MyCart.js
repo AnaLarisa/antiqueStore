@@ -8,6 +8,7 @@ import "./CSS/Navbar.css";
 import "./CSS/MyCart.css";
 import {userRequest} from "../requestMethods";
 import book from './images/book.png';
+import Popup from './Popup';
 import "./CSS/font-awesome-4.7.0/css/font-awesome.min.css";
 import cometChatMessageButton from "./cometChatButton";
 
@@ -32,6 +33,7 @@ function MyCart() {
     const cart = useSelector((state)=> state.cart );
     const [stripeToken, setStripeToken] = useState(null);
     const navigate = useNavigate();
+    const [openModal, setOpenModal] = useState(false);
 
     const onToken = (token) => {
         setStripeToken(token);
@@ -60,7 +62,7 @@ function MyCart() {
                 <span className="nav-logo"><span>ANTIQUE</span><br/>
                 <span>STORE</span></span>
                 <div className={`nav-items ${isOpen && "open"}`}>
-                    <Link to ="/home">Home</Link>
+                    <Link to ="/">Home</Link>
                     <Link to="/donate">Donate</Link>
                     <Link to="/login">Login</Link>
                 </div>
@@ -119,8 +121,11 @@ function MyCart() {
                                             amount={cart.total*100}
                                             token={onToken}
                                             stripeKey={KEY}>
-                                <div classname = "check"><button className = "checkout">Proceed to Checkout</button></div>
+
+
+                                <div classname = "check"><button className = "checkout" onClick={() => setOpenModal(true)} >Proceed to Checkout</button></div>
                             </StripeCheckout>
+                            <Popup  open={openModal}  onClose={() => setOpenModal(false)} />
                         </div>
                     </div>
                     <div className='App'></div>
