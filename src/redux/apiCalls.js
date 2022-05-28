@@ -14,7 +14,7 @@ import {
   addBookSuccess,
   addBookFailure,
 } from "./productRedux";
-import { publicRequest } from "../requestMethods";
+import { publicRequest, userRequest } from "../requestMethods";
 
 import React from 'react';
 
@@ -25,6 +25,8 @@ export const login = async (dispatch, user) => {
     localStorage.setItem('username',res.data.username);
     localStorage.setItem('userNameuid',res.data.uid);
     localStorage.setItem('userEmail',res.data.email);
+    localStorage.setItem('acessToken', res.data.accessToken);
+    localStorage.setItem('_id',res.data._id);
     if(res.data.isAdmin == true)
       localStorage.setItem('userRole',"admin");
     else
@@ -67,5 +69,25 @@ export const addBook = async (dispatch, book) => {
     console.log("added succesfully");
   }catch (err) {
     dispatch(addBookFailure());
+  }
+}
+
+export const addCart = async (dispatch, cart) => {
+  //dispatch(addBook());
+  try{
+    const res = await userRequest.post("/carts/addCart", cart);
+    console.log("added to cart succesfully");
+  }catch (err){
+    console.log("could not add into cart");
+  }
+}
+
+export const getCart = async (dispatch, user) => {
+  //dispatch(addBook());
+  try{
+    const res = await userRequest.post("/carts/getCart");
+    console.log("added to cart succesfully");
+  }catch (err){
+    console.log("could not add into cart");
   }
 }
