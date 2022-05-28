@@ -47,8 +47,8 @@ router.post("/register", async (req, res) => {
                 headers: {
                     'content-type': 'application/json',
                     'accept': 'application/json',
-                    'apikey': '3a96c515af9a86e67ec716d23973b18b28d7081c',
-                    'appid': '208328d714ad2a41'
+                    'apikey': '33af5fb56826c52cdb231753bd1d44ebb72d5dc9',
+                    'appid': '2108245fa86e6c36'
                 } 
             }).then(res=>{
                 console.log('success on adding user on cometchat');

@@ -1,7 +1,7 @@
 import React, {Component, useEffect, useState, useRef} from 'react';
 import MDSpinner from "react-md-spinner";
 import 'react-router-dom'
-import {Link} from 'react-router-dom';
+import {Link, Navigate} from 'react-router-dom';
 import './CSS/Home.css';
 import "./CSS/Navbar.css";
 import './CSS/styles.css'
@@ -10,7 +10,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 import product_card from "./product_data.js"
 import ScrollToTop from "./ScrollToTop";
 
-import {getBooks} from '../redux/apiCalls';
+import {getBooks, addCart} from '../redux/apiCalls';
 
 import { useDispatch , useSelector} from "react-redux";
 
@@ -20,6 +20,15 @@ const AUTH_KEY = process.env.REACT_APP_AUTH_KEY;
 const wid = process.env.REACT_APP_W1;
 
 function Client(){
+
+  // const dispatch = useDispatch();
+  // addCart(dispatch,{token: localStorage.acessToken, userId:localStorage._id, books :[ { bookId:"62738ee19ca50e50d09dd6e1", quantity:1 } ] })
+    
+  if(localStorage.userRole === "admin")
+  {
+      return <Navigate to="/agent"/>
+  }
+
   const[items, setItems] =useState([]);
     const[visible, setVisible] = useState(3);
     const showMoreItems = () => {
@@ -74,30 +83,49 @@ function Client(){
         );
         return Filtered;
     }
-  const [load, setLoad] = useState(true);
-  useEffect(() => {
-    setLoad(true);
-    window.CometChatWidget.init({
-      appID: appID,
-      appRegion: region,
-      authKey: AUTH_KEY,
-    }).then((response) => {
-      console.log("Initialization completed successfully");
-      //You can now call login function.
-      let uid = localStorage.getItem("cc-uid");
-      if (uid === null) {
-        // create new user 
-        // momentan e de test, teoretic daca nu este logat user-ul, acesta nu va fii automat creat
-        const uid = "user" + new Date().getSeconds().toString();
-        const user = new window.CometChatWidget.CometChat.User(uid);
-        user.setName(uid);
-        window.CometChatWidget.createOrUpdateUser(user).then((user) => {
-          // Proceed with user login
+
+    const [load, setLoad] = useState(true);
+    useEffect(() => {
+      setLoad(true);
+      window.CometChatWidget.init({
+        appID: appID,
+        appRegion: region,
+        authKey: AUTH_KEY,
+      }).then((response) => {
+        console.log("Initialization completed successfully");
+        //You can now call login function.
+        let uid = localStorage.userNameuid;
+        if (uid === null) {
+          // create new user 
+          // momentan e de test, teoretic daca nu este logat user-ul, acesta nu va fii automat creat
+          const uid = localStorage.userNameuid;
+          const user = new window.CometChatWidget.CometChat.User(uid);
+          user.setName(uid);
+          window.CometChatWidget.createOrUpdateUser(user).then((user) => {
+            // Proceed with user login
+            window.CometChatWidget.login({
+              uid: uid,
+            }).then((loggedInUser) => {
+              localStorage.setItem("cc-uid", loggedInUser.uid);
+              // Proceed with launching your Chat Widget
+              window.CometChatWidget.launch({
+                widgetID: wid,
+                roundedCorners: "true",
+                docked: "true",
+                height: "300px",
+                width: "400px",
+                defaultID: process.env.REACT_APP_AGENT_ID,
+                defaultType: "group", //user or group
+              });
+              setLoad(false);
+            });
+          });
+        } else {
+          //login-ul efectiv
           window.CometChatWidget.login({
-            uid: uid,
-          }).then((loggedInUser) => {
-            localStorage.setItem("cc-uid", loggedInUser.uid);
-            // Proceed with launching your Chat Widget
+            uid: localStorage.userNameuid,
+          }).then((user) => {
+            //launch la widget
             window.CometChatWidget.launch({
               widgetID: wid,
               roundedCorners: "true",
@@ -105,31 +133,14 @@ function Client(){
               height: "300px",
               width: "400px",
               defaultID: process.env.REACT_APP_AGENT_ID,
-              defaultType: "group", //user or group
+              defaultType: "user", //user or group
             });
             setLoad(false);
           });
-        });
-      } else {
-        //login-ul efectiv
-        window.CometChatWidget.login({
-          uid: uid,
-        }).then((user) => {
-          //launch la widget
-          window.CometChatWidget.launch({
-            widgetID: wid,
-            roundedCorners: "true",
-            docked: "true",
-            height: "300px",
-            width: "400px",
-            defaultID: process.env.REACT_APP_AGENT_ID,
-            defaultType: "user", //user or group
-          });
-          setLoad(false);
-        });
-      }
-    });
-  }, []);
+        }
+      });
+    }, []);
+
   //daca nu s a facut conectarea, sa arate cercul ca se incarca
   if (load) {
     return (

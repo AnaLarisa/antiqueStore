@@ -9,7 +9,8 @@ import './CSS/HomePage.css';
 import { AiOutlineSearch } from "react-icons/ai";
 import product_card from "./product_data.js"
 import ScrollToTop from "./ScrollToTop";
-
+import { useDispatch } from "react-redux";
+import {addCart} from "../redux/apiCalls";
 
 import {useCategoryContext, BookProvider} from "../contexts/BookContext";
 import cometChatMessageButton from "./cometChatButton";
@@ -20,16 +21,18 @@ function Home() {
     {
         return <Navigate to="/agent"/>
     }
-
-    console.log("ext userRole =",localStorage.userRole);
-    console.log("ext username = ",localStorage.username);
-    console.log("ext loginStatus = " ,localStorage.loginStatus);
-
+    //console.log("access token " + localStorage.acessToken);
+    
+    // adaugare in myCart
+    
+    //const dispatch = useDispatch();
+    // addCart(dispatch,{token: localStorage.acessToken, userId:localStorage._id, books :[ { bookId:"62738ee19ca50e50d09dd6e1", quantity:1 } ] })
+    
 
     // console.log(userNameFromBackEnd.value); nume user
     // console.log(sessionStorage.username);
     // console.log(sessionStorage.userNameuid);
-    console.log("home " + localStorage.userRole);
+    // console.log("home " + localStorage.userRole);
     // console.log(' login status ' + sessionStorage.loginStatus);
 
     cometChatMessageButton(localStorage.userNameuid);

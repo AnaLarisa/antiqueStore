@@ -80,7 +80,7 @@ function Login() {
                                 <img src={lock} alt='password' className='email' />
                                 <input type="password" placeholder='Enter Password' className='fill' onChange={(event) => setPasswordlog(event.target.value) }/>
                             </div>
-                            {/* HERE WITH THE HELP OF LINK PROVIDED BY REACT-ROUTER WE CAN NAVIGATE TO OTHER PAGES 
+                            {/* HERE WITH THE HELP OF LINK PROVIDED BY REACT-ROUTER WE CAN NAVIGATE TO OTHER PAGES
                                 IN LINK WE HAVE TO PASS LOCATION OF THE NAVIGATING PAGE AS PATH IS DEFINED IN THE APP.JS*/}
                             <div className='login-btn'>
                                 <button className='login-btn' type="submit" onClick={handleClick}>Login</button>
@@ -88,7 +88,7 @@ function Login() {
                             <div className='reg-link'>
                                 <p>Don't have an account? <Link className='link' to='/registration'>Register Now</Link></p>
                             </div>
-                            
+
                         </div>
 
                     </div>
@@ -97,8 +97,7 @@ function Login() {
         </form>
 
     );
-    
+
 }
 
 export default Login
-
