@@ -47,7 +47,7 @@ form input.donate {
     border-bottom: 1px solid #eee;
     font-weight: 300;
 }
-form input.donate[type = text], form input[type = number], form input::placeholder{
+form input.donate, form input::placeholder{
     color: #9a9a9a;
     width:300px;
     padding: 10px;

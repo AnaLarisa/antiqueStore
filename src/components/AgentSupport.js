@@ -1,7 +1,7 @@
 import React, {Component, useEffect, useState} from 'react';
 
 import MDSpinner from "react-md-spinner";
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 
 const agentUID = process.env.REACT_APP_AGENT_ID;
 const appID = process.env.REACT_APP_ID;
@@ -10,6 +10,14 @@ const AUTH_KEY = process.env.REACT_APP_AUTH_KEY;
 const wid = process.env.REACT_APP_W2;
 
 function AgentSupport(){
+  if(localStorage.userRole === "notSet"){
+        return <Navigate to="/login"/>
+    }
+    if(localStorage.userRole === "user")
+    {
+        return <Navigate to="/home"/>
+    }
+
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     window.CometChatWidget.init({
@@ -56,7 +64,6 @@ function AgentSupport(){
     );
   }
   return (
-    <div id="cometchat" style={{ margin: "0 auto", width: "60%" }}>
       <div className="under">
         <div className="over">
         <div className="Navbar">
@@ -64,17 +71,17 @@ function AgentSupport(){
             <span className="nav-logo"><span>ANTIQUE</span><br/>
             <span>STORE</span></span>
             <div className={`nav-items`}>
-                <Link to ="/donate">Donate</Link>
+                <Link to ="/addbook">Add Book</Link>
                 <Link to="/mycart">My Cart</Link>
             </div>
             <div className={`nav-toggle`}>
                 <div className="bar"></div>
             </div>
         </div>
-            <h1>Client Side</h1>
+            <p></p>
+            <div id="cometchat" style={{ margin: "0 auto", width: "60%" }}></div>
         </div>
       </div>
-    </div>
   );
 };
 export default AgentSupport;   

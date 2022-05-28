@@ -9,8 +9,6 @@ import profile from "./images/icon.jpg";
 import "./CSS/Authentification.css";
 
 
-
-
 function Login() {
     const [emaillog, setEmaillog] = useState(" ");
     const [passwordlog, setPasswordlog] = useState(" ");
@@ -18,13 +16,25 @@ function Login() {
     const { isFetching, error } = useSelector((state) => state.user);
 
     const [modal, setModal] = useState(false);
+    
+    console.log(localStorage.loginStatus);
 
+
+    if(localStorage.testIT === "true")
+    {
+
+        console.log("please press again");
+        localStorage.setItem('testIT',false);
+    }
 
     const handleClick = (e) => {
         e.preventDefault();
         login(dispatch, { email: emaillog, password: passwordlog });
         //if(e.value!=null) // nu stiu ce conditie sa spun aici ca sa verifice daca e okay logarea (daca returneaza ceva serverul nostru)
-        setModal(true);
+        localStorage.setItem('testIT',true);
+        if(localStorage.loginStatus === "true"){
+            setModal(true);
+        }
     };
 
     return (
@@ -73,7 +83,7 @@ function Login() {
                             {/* HERE WITH THE HELP OF LINK PROVIDED BY REACT-ROUTER WE CAN NAVIGATE TO OTHER PAGES
                                 IN LINK WE HAVE TO PASS LOCATION OF THE NAVIGATING PAGE AS PATH IS DEFINED IN THE APP.JS*/}
                             <div className='login-btn'>
-                                <button type="submit" onClick={handleClick}>Login</button>
+                                <button className='login-btn' type="submit" onClick={handleClick}>Login</button>
                             </div>
                             <div className='reg-link'>
                                 <p>Don't have an account? <Link className='link' to='/registration'>Register Now</Link></p>

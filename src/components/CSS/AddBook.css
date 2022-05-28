@@ -1,0 +1,150 @@
+    .nav-links{
+    width:50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+  }
+  
+  .link{
+    list-style: none;
+  }
+  
+  .main-addbook{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium';
+    justify-content: center;
+    display: flex;
+    padding: 50px 0px 50px 0;
+    
+  }
+  
+  .sub-main-addbook{
+    display: flex;
+    justify-content: right;
+    height: 550px;
+    width: 60%;
+    padding-top:40px ;
+    padding-right:80px;
+    padding-left: 80px;
+    border-radius: 60px;
+  }
+
+  .upload_pic{
+    display: flex;
+    justify-content: left;
+    height: 550px;
+    width: 60%;
+    padding-left: 100px;
+    padding-top:30px;
+    border-radius: 60px;
+  }
+  
+  div.sub-main-addbook{
+    background-color: #ffffff;
+    opacity: 0.96;
+  }
+  
+  input{
+    width: 300px;
+    height: 50px;
+    border-radius: 20px;
+    box-shadow: inset 0px 0px 25px 0px #888;
+  }
+
+  textarea{
+    width: 300px;
+    height: 80px;
+    border-radius: 20px;
+    box-shadow: inset 0px 0px 25px 0px #888;
+  }
+  
+  .imgs{
+    justify-content: center;
+    display: flex;
+  }
+  .container-image{
+    background-color: rgba(244,242,237,255);
+    border-radius: 100px;
+    align-items:center;
+    display: flex;
+    height: 115px;
+    width: 115px;  
+  }
+  
+  .profile{
+    height: 130px;
+    width: 130px;
+    border-radius: 100px;
+  }
+  
+  .LHeader{
+    text-align: center;
+    padding-bottom: 25px;
+    padding-top: 10px;
+  }
+  
+  .fill{
+    padding-left: 30px;
+    font-size: 20px;
+  }
+  .second-input{
+    padding-top: 20px;
+  }
+  
+  button.btbt{
+    width: 260px;
+    height: 50px;
+    border-radius: 60px;
+    background-color: #261600;
+    color: white;
+    box-shadow: inset 0px 0px 15px 0px #3b270c;
+    font-size: 25px;
+    border: none;
+  }
+  
+  .bt{
+    padding-top: 400px;
+    padding-bottom: 10px;
+  }
+  button.btbt:hover {
+    background-color: #3b270c;
+  }
+
+  
+ .drop-down-menu {
+    padding-top:15px;
+}
+
+.b {
+    padding-top:20px;
+    padding-bottom:10px;
+    font-weight:bold;
+    text-align:left;
+    margin-left:5px;
+}
+
+select {
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 10px;
+    color: #fff;
+    cursor: pointer;
+    color:rgb(56, 54, 54);
+    box-shadow: inset 0px 0px 25px 0px rgba(136, 136, 136, 0.444);
+    font-family: inherit;
+    initial-value: pick a role !important;
+    font-weight: 550;
+  }
+  
+  .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0 1em;
+    background: #34495E;
+    pointer-events: none;
+  }

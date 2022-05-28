@@ -81,7 +81,7 @@ div.sub-main{
   padding-top: 20px;
 }
 
-button{
+button.login-btn{
   width: 260px;
   height: 50px;
   border-radius: 60px;
@@ -93,10 +93,11 @@ button{
 }
 
 .login-btn{
-  padding-top: 40px;
-  padding-bottom: 20px;
+  padding-top: 8px;
+  padding-bottom: 15px;
+  margin-top:20px
 }
-button:hover {
+button.login-btn:hover {
   background-color: rgb(141, 40, 0);
 }
 

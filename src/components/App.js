@@ -9,9 +9,14 @@ import Registration from './Registration';
 import Client from './Client';
 import AgentSupport from './AgentSupport';
 import Service from './Service';
+import AddBook from './AddBook';
+
 import { useSelector } from "react-redux";
 
 import { userRole } from "../redux/apiCalls";
+
+// localStorage.setItem('userRole',"notSet");
+localStorage.setItem('loginStatus', false);
 
 
 const App = () => {
@@ -31,6 +36,7 @@ const App = () => {
             <Route path="/service" element={<Service/>} />
             <Route path='/client' element={<Client />} />
             <Route path='/agent' element={<AgentSupport />} />
+            <Route path='/addbook' element={<AddBook />} />
           </Routes>
         </div>
       </React.Fragment>

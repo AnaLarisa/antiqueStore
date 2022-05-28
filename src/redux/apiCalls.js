@@ -22,15 +22,17 @@ export const login = async (dispatch, user) => {
   dispatch(loginStart());
   try {
     const res = await publicRequest.post("/auth/login", user);
-    sessionStorage.setItem('username',res.data.username);
-    sessionStorage.setItem('userNameuid',res.data.uid);
-    sessionStorage.setItem('userRole',res.data.isAdmin);
-    sessionStorage.setItem('loginStatus',true);
-    console.log(sessionStorage.userRole);
-    console.log(res.data.isAdmin);
+    localStorage.setItem('username',res.data.username);
+    localStorage.setItem('userNameuid',res.data.uid);
+    localStorage.setItem('userEmail',res.data.email);
+    if(res.data.isAdmin == true)
+      localStorage.setItem('userRole',"admin");
+    else
+      localStorage.setItem('userRole',"user");
+    localStorage.setItem('loginStatus',true);
     dispatch(loginSuccess(res.data));
   } catch (err) {
-    sessionStorage.setItem('loginStatus',false);
+    localStorage.setItem('loginStatus',false);
     dispatch(loginFailure());
   }
 };
@@ -49,8 +51,21 @@ export const getBooks = async (dispatch) => {
   dispatch(getBookStart());
   try {
     const res = await publicRequest.get("/books");
+    const resultJson = JSON.parse(res.data);
+    console.log("test" + res.data);
     dispatch(getBookSuccess(res.data));
   } catch (err) {
     dispatch(getBookFailure());
   }
 };
+
+export const addBook = async (dispatch, book) => {
+  dispatch(addBookStart());
+  try{
+    const res = await publicRequest.get("/books/addBook", book);
+    dispatch(addBookSuccess());
+    console.log("added succesfully");
+  }catch (err) {
+    dispatch(addBookFailure());
+  }
+}
