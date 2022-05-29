@@ -5,7 +5,7 @@ import Tilt from 'react-vanilla-tilt'
 import {Link, Navigate} from 'react-router-dom';
 import './CSS/Home.css';
 import "./CSS/Navbar.css";
-import { addBook, deleteBook } from "../redux/apiCalls";
+import { editBook } from "../redux/apiCalls";
 import { useDispatch , useSelector} from "react-redux";
 
 
@@ -21,6 +21,12 @@ function EditBook() {
 
 
     const { isFetching, error } = useSelector((state) => state.user);
+
+    // EDIT BOOK
+
+    // const dispatch = useDispatch();
+
+    // editBook(dispatch, { token: localStorage.acessToken, isAdmin:true, title: "test11", author: "testtest11", price: "555", desc: "testtest11", genre: "fantasy", img: "test11", _id: "629297675b178111e86b48a6"})
 
 
     return (

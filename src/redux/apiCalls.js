@@ -101,3 +101,13 @@ export const deleteBook = async (dispatch, book) => {
     console.log("book not deleted");
   }
 }
+
+export const editBook = async (dispatch, book) => {
+  console.log(JSON.stringify(book));
+  try{
+    const res = await userRequest.put("/books/edit/" + book._id , book);
+    console.log("book edited");
+  }catch(err) {
+    console.log("book not edited");
+  }
+}
