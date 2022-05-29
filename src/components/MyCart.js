@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import { useSelector } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 import { useNavigate } from 'react-router-dom';
 import StripeCheckout from 'react-stripe-checkout';
 import 'react-router-dom'
@@ -11,7 +11,7 @@ import book from './images/book.png';
 import Popup from './Popup';
 import "./CSS/font-awesome-4.7.0/css/font-awesome.min.css";
 import cometChatMessageButton from "./cometChatButton";
-
+import {getCart, deleteCart} from "../redux/apiCalls";
 
 //const KEY = process.env.REACT_APP_STRIPE;
 const KEY = "pk_test_51JzmyRALRgt5fdLcNrrrBXZ5PdZeC52usIQz2SwgMritEJRGbHZmjs55UMIJvd4IG8uPm6gt7WeImjxWfIeUwAeB00y71hkmwJ";
@@ -25,6 +25,16 @@ function MyCart() {
     {
         return <Navigate to="/agent"/>
     }
+
+    const dispatch = useDispatch();
+    
+    // show cart -> de revazut de ce nu se poate pune body
+    // getCart(dispatch, { token: localStorage.acessToken, userId: localStorage._id });
+
+    // delete cart -> de revazut de ce nu se poate pune body 
+
+    // deleteCart(dispatch, {token: localStorage.acessToken, userId:localStorage._id } );
+
 
     console.log(localStorage.username);
     cometChatMessageButton(localStorage.userNameuid);

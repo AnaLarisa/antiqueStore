@@ -54,7 +54,7 @@ export const getBooks = async (dispatch) => {
   try {
     const res = await publicRequest.get("/books");
     const resultJson = JSON.parse(res.data);
-    console.log("test" + res.data);
+    return resultJson;
     dispatch(getBookSuccess(res.data));
   } catch (err) {
     dispatch(getBookFailure());
@@ -83,12 +83,23 @@ export const addCart = async (dispatch, cart) => {
 }
 
 export const getCart = async (dispatch, user) => {
-  //dispatch(addBook());
+  console.log(JSON.stringify(user));
   try{
-    const res = await userRequest.post("/carts/getCart");
-    console.log("added to cart succesfully");
+    const res = await userRequest.get("/carts/find/" + user.userId ,user);
+    console.log("cart :" + JSON.stringify(res.data));
+    console.log("show cart succesfully");
   }catch (err){
-    console.log("could not add into cart");
+    console.log("could not show cart");
+  }
+}
+
+export const deleteCart = async (dispatch, user) => {
+  console.log("delte cart " + JSON.stringify(user));
+  try{
+    const res = await userRequest.delete("/carts/" + user.userId , { data: { user, token: user.token }});
+    console.log("book deleted");
+  }catch(err) {
+    console.log("book not deleted");
   }
 }
 
