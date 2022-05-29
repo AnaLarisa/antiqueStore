@@ -16,7 +16,7 @@ const verifyToken = (req, res, next) => {
       next();
     });
   } else {
-    //console.log("not auth");
+    console.log("not auth");
     return res.status(401).json("You are not authenticated!");
   }
 };
@@ -32,7 +32,6 @@ const verifyTokenAndAuthorization = (req, res, next) => {
 };
 
 const verifyTokenAndAdmin = (req, res, next) => {
-  console.log(JSON.stringify(req.body));
   verifyToken(req, res, () => { 
     if (req.body.isAdmin) {
       next();
@@ -42,6 +41,7 @@ const verifyTokenAndAdmin = (req, res, next) => {
     }
   });
 };
+
 
 module.exports = {
   verifyToken,

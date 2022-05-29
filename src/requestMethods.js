@@ -3,7 +3,7 @@ import axios from "axios";
 const HEROKU_URL = "https://backendantiquestore.herokuapp.com";
 const BASE_URL = "http://localhost:2000";
 const TOKEN = localStorage.acessToken;
-console.log("token from requestMethods " + TOKEN);
+// console.log("token from requestMethods " + TOKEN);
 //   JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser
 //     .accessToken || "";
 

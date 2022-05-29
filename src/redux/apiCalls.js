@@ -91,3 +91,13 @@ export const getCart = async (dispatch, user) => {
     console.log("could not add into cart");
   }
 }
+
+export const deleteBook = async (dispatch, book) => {
+  // console.log(JSON.stringify(book));
+  try{
+    const res = await userRequest.delete("/books/" + book._id , { data: { book, token: book.token, isAdmin: book.isAdmin }});
+    console.log("book deleted");
+  }catch(err) {
+    console.log("book not deleted");
+  }
+}

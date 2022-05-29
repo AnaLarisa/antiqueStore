@@ -5,7 +5,7 @@ import Tilt from 'react-vanilla-tilt'
 import {Link, Navigate} from 'react-router-dom';
 import './CSS/Home.css';
 import "./CSS/Navbar.css";
-import { addBook } from "../redux/apiCalls";
+import { addBook, deleteBook } from "../redux/apiCalls";
 import { useDispatch , useSelector} from "react-redux";
 
 
@@ -24,6 +24,7 @@ function DeleteBook() {
 
     const dispatch = useDispatch();
 
+    deleteBook(dispatch, { token: localStorage.acessToken, isAdmin:true, title: "test Bogdan", author: "test Bogdan", price: "555", desc: "test Bogdan", genre: "fantasy", img: "test", _id: "62927873f4bdb9dcc175c320"})
 
     return (
         <div className="under">

@@ -72,7 +72,7 @@ router.put("/:id", verifyTokenAndAdmin, async (req, res) => {
 //DELETE
 router.delete("/:id", verifyTokenAndAdmin, async (req, res) => {
     try {
-        await Book.findByIdAndDelete(req.params.id);
+        await Book.findByIdAndDelete(req.body.book._id);
         res.status(200).json("Book has been deleted...");
     } catch (err) {
         res.status(500).json(err);
