@@ -9,7 +9,7 @@ import { addBook, deleteBook } from "../redux/apiCalls";
 import { useDispatch , useSelector} from "react-redux";
 
 
-function DeleteBook() {
+function EditBook() {
 
     if(localStorage.userRole === "notSet"){
         return <Navigate to="/login"/>
@@ -22,11 +22,6 @@ function DeleteBook() {
 
     const { isFetching, error } = useSelector((state) => state.user);
 
-    // DELETE BOOK
-
-    // const dispatch = useDispatch();
-
-    // deleteBook(dispatch, { token: localStorage.acessToken, isAdmin:true, title: "test Bogdan", author: "test Bogdan", price: "555", desc: "test Bogdan", genre: "fantasy", img: "test", _id: "62927873f4bdb9dcc175c320"})
 
     return (
         <div className="under">
@@ -38,7 +33,7 @@ function DeleteBook() {
               <div className={`nav-items`}>
                   <Link to ="/addbook">Add Book</Link>
                   <Link to ="/agent">Support</Link>
-                  <Link to="/editbook">Edit Book</Link>
+                  <Link to ="/deletebook">Delete Book</Link>
               </div>
               <div className={`nav-toggle`}>
                   <div className="bar"></div>
@@ -51,5 +46,5 @@ function DeleteBook() {
     );
 }
 
-export default DeleteBook;
+export default EditBook;
 

@@ -11,6 +11,7 @@ import AgentSupport from './AgentSupport';
 import AddBook from './AddBook';
 import BookDetails from './BookDetails';
 import DeleteBook from './DeleteBook';
+import EditBook from './EditBook';
 
 import { useSelector } from "react-redux";
 
@@ -38,6 +39,7 @@ const App = () => {
             <Route path="/home" element={<Home/>} />
             <Route path="/bookdetails" element={<BookDetails/>} />
             <Route path='/deletebook' element={<DeleteBook />} />
+            <Route path='/editbook' element={<EditBook /> } />
           </Routes>
         </div>
       </React.Fragment>
