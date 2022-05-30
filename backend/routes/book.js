@@ -57,7 +57,6 @@ router.post("/addBook", verifyTokenAndAdmin, async (req, res) => {
 router.put("/edit/:id", verifyTokenAndAdmin, async (req, res) => {
     //console.log(JSON.stringify(req.body));
     try {
-        console.log("aici trece");
         const updatedBook = await Book.findByIdAndUpdate(
             req.body._id,
             {
@@ -65,7 +64,6 @@ router.put("/edit/:id", verifyTokenAndAdmin, async (req, res) => {
             },
             { new: true }
         );
-        console.log('aici nu mai trece');
         res.status(200).json(updatedBook);
     } catch (err) {
         res.status(500).json(err);

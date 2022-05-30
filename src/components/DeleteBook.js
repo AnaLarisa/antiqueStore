@@ -25,9 +25,9 @@ function DeleteBook() {
 
     // DELETE BOOK
 
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
-    // deleteBook(dispatch, { token: localStorage.acessToken, isAdmin:true, title: "test Bogdan", author: "test Bogdan", price: "555", desc: "test Bogdan", genre: "fantasy", img: "test", _id: "62927873f4bdb9dcc175c320"})
+    // deleteBook(dispatch, { token: localStorage.acessToken, isAdmin:true, title: "BogdanTest30May", author: "test Bogdan", price: "555", desc: "test Bogdan", genre: "fantasy", img: "test", _id: "62950646e92978aaf94c0f1f"})
 
     // setProduct(getBooks(dispatch));
     // console.log(product);

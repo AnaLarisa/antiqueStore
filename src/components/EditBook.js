@@ -24,9 +24,9 @@ function EditBook() {
 
     // EDIT BOOK
 
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
-    // editBook(dispatch, { token: localStorage.acessToken, isAdmin:true, title: "test11", author: "testtest11", price: "555", desc: "testtest11", genre: "fantasy", img: "test11", _id: "629297675b178111e86b48a6"})
+    // editBook(dispatch, { token: localStorage.acessToken, isAdmin:true, title: "bogdan30MaiTestEdit", author: "testtest11", price: "555", desc: "testtest11", genre: "fantasy", img: "test11", _id: "6295069ee92978aaf94c0f24"})
 
 
     return (

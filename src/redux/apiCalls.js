@@ -64,7 +64,7 @@ export const getBooks = async (dispatch) => {
 export const addBook = async (dispatch, book) => {
   dispatch(addBookStart());
   try{
-    const res = await publicRequest.post("/books/addBook", book);
+    const res = await userRequest.post("/books/addBook", book);
     dispatch(addBookSuccess());
     console.log("added succesfully");
   }catch (err) {
@@ -83,9 +83,8 @@ export const addCart = async (dispatch, cart) => {
 }
 
 export const getCart = async (dispatch, user) => {
-  console.log(JSON.stringify(user));
   try{
-    const res = await userRequest.get("/carts/find/" + user.userId ,user);
+    const res = await userRequest.get("/carts/find/" + user.userId ,{data : {user} });
     console.log("cart :" + JSON.stringify(res.data));
     console.log("show cart succesfully");
   }catch (err){
@@ -94,12 +93,11 @@ export const getCart = async (dispatch, user) => {
 }
 
 export const deleteCart = async (dispatch, user) => {
-  console.log("delte cart " + JSON.stringify(user));
   try{
-    const res = await userRequest.delete("/carts/" + user.userId , { data: { user, token: user.token }});
-    console.log("book deleted");
+    const res = await userRequest.delete("/carts/" + user.userId , { data: { user, token: user.token, id: user.userId }});
+    console.log("cart deleted");
   }catch(err) {
-    console.log("book not deleted");
+    console.log("cart not deleted");
   }
 }
 

@@ -33,7 +33,7 @@ function MyCart() {
 
     // delete cart -> de revazut de ce nu se poate pune body 
 
-    // deleteCart(dispatch, {token: localStorage.acessToken, userId:localStorage._id } );
+    // deleteCart(dispatch, {token: localStorage.acessToken, userId:"628289d5b833ad71c282db92" } );
 
 
     console.log(localStorage.username);

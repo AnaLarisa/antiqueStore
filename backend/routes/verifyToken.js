@@ -1,16 +1,12 @@
 const jwt = require("jsonwebtoken");
 
 const verifyToken = (req, res, next) => {
-  const authHeader = req.body.token;
-  console.log(authHeader);
-  //console.log("headers " + JSON.stringify(req.headers));
+  const authHeader = req.headers.token;
   if (authHeader) {
-    const token = authHeader;
-    //console.log("token : " + token);
+    const token = authHeader.split(" ")[1];
     jwt.verify(token, process.env.JWT_SEC, (err, user) => {
       if (err) {
         res.status(403).json("Token is not valid!");
-        //console.log("token is invalid");
       }
       req.user = user;
       next();
@@ -22,10 +18,10 @@ const verifyToken = (req, res, next) => {
 };
 
 const verifyTokenAndAuthorization = (req, res, next) => {
-  console.log("body " + JSON.stringify(req.body));
-  console.log("params " + JSON.stringify(req.params))
+  console.log(req.body.id);
+  console.log(req.params.id);
   verifyToken(req, res, () => {
-    if (req.user.id === req.params.id || req.user.isAdmin) {
+    if (req.body.id === req.params.id || req.user.isAdmin) {
       next();
     } else {
       res.status(403).json("You are not allowed to do that!");
@@ -38,7 +34,6 @@ const verifyTokenAndAdmin = (req, res, next) => {
     if (req.body.isAdmin) {
       next();
     } else {
-      console.log('aici pica');
       res.status(403).json("You are not alowed to do that!");
     }
   });
