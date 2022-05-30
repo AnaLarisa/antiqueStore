@@ -36,7 +36,7 @@
     "redux-persist": "^6.0.0"
   },
   "scripts": {
-    "start": "react-scripts start"
+    "start": "react-scripts --max_old_space_size=4096 start"
   },
   "eslintConfig": {
     "extends": "react-app"
