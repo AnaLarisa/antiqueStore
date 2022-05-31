@@ -65,7 +65,12 @@ function Donate() {
                 <div className={`nav-items ${isOpen && "open"}`}>
                     <Link to ="/">Home</Link>
                     <Link to="/mycart">My Cart</Link>
-                    <Link to="/login">Login</Link>
+                    <div className={`${!(localStorage.userRole === "notSet") && "hide"}`}>
+                        <Link to="/login">Login</Link>
+                    </div>
+                    <div className={`${(localStorage.userRole === "notSet") && "hide"}`}>
+                        <Link to="/logout">Logout</Link>
+                    </div>
                 </div>
                 <div
                     className={`nav-toggle ${isOpen && "open"}`}

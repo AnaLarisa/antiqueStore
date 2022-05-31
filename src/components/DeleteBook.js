@@ -43,6 +43,7 @@ function DeleteBook() {
                   <Link to ="/addbook">Add Book</Link>
                   <Link to ="/agent">Support</Link>
                   <Link to="/editbook">Edit Book</Link>
+                  <Link to="/logout">Logout</Link>
               </div>
               <div className={`nav-toggle`}>
                   <div className="bar"></div>

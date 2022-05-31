@@ -17,9 +17,9 @@ const KEY = "pk_test_51JzmyRALRgt5fdLcNrrrBXZ5PdZeC52usIQz2SwgMritEJRGbHZmjs55UM
 
 function MyCart() {
 
-    if(localStorage.userRole === "notSet"){
-        return <Navigate to="/login"/>
-    }
+    // if(localStorage.userRole === "notSet"){
+    //     return <Navigate to="/login"/>
+    // }
     if(localStorage.userRole === "admin")
     {
         return <Navigate to="/agent"/>
@@ -73,7 +73,12 @@ function MyCart() {
                 <div className={`nav-items ${isOpen && "open"}`}>
                     <Link to ="/">Home</Link>
                     <Link to="/donate">Donate</Link>
-                    <Link to="/login">Login</Link>
+                    <div className={`${!(localStorage.userRole === "notSet") && "hide"}`}>
+                        <Link to="/login">Login</Link>
+                    </div>
+                    <div className={`${(localStorage.userRole === "notSet") && "hide"}`}>
+                        <Link to="/logout">Logout</Link>
+                    </div>
                 </div>
                 <div
                     className={`nav-toggle ${isOpen && "open"}`}
@@ -122,19 +127,27 @@ function MyCart() {
                                 <span>Number of Items</span>
                                 <span>2</span>
                             </p>
-                            <StripeCheckout name="AntiqueStore"
-                                            image = "https://media.istockphoto.com/photos/image-of-open-antique-book-on-wooden-table-with-glitter-overlay-picture-id873507500?b=1&k=20&m=873507500&s=170667a&w=0&h=jHslAXdeW5Ob6D9I0zyiLGChrluxKg2S35Z_SHS_Kfc="
-                                            billingAddress
-                                            shippingAddress
-                                            description={`Your total is $${cart.total}`}
-                                            amount={cart.total*100}
-                                            token={onToken}
-                                            stripeKey={KEY}>
+                            <div className={`${!(localStorage.userRole === "notSet") && "hide"}`}>
+                                <div classname = "check">
+                                    <button className = "checkout" onClick={() => setOpenModal(true)} >Proceed to Checkout</button>
+                                    <Popup  open={openModal}  onClose={() => setOpenModal(false)} />
+                                </div>                            </div>
+                            <div className={`${(localStorage.userRole === "notSet") && "hide"}`}>
+                                <StripeCheckout name="AntiqueStore"
+                                                image = "https://media.istockphoto.com/photos/image-of-open-antique-book-on-wooden-table-with-glitter-overlay-picture-id873507500?b=1&k=20&m=873507500&s=170667a&w=0&h=jHslAXdeW5Ob6D9I0zyiLGChrluxKg2S35Z_SHS_Kfc="
+                                                billingAddress
+                                                shippingAddress
+                                                description={`Your total is $${cart.total}`}
+                                                amount={cart.total*100}
+                                                token={onToken}
+                                                stripeKey={KEY}>
 
 
-                                <div classname = "check"><button className = "checkout" onClick={() => setOpenModal(true)} >Proceed to Checkout</button></div>
-                            </StripeCheckout>
-                            <Popup  open={openModal}  onClose={() => setOpenModal(false)} />
+                                    <div classname = "check">
+                                        <button className = "checkout" onClick={() => setOpenModal(true)} >Proceed to Checkout</button>
+                                    </div>
+                                </StripeCheckout>
+                            </div>
                         </div>
                     </div>
                     <div className='App'></div>
