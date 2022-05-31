@@ -5,6 +5,7 @@ import StripeCheckout from 'react-stripe-checkout';
 import 'react-router-dom'
 import {Link, Navigate} from 'react-router-dom';
 import "./CSS/Navbar.css";
+import { send } from 'emailjs-com';
 import "./CSS/MyCart.css";
 import {userRequest} from "../requestMethods";
 import book from './images/book.png';
@@ -34,7 +35,6 @@ function MyCart() {
 
     // deleteCart(dispatch, {token: localStorage.acessToken, userId:localStorage.userId } );
 
-
     console.log(localStorage.username);
     cometChatMessageButton(localStorage.userNameuid);
     console.log(KEY);
@@ -63,6 +63,23 @@ function MyCart() {
         stripeToken && makeRequest();
     }, [stripeToken, cart.total, navigate]);
     
+    var template = {
+        user_name: localStorage.username,
+        user_email: localStorage.userEmail,
+        message: `Name : ${localStorage.username}`
+    };
+
+    function sendEmail(){
+        setOpenModal(true);
+
+        send('service_antiqueStore','template_f7z5elm',template,'BdViCNIaBzilCPp0o')
+            .then(function(res){
+                console.log("success !");
+            }, function(error){
+                console.log("failed .. ");
+            });
+    }
+
     return (
         <div className="under">
             <div className="over">
@@ -144,7 +161,7 @@ function MyCart() {
 
 
                                     <div classname = "check">
-                                        <button className = "checkout" onClick={() => setOpenModal(true)} >Proceed to Checkout</button>
+                                        <button className = "checkout" onClick={() => sendEmail() } >Proceed to Checkout</button>
                                     </div>
                                 </StripeCheckout>
                             </div>
