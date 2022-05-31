@@ -32,9 +32,6 @@ router.post("/register", async (req, res) => {
         uid: data.uid,
     });
 
-    
-    
-
     try {
 
         

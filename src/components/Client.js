@@ -21,13 +21,24 @@ const wid = process.env.REACT_APP_W1;
 
 function Client(){
 
-  // const dispatch = useDispatch();
-  // addCart(dispatch,{token: localStorage.acessToken, userId:localStorage._id, books :[ { bookId:"62738ee19ca50e50d09dd6e1", quantity:1 } ] })
+  const[detaliu,setDetaliu] = useState([]);
+  const dispatch = useDispatch();
+  
+  // const rez = getBooks(dispatch);
+
+  // console.log("get books " + JSON.stringify(rez));
+
+  // if(localStorage.userRole === "admin")
+  // {
+  //     return <Navigate to="/agent"/>
+  // }
+
+  function setName(item){
+    addCart(dispatch,{token: localStorage.acessToken, userId:localStorage._id, books :[ { bookId:item, quantity:1 } ] })
     
-  if(localStorage.userRole === "admin")
-  {
-      return <Navigate to="/agent"/>
-  }
+    console.log("Acesta este un detaliu : " + item);
+  };
+
 
   const[items, setItems] =useState([]);
     const[visible, setVisible] = useState(3);
@@ -77,7 +88,7 @@ function Client(){
                 <div className="card_header">
                     <h2>{item.product_name}</h2>
                     <p className="price">{item.price}<span>{item.currency}</span></p>
-                    <div className="btn">Add to cart</div>
+                    <button className="loadMoreBtn"  type="submit" onClick={() => setName(item.product_name)}>Add to cart</button>
                 </div>
             </div>
         );

@@ -26,11 +26,17 @@ function Registration() {
             alert("Complete all the fields!!!")
             return
         }
-        console.log(username);
+
+        if(localStorage.testReg === "true"){
+            console.log("please press again");
+            localStorage.setItem('testReg',false);
+        }
 
         register(dispatch, {username:username, email:email, password:password});
-        //if(e.value!=null) // nu stiu ce conditie sa spun aici ca sa verifice daca e okay logarea (daca returneaza ceva serverul nostru)
-        setModal(true);
+        if(localStorage.registerStatus === "true"){
+            setModal(true);
+            localStorage.setItem("testReg",true);
+        }
     }
 
     return (

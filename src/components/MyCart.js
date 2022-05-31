@@ -12,7 +12,6 @@ import Popup from './Popup';
 import "./CSS/font-awesome-4.7.0/css/font-awesome.min.css";
 import cometChatMessageButton from "./cometChatButton";
 import {getCart, deleteCart} from "../redux/apiCalls";
-
 //const KEY = process.env.REACT_APP_STRIPE;
 const KEY = "pk_test_51JzmyRALRgt5fdLcNrrrBXZ5PdZeC52usIQz2SwgMritEJRGbHZmjs55UMIJvd4IG8uPm6gt7WeImjxWfIeUwAeB00y71hkmwJ";
 
@@ -33,7 +32,7 @@ function MyCart() {
 
     // delete cart -> de revazut de ce nu se poate pune body 
 
-    // deleteCart(dispatch, {token: localStorage.acessToken, userId:"628289d5b833ad71c282db92" } );
+    // deleteCart(dispatch, {token: localStorage.acessToken, userId:localStorage.userId } );
 
 
     console.log(localStorage.username);

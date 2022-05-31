@@ -25,8 +25,8 @@ function Home() {
     
     // adaugare in myCart
     
-    //const dispatch = useDispatch();
-    // addCart(dispatch,{token: localStorage.acessToken, userId:localStorage._id, books :[ { bookId:"62738ee19ca50e50d09dd6e1", quantity:1 } ] })
+    // const dispatch = useDispatch();
+    // addCart(dispatch,{token: localStorage.acessToken, userId:localStorage._id, books :[ { bookId:"6295069ee92978aaf94c0f24", quantity:1 } ] })
     
 
     // console.log(userNameFromBackEnd.value); nume user

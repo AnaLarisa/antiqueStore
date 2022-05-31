@@ -27,7 +27,7 @@ router.get("/", async (req, res) => {
         } else {
             books = await Book.find();
         }
-
+        console.log("book fetched");
         res.status(200).json(books);
     } catch (err) {
         res.status(500).json(err);

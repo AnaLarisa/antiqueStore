@@ -43,8 +43,10 @@ export const register = async (dispatch, user) => {
   dispatch(registerStart());
   try {
     const res = await publicRequest.post("/auth/register", user);
+    localStorage.setItem('registerStatus',true);
     dispatch(registerSuccess(res.data));
   } catch (err) {
+    localStorage.setItem('registerStatus',false);
     dispatch(registerFailure());
   }
 };
@@ -53,9 +55,10 @@ export const getBooks = async (dispatch) => {
   dispatch(getBookStart());
   try {
     const res = await publicRequest.get("/books");
-    const resultJson = JSON.parse(res.data);
-    return resultJson;
+    const resultJson = JSON.stringify(res.data);
+    console.log("apiCals " + resultJson);
     dispatch(getBookSuccess(res.data));
+    return resultJson;
   } catch (err) {
     dispatch(getBookFailure());
   }

@@ -19,6 +19,8 @@ import { userRole } from "../redux/apiCalls";
 
 // localStorage.setItem('userRole',"notSet");
 localStorage.setItem('loginStatus', false);
+localStorage.setItem("testReg",false);
+localStorage.setItem('testIT',false);
 
 
 const App = () => {

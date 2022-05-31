@@ -31,9 +31,9 @@ function Login() {
         e.preventDefault();
         login(dispatch, { email: emaillog, password: passwordlog });
         //if(e.value!=null) // nu stiu ce conditie sa spun aici ca sa verifice daca e okay logarea (daca returneaza ceva serverul nostru)
-        localStorage.setItem('testIT',true);
         if(localStorage.loginStatus === "true"){
             setModal(true);
+            localStorage.setItem('testIT',true);
         }
     };
 
