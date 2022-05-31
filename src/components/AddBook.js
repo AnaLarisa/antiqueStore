@@ -16,7 +16,7 @@ function AddBook() {
     }
     if(localStorage.userRole === "user")
     {
-        return <Navigate to="/service"/>
+        return <Navigate to="/"/>
     }
 
     const [isOpen, setIsOpen] = useState(false);
