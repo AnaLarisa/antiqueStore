@@ -16,7 +16,7 @@ function EditBook() {
     }
     if(localStorage.userRole === "user")
     {
-        return <Navigate to="/service"/>
+        return <Navigate to="/"/>
     }
 
 

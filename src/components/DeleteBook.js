@@ -16,7 +16,7 @@ function DeleteBook() {
     }
     if(localStorage.userRole === "user")
     {
-        return <Navigate to="/service"/>
+        return <Navigate to="/"/>
     }
 
     const[product, setProduct] = useState([]);

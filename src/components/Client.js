@@ -28,10 +28,10 @@ function Client(){
 
   // console.log("get books " + JSON.stringify(rez));
 
-  // if(localStorage.userRole === "admin")
-  // {
-  //     return <Navigate to="/agent"/>
-  // }
+  if(localStorage.userRole === "admin")
+  {
+      return <Navigate to="/agent"/>
+  }
 
   function setName(item){
     addCart(dispatch,{token: localStorage.acessToken, userId:localStorage._id, books :[ { bookId:item, quantity:1 } ] })
@@ -175,7 +175,12 @@ function Client(){
           <div className={`nav-items ${isOpen && "open"}`}>
               <Link to ="/donate">Donate</Link>
               <Link to="/mycart">My Cart</Link>
-              <Link to="/login">Login</Link>
+              <div className={`${!(localStorage.userRole === "notSet") && "hide"}`}>
+                  <Link to="/login">Login</Link>
+              </div>
+              <div className={`${(localStorage.userRole === "notSet") && "hide"}`}>
+                  <Link to="/logout">Logout</Link>
+              </div>
           </div>
           <div className={`nav-toggle ${isOpen && "open"}`} onClick={() => setIsOpen(!isOpen)}>
               <div className="bar"></div>

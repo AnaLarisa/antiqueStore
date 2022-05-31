@@ -16,6 +16,7 @@ import EditBook from './EditBook';
 import { useSelector } from "react-redux";
 
 import { userRole } from "../redux/apiCalls";
+import Logout from './Logout';
 
 // localStorage.setItem('userRole',"notSet");
 localStorage.setItem('loginStatus', false);
@@ -42,6 +43,7 @@ const App = () => {
             <Route path="/bookdetails" element={<BookDetails/>} />
             <Route path='/deletebook' element={<DeleteBook />} />
             <Route path='/editbook' element={<EditBook /> } />
+            <Route path='/logout' element={<Logout /> } />
           </Routes>
         </div>
       </React.Fragment>
