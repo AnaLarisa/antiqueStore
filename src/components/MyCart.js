@@ -148,7 +148,8 @@ function MyCart() {
                                 <div classname = "check">
                                     <button className = "checkout" onClick={() => setOpenModal(true)} >Proceed to Checkout</button>
                                     <Popup  open={openModal}  onClose={() => setOpenModal(false)} />
-                                </div>                            </div>
+                                </div>                            
+                            </div>
                             <div className={`${(localStorage.userRole === "notSet") && "hide"}`}>
                                 <StripeCheckout name="AntiqueStore"
                                                 image = "https://media.istockphoto.com/photos/image-of-open-antique-book-on-wooden-table-with-glitter-overlay-picture-id873507500?b=1&k=20&m=873507500&s=170667a&w=0&h=jHslAXdeW5Ob6D9I0zyiLGChrluxKg2S35Z_SHS_Kfc="

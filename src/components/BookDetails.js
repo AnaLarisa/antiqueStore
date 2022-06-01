@@ -41,8 +41,7 @@ function BookDetails() {
       }
     
     getOnlyABook(dispatch,{ bookId: localStorage.bookId });
-
-    console.log("title : " + bookTitle);
+ 
     const [isOpen, setIsOpen] = useState(false);
     return (
         <div className="under">

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import "./CSS/AddBook.css";
 import UploadPic from "./UploadPic";
 import Tilt from 'react-vanilla-tilt'
@@ -8,7 +8,7 @@ import "./CSS/Navbar.css";
 import { addBook, deleteBook } from "../redux/apiCalls";
 import { useDispatch , useSelector} from "react-redux";
 import { publicRequest, userRequest } from "../requestMethods";
-
+import axios from 'axios';
 
 function DeleteBook() {
 
@@ -27,28 +27,22 @@ function DeleteBook() {
 
     // DELETE BOOK
 
-    let array = [];
+    useEffect( () =>{
+        getData();
+    }, [])
 
-    const dispatch = useDispatch();
+    async function getData() {
+        await axios('http://localhost:2000/books')
+            .then(response => {
+                setProduct(response.data);
+            })
+            .catch(err =>{
+                console.log('error fetching');
+            })
+    }
 
-    const getBooks = async (dispatch) => {
-        try {
-          const res = await publicRequest.get("/books");
-          const resultJson = JSON.stringify(res.data);
-          // console.log("api cals " + res.data[0].title);
-          const newItem = {
-            id: res.data.title,
-          };
-          array.push(newItem);
-          return resultJson;
-        } catch (err) {
-            console.log("could not get books");
-        }
-      };
-        
-    //  getBooks(dispatch);
+    console.log(product);
 
-    console.log("array : " + array);
     // \deleteBook(dispatch, { token: localStorage.acessToken, isAdmin:true, title: "BogdanTest30May", author: "test Bogdan", price: "555", desc: "test Bogdan", genre: "fantasy", img: "test", _id: "62950646e92978aaf94c0f1f"})
 
     return (
@@ -68,7 +62,7 @@ function DeleteBook() {
                   <div className="bar"></div>
               </div>
             </div>
-                <p></p>
+                <p>{product.title}</p>
                 <div id="cometchat" style={{ margin: "0 auto", width: "60%" }}></div>
             </div>
           </div>

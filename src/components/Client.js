@@ -13,6 +13,8 @@ import ScrollToTop from "./ScrollToTop";
 import {getBooks, addCart} from '../redux/apiCalls';
 
 import { useDispatch , useSelector} from "react-redux";
+import axios from 'axios';
+
 
 const appID = process.env.REACT_APP_ID;
 const region = process.env.REACT_APP_REGION;
@@ -23,7 +25,6 @@ function Client(){
 
   const[detaliu,setDetaliu] = useState([]);
   const dispatch = useDispatch();
-  
   // const rez = getBooks(dispatch);
 
   // console.log("get books " + JSON.stringify(rez));
@@ -43,6 +44,26 @@ function Client(){
   // test de sters : 
 
   localStorage.setItem('bookId',"62610c437305c11ce59bd093");
+
+  //fetch
+  const[product, setProduct] = useState([]);
+  
+
+  useEffect( () =>{
+      getData();
+  }, [])
+
+  async function getData() {
+      await axios('http://localhost:2000/books')
+          .then(response => {
+              setProduct(response.data);
+          })
+          .catch(err =>{
+              console.log('error fetching');
+          })
+  }
+
+  console.log(product);
 
   const[items, setItems] =useState([]);
     const[visible, setVisible] = useState(3);
@@ -64,21 +85,21 @@ function Client(){
       const drama = useRef(null);
       const romance = useRef(null);
       const fantasy = useRef(null); 
-      const sf = useRef(null);
+      const fiction = useRef(null);
       const mistery = useRef(null); 
 
     const [isOpen, setIsOpen] = useState(false);
     const [searchTerm,setSearchTerm]=useState("");
-    function FilterByCategory(cathegory) {
-        const Filtered = product_card.filter((item) => {
-            if(item.cathegory.toLowerCase()==cathegory) {
+    function FilterByCategory(genre) {
+        const Filtered = product.filter((item) => {
+            if(item.genre.toLowerCase()==genre) {
                 return item;
             }
         });
         return Filtered;
     }
-    const Books = product_card.filter((item) => {
-        if(item.product_name.toLowerCase().includes(searchTerm.toLowerCase())) {
+    const Books = product.filter((item) => {
+        if(item.title.toLowerCase().includes(searchTerm.toLowerCase())) {
             return item;
         }
     })
@@ -87,12 +108,12 @@ function Client(){
         const Filtered = List.slice(0, visible).map((item) =>
             <div className="card" key={item.id}>
                 <div className="card_img">
-                    <img src={require('./images/' + item.image +'.png')} />
+                    <img src={item.img} />
                 </div>
                 <div className="card_header">
-                    <h2>{item.product_name}</h2>
+                    <h2>{item.title}</h2>
                     <p className="price">{item.price}<span>{item.currency}</span></p>
-                    <button className="loadMoreBtn"  type="submit" onClick={() => setName(item.product_name)}>Add to cart</button>
+                    <button className="loadMoreBtn"  type="submit" onClick={() => setName(item.title)}>Add to cart</button>
                 </div>
             </div>
         );
@@ -209,7 +230,7 @@ function Client(){
               <li onClick={() => scrollToSection(fantasy)} className="link">
                   Fantasy
               </li>
-              <li onClick={() => scrollToSection(sf)} className="link">
+              <li onClick={() => scrollToSection(fiction)} className="link">
                   Science Fiction
               </li>
               <li onClick={() => scrollToSection(mistery)} className="link">
@@ -247,10 +268,10 @@ function Client(){
                 </div>
             </div>
 
-            <div ref={sf} className = "categories">
+            <div ref={fiction} className = "categories">
                 <p className="text">Science-Fiction</p>
                 <div className="homeContent">
-                    {MapBooks(FilterByCategory("sf"))}
+                    {MapBooks(FilterByCategory("fiction"))}
                     <div className="loadMore">
                         <button className="loadMoreBtn" onClick={showMoreItems}>Load More</button>
                     </div>
@@ -321,7 +342,7 @@ function Client(){
               <li onClick={() => scrollToSection(fantasy)} className="link">
                   Fantasy
               </li>
-              <li onClick={() => scrollToSection(sf)} className="link">
+              <li onClick={() => scrollToSection(fiction)} className="link">
                   Science Fiction
               </li>
               <li onClick={() => scrollToSection(mistery)} className="link">
@@ -359,10 +380,10 @@ function Client(){
                 </div>
             </div>
 
-            <div ref={sf} className = "categories">
+            <div ref={fiction} className = "categories">
                 <p className="text">Science-Fiction</p>
                 <div className="homeContent">
-                    {MapBooks(FilterByCategory("sf"))}
+                    {MapBooks(FilterByCategory("fiction"))}
                     <div className="loadMore">
                         <button className="loadMoreBtn" onClick={showMoreItems}>Load More</button>
                     </div>
