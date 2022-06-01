@@ -23,6 +23,7 @@ function AddBook() {
     const [authorlog, setAuthorlog] = useState(" ");
     const [pricelog, setPricelog] = useState(" ");
     const [cathegorylog, setCathegorylog] = useState(" ");
+    const [imgLog, setImgLog] = useState(" ");
     const [descriptionlog, setDescriptionlog] = useState("default");
 
 
@@ -34,7 +35,7 @@ function AddBook() {
 
         e.preventDefault();
 
-        addBook(dispatch, { token: localStorage.acessToken, isAdmin:true, title: namelog, author: authorlog, price: pricelog, desc: descriptionlog, genre: cathegorylog })
+        addBook(dispatch, { token: localStorage.acessToken, isAdmin:true, title: namelog, author: authorlog, price: pricelog, desc: descriptionlog, genre: cathegorylog, img:imgLog })
 
     };
 
@@ -73,6 +74,9 @@ function AddBook() {
                             </div>
                             <div className='second-input'>
                                 <input placeholder='Author' className='fill' onChange={(event) => setAuthorlog(event.target.value) }/>
+                            </div>
+                            <div className='second-input'>
+                                <input placeholder='Img URL' className='fill' onChange={(event) => setImgLog(event.target.value) }/>
                             </div>
                             <div className='second-input'>
                                 <input type="number" placeholder='Price' min={0} className='fill' onChange={(event) => setPricelog(event.target.value) }/>
