@@ -45,7 +45,7 @@ function Client(){
   function seeDetails(item){
     localStorage.setItem('bookId',item);
     navigate('/bookdetails');
-}
+  }
 
 
   // test de sters : 
@@ -113,14 +113,15 @@ function Client(){
         if(!List){List=[];}
         const Filtered = List.slice(0, visible).map((item) =>
             <div className="card" key={item._id}>
-                <div className="card_img">
-                    <img src={item.img} />
-                </div>
+                <button className="imgButton" type="submit" onClick={() => seeDetails(item._id)}>
+                    <div className="card_img">
+                        <img src={item.img} />
+                    </div>
+                </button>
                 <div className="card_header">
                     <h2>{item.title}</h2>
                     <p className="price">{item.price}<span>{item.currency}</span></p>
                     <button className="loadMoreBtn"  type="submit" onClick={() => setId(item._id)}>Add to cart</button>
-                    <button className="loadMoreBtn" type="submit" onClick={() => seeDetails(item._id)}>See information</button>
                 </div>
             </div>
         );
