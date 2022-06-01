@@ -15,11 +15,13 @@ function Donate() {
     const [name, setName] = useState(" ");
     const [nrBook, setNrBook] = useState(" ");
     const [isOpen, setIsOpen] = useState(false);
-    const dateValue = new Date();
+    var dateValue = new Date((new Date()).setHours((new Date()).getHours()+1));
+    dateValue = new Date(dateValue.setMinutes(0))
     const minDate = dateValue;
     const maxDate = new Date((new Date()).setMonth(dateValue.getMonth()+3));
     const [openModal, setOpenModal] = useState(false);
     const [openModal2, setOpenModal2] = useState(false);
+    const [test, setTest] = useState(dateValue);
     // console.log("donate " + localStorage.userRole)
     // if(localStorage.userRole === "notSet"){
     //     return <Navigate to="/login"/>
@@ -36,16 +38,14 @@ function Donate() {
     //     reply_to: '',
     // });
 
-    console.log(localStorage.userEmail);
+    console.log("data" + test);
 
     var template = {
         user_name: localStorage.username,
         user_email: localStorage.userEmail,
         message: `Name : ${name}, 
-             Number of books:  ${nrBook}`
+             Number of books:  ${nrBook}. On day: ${test}  `
     };
-
-
 
     const handleClick = (e) => {
         e.preventDefault();
@@ -97,7 +97,7 @@ function Donate() {
                             <h3>Schedule</h3>
                             <form>
                                 <div style={{paddingInline:'50px'}}>
-                                    <DateTimePickerComponent placeholder="Choose a date and time" value={dateValue} min={minDate} max={maxDate}format="dd-MMM-yyyy HH:mm"></DateTimePickerComponent>
+                                    <DateTimePickerComponent placeholder="Choose a date and time" onChange={(event) => setTest(event.target.value)} value={test} min={minDate} max={maxDate}format="dd-MMM-yyyy HH:mm"></DateTimePickerComponent>
                                 </div>
                                 <input type = "text" className="donate" placeholder="Full Name" onChange={(event) => setName(event.target.value) }/>
                                 <input type = "text" className="donate" placeholder="Phone Number"/>

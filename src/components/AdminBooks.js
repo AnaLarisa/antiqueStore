@@ -16,13 +16,13 @@ import { AiOutlineSearch } from "react-icons/ai";
 function AdminBooks() {
     const navigate = useNavigate();
 
-    // if(localStorage.userRole === "notSet"){
-    //     return <Navigate to="/login"/>
-    // }
-    // if(localStorage.userRole === "user")
-    // {
-    //     return <Navigate to="/"/>
-    // }
+    if(localStorage.userRole === "notSet"){
+        return <Navigate to="/login"/>
+    }
+    if(localStorage.userRole === "user")
+    {
+        return <Navigate to="/"/>
+    }
 
 
     const[product, setProduct] = useState([]);
@@ -131,7 +131,6 @@ function AdminBooks() {
           <div className={`nav-items ${isOpen && "open"}`}>
                 <Link to ="/addbook">Add Book</Link>
                 <Link to ="/agent">Support</Link>
-                <Link to="/editbook">Edit Book</Link>
                 <Link to="/logout">Logout</Link>
           </div>
           <div className={`nav-toggle ${isOpen && "open"}`} onClick={() => setIsOpen(!isOpen)}>

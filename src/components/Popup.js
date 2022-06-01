@@ -2,7 +2,9 @@ import React from 'react';
 import nft from './CSS/donate2.jpg';
 import './CSS/popup.css';
 import { IoIosCloseCircleOutline} from "react-icons/io";
-import {Link} from 'react-router-dom';
+import {Link, Navigate} from 'react-router-dom';
+import { useDispatch , useSelector} from "react-redux";
+
 
 export const  Popup = ({ open, onClose }) => {
   if (!open) return null;
@@ -66,6 +68,16 @@ export const  Popup2 = ({ open2, onClose2 }) => {
 
 
 export const  Popup3 = ({ open3, onClose3 }) => {
+  const dispatch = useDispatch();
+
+  function deleteBook()
+  {
+
+    deleteBook(dispatch, { token: localStorage.acessToken, isAdmin:true, _id: localStorage.bookId })
+
+    return <Navigate to="/adminbooks"/>
+  }
+
   if (!open3) return null;
   return (
     <div onClick={onClose3} >
@@ -84,7 +96,7 @@ export const  Popup3 = ({ open3, onClose3 }) => {
             <p>Are you sure you want to delete this book?</p>
           </div>
           <div className='btnContainer'>
-            <button className='btnPopup'>
+            <button onClick={deleteBook()} className='btnPopup'>
             <span className='bold'>Yes</span>
             </button>
           

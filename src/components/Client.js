@@ -37,7 +37,7 @@ function Client(){
   }
 
   function setId(item){
-    addCart(dispatch,{token: localStorage.acessToken, userId:localStorage._id, books :[ { bookId:item, quantity:1 } ] })
+    addCart(dispatch,{token: localStorage.acessToken, userId:localStorage._id, bookId:item._id, title: item.title, img:item.img,price:item.price, author:item.author })
     
     console.log("Acesta este un detaliu : " + item);
   };
@@ -120,8 +120,8 @@ function Client(){
                 </button>
                 <div className="card_header">
                     <h2>{item.title}</h2>
-                    <p className="price">{item.price}<span>{item.currency}</span></p>
-                    <button className="loadMoreBtn"  type="submit" onClick={() => setId(item._id)}>Add to cart</button>
+                    <p className="price">{item.price}€</p>
+                    <button className="loadMoreBtn"  type="submit" onClick={() => setId(item)}>Add to cart</button>
                 </div>
             </div>
         );

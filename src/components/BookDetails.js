@@ -51,17 +51,26 @@ function BookDetails() {
                 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Irish+Grover" />
                 <span className="nav-logo"><span>ANTIQUE</span><br/>
                 <span>STORE</span></span>
-                <div className={`nav-items ${isOpen && "open"}`}>
-                    <Link to ="/">Home</Link>
-                    <Link to ="/donate">Donate</Link>
-                    <Link to="/mycart">My Cart</Link>
-                    {(localStorage.userRole === "notSet") && 
-                        <Link to="/login">Login</Link>
-                    }
-                    {(!(localStorage.userRole === "notSet"))&&
+                {(localStorage.userRole !="admin") && 
+                    <div className={`nav-items ${isOpen && "open"}`}>
+                        <Link to ="/">Home</Link>
+                        <Link to ="/donate">Donate</Link>
+                        <Link to="/mycart">My Cart</Link>
+                        {(localStorage.userRole === "notSet") && 
+                            <Link to="/login">Login</Link>
+                        }
+                        {(!(localStorage.userRole === "notSet"))&&
+                            <Link to="/logout">Logout</Link>
+                        }
+                    </div>
+                }
+                {(localStorage.userRole === "admin") && 
+                    <div className={`nav-items ${isOpen && "open"}`}>
+                        <Link to ="/addbook">Add Book</Link>
+                        <Link to ="/agent">Support</Link>
                         <Link to="/logout">Logout</Link>
-                    }
-                </div>
+                    </div>
+                }        
                 <div
                     className={`nav-toggle ${isOpen && "open"}`}
                     onClick={() => setIsOpen(!isOpen)}
@@ -80,9 +89,11 @@ function BookDetails() {
                             }   
                             {(localStorage.userRole === "admin") && 
                             <div className='deleteBtn'>
-                                <TiDelete size={32} color="white" onClick={() => {if(localStorage.userRole === "notSet") {setOpenModal3(true)}}}/>
+                                <TiDelete size={32} color="white" onClick={() => {if(localStorage.userRole === "admin") {setOpenModal3(true)}}}/>
                             </div>
+                            
                             }
+                            <Popup3  open3={openModal3}  onClose3={() => setOpenModal3(false)} />
                             <img src={img} className="profile-pic"/>
                             <h3>{bookTitle}</h3>
                             <p>{bookAuthor}</p>
@@ -91,7 +102,6 @@ function BookDetails() {
                                 <p>{desc}</p>
                             </div>
                             
-                            <Popup3  open3={openModal3}  onClose3={() => setOpenModal3(false)} />
                </div>
                </div>
               

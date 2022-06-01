@@ -96,8 +96,9 @@ export const getCart = async (dispatch, user) => {
 }
 
 export const deleteCart = async (dispatch, user) => {
+  console.log(JSON.stringify(user));
   try{
-    const res = await userRequest.delete("/carts/" + user.userId , { data: { user, token: user.token, id: user.userId }});
+    const res = await userRequest.delete("/carts/" + user.id , { data: { id:user.id, bookId:user.bookId, cartId:user.cartId  }});
     console.log("cart deleted");
   }catch(err) {
     console.log("cart not deleted");
