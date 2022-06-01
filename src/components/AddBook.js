@@ -67,7 +67,7 @@ function AddBook() {
                             <button type="submit" className='btbt' onClick={handleClick}>Add Book</button>
                         </div>
                     </div>
-                    <div className='inputs'>
+                    <div className='inputsedit'>
                             <br></br>
                             <div>
                                 <input placeholder='Name' className='fill' onChange={(event) => setNamelog(event.target.value) }/> 
