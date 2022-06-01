@@ -64,7 +64,7 @@ function EditBook() {
             <div className='sub-main-addbook' style={{backgroundcolor:"transparent", padding:'50px'}}>
                     <div className="upload_pic">
                         <div className='bt'>
-                            <button type="submit" className='btbt' onClick={() => {editBookFunction();}}><Link to="/adminbooks" style={{color:"white", textDecoration: 'none'}}>Edit Book</Link></button>
+
                         </div>
                     </div>
                     <div className='inputsedit'>
@@ -97,6 +97,8 @@ function EditBook() {
                             <div className='second-input'>
                                 <textarea placeholder='Description' className='fill' onChange={(event) => setDescriptionlog(event.target.value) }/>
                             </div>
+                            <button type="submit" className='btbt' onClick={() => {editBookFunction();}}><Link to="/adminbooks" style={{color:"white", textDecoration: 'none'}}>Edit Book</Link></button>
+
                         </div>
             </div>
             </div>

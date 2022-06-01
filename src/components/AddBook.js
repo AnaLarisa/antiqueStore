@@ -64,7 +64,6 @@ function AddBook() {
             <div className='sub-main-addbook' style={{backgroundcolor:"transparent", padding:'50px'}}>
                     <div className="upload_pic">
                         <div className='bt'>
-                            <button type="submit" className='btbt' onClick={handleClick}>Add Book</button>
                         </div>
                     </div>
                     <div className='inputsedit'>
@@ -89,7 +88,7 @@ function AddBook() {
                                         <option value="drama">Drama</option>
                                         <option value="romance">Romance</option>
                                         <option value="fantasy">Fantasy</option>
-                                        <option value="sf">Science-Fiction</option>
+                                        <option value="fiction">Science-Fiction</option>
                                         <option value="mistery">Mistery</option>
                                     </select>
                                 </label>
@@ -97,7 +96,10 @@ function AddBook() {
                             <div className='second-input'>
                                 <textarea placeholder='Description' className='fill' onChange={(event) => setDescriptionlog(event.target.value) }/>
                             </div>
-                        </div>
+                            <button type="submit" className='btbt' onClick={handleClick}>Add Book</button>
+
+                            
+                    </div>
             </div>
             </div>
         </form>
