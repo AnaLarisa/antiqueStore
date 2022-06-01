@@ -5,6 +5,7 @@ import StripeCheckout from 'react-stripe-checkout';
 import 'react-router-dom'
 import {Link, Navigate} from 'react-router-dom';
 import "./CSS/Navbar.css";
+import { send } from 'emailjs-com';
 import "./CSS/MyCart.css";
 import {userRequest} from "../requestMethods";
 import book from './images/book.png';
@@ -33,7 +34,6 @@ function MyCart() {
     // delete cart -> de revazut de ce nu se poate pune body 
 
     // deleteCart(dispatch, {token: localStorage.acessToken, userId:localStorage.userId } );
-
 
     console.log(localStorage.username);
     cometChatMessageButton(localStorage.userNameuid);
@@ -64,6 +64,23 @@ function MyCart() {
         stripeToken && makeRequest();
     }, [stripeToken, cart.total, navigate]);
     
+    var template = {
+        user_name: localStorage.username,
+        user_email: localStorage.userEmail,
+        message: `Name : ${localStorage.username}`
+    };
+
+    function sendEmail(){
+        setOpenModal(true);
+
+        send('service_antiqueStore','template_f7z5elm',template,'BdViCNIaBzilCPp0o')
+            .then(function(res){
+                console.log("success !");
+            }, function(error){
+                console.log("failed .. ");
+            });
+    }
+
     return (
         <div className="under">
             <div className="over">
@@ -128,14 +145,21 @@ function MyCart() {
                                 <span>Number of Items</span>
                                 <span>2</span>
                             </p>
-                            <StripeCheckout name="AntiqueStore"
-                                            image = "https://media.istockphoto.com/photos/image-of-open-antique-book-on-wooden-table-with-glitter-overlay-picture-id873507500?b=1&k=20&m=873507500&s=170667a&w=0&h=jHslAXdeW5Ob6D9I0zyiLGChrluxKg2S35Z_SHS_Kfc="
-                                            billingAddress
-                                            shippingAddress
-                                            description={`Your total is $${cart.total}`}
-                                            amount={cart.total*100}
-                                            token={onToken}
-                                            stripeKey={KEY}>
+                            <div className={`${!(localStorage.userRole === "notSet") && "hide"}`}>
+                                <div classname = "check">
+                                    <button className = "checkout" onClick={() => setOpenModal(true)} >Proceed to Checkout</button>
+                                    <Popup  open={openModal}  onClose={() => setOpenModal(false)} />
+                                </div>                            
+                            </div>
+                            <div className={`${(localStorage.userRole === "notSet") && "hide"}`}>
+                                <StripeCheckout name="AntiqueStore"
+                                                image = "https://media.istockphoto.com/photos/image-of-open-antique-book-on-wooden-table-with-glitter-overlay-picture-id873507500?b=1&k=20&m=873507500&s=170667a&w=0&h=jHslAXdeW5Ob6D9I0zyiLGChrluxKg2S35Z_SHS_Kfc="
+                                                billingAddress
+                                                shippingAddress
+                                                description={`Your total is $${cart.total}`}
+                                                amount={cart.total*100}
+                                                token={onToken}
+                                                stripeKey={KEY}>
 
 
                                 <div classname = "check"><button className = "checkout" onClick={() => {if(localStorage.userRole === "notSet") {setOpenModal(true)}else{setOpenModal2(true)}}} >Proceed to Checkout</button></div>
@@ -148,7 +172,7 @@ function MyCart() {
                 </div>
         </div>
     </div>
-
+    </div>
     )
 }
 

@@ -123,3 +123,14 @@ export const editBook = async (dispatch, book) => {
     console.log("book not edited");
   }
 }
+
+export const getOnlyABook = async (dispatch, book) =>{
+  console.log("bookId: " + JSON.stringify(book));
+  try{
+    const res = await userRequest.get("/books/find/"+ book.bookId, book);
+    console.log("book returned " + JSON.stringify(res))
+  }catch(err)
+  {
+    console.log("book not returned");
+  }
+}

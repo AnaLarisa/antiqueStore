@@ -40,6 +40,7 @@ function EditBook() {
                   <Link to ="/addbook">Add Book</Link>
                   <Link to ="/agent">Support</Link>
                   <Link to ="/deletebook">Delete Book</Link>
+                  <Link to="/logout">Logout</Link>
               </div>
               <div className={`nav-toggle`}>
                   <div className="bar"></div>

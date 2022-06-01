@@ -50,6 +50,7 @@ function AddBook() {
                 <Link to="/agent">Support</Link>
                 <Link to="/deletebook">Delete Book</Link>
                 <Link to="/editbook">Edit Book</Link>
+                <Link to="/logout">Logout</Link>
             </div>
             <div
                 className={`nav-toggle ${isOpen && "open"}`}

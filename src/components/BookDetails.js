@@ -8,8 +8,40 @@ import Tilt from 'react-vanilla-tilt';
 import profile from "./images/1.png"
 import settings from "./images/setting.png"
 import { TiDelete } from "react-icons/ti";
+import { useDispatch , useSelector} from "react-redux";
+import { publicRequest, userRequest } from "../requestMethods";
+
 
 function BookDetails() {
+    const [bookTitle, setBookTitle] = useState(" ");
+    const [bookAuthor, setBookAuthor] = useState(" ");
+    const [desc, setDesc] = useState(" ");
+    const [img, setImg] = useState(" ");
+    const [genre, setGenre] = useState(" ");
+    const [price, setPrice] = useState(" ");
+
+    const dispatch = useDispatch();
+
+    // getOnlyABook(dispatch, { bookId: "62951b37e71b6b4556480815" });
+
+    const getOnlyABook = async (dispatch, book) =>{
+        // console.log("bookId: " + JSON.stringify(book));
+        try{
+          const res = await userRequest.get("/books/find/"+ book.bookId, book);
+          setBookTitle(res.data.title);
+          setBookAuthor(res.data.author);
+          setDesc(res.data.desc);
+          setImg(res.data.img);
+          setGenre(res.data.genre);
+          setPrice(res.data.price);
+        }catch(err)
+        {
+          console.log("book not returned");
+        }
+      }
+    
+    getOnlyABook(dispatch,{ bookId: localStorage.bookId });
+ 
     const [isOpen, setIsOpen] = useState(false);
     return (
         <div className="under">
@@ -46,13 +78,12 @@ function BookDetails() {
                             <div className='deleteBtn'>
                                 <Link to="/"><TiDelete size={32} color="white" /></Link>
                             </div>
-                            <img src={profile} className="profile-pic"/>
-                            <h3>Then She Was Gone</h3>
-                            <p>Lisa Jewell</p>
-                            <p className="price">20 €</p>
+                            <img src={img} className="profile-pic"/>
+                            <h3>{bookTitle}</h3>
+                            <p>{bookAuthor}</p>
+                            <p className="price">{price} €</p>
                             <div className="profile-bottom">
-                                <p>A 2018 Goodreads Choice Award Finalist--Top 5 Best Mystery & Thriller * A Suspense Magazine "Best of 2018" Thriller/Suspense Pick
-                                    "An acutely observed family drama with bone-chilling suspense." --People</p>
+                                <p>{desc}</p>
                             </div>
                </Tilt>
                </div>
