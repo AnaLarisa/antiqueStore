@@ -114,12 +114,6 @@ function MyCart() {
         stripeToken && makeRequest();
     }, [stripeToken, cart.total, navigate]);
     
-    var template = {
-        user_name: localStorage.username,
-        user_email: localStorage.userEmail,
-        message: `Name : ${localStorage.username} \n Number of books : ${quantity} \n Price : ${total}`
-    };
-
 
     const[visible, setVisible] = useState(3);
 
@@ -136,17 +130,22 @@ function MyCart() {
                 <div className="product-info">
                     <h3 className="product-name">{item.title}</h3>
                     <h4 className="product-price">{item.price}€</h4>
-                    <p className="product-remove">
-                    <i class="fa fa-trash" aria-hidden="true"></i>
-                    <button onClick={() => removeBookCart(item)}>
+                    <button className="removeBtn" onClick={() => removeBookCart(item)}>
+                        <i class="fa fa-trash" aria-hidden="true"></i>
                         <span className="remove">Remove</span>
                     </button>
-                    </p>
                 </div>
             </div>
         );
         return Filtered;
     }
+
+    var template = {
+        user_name: localStorage.username,
+        user_email: localStorage.userEmail,
+        message: `Name : ${localStorage.username} \n Number of books : ${quantity} \n Price : ${total}`
+    };
+
 
     function sendEmail(){
         setOpenModal(true);
