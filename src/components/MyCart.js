@@ -13,6 +13,8 @@ import Popup from './Popup';
 import "./CSS/font-awesome-4.7.0/css/font-awesome.min.css";
 import cometChatMessageButton from "./cometChatButton";
 import {getCart, deleteCart} from "../redux/apiCalls";
+import axios from 'axios';
+
 //const KEY = process.env.REACT_APP_STRIPE;
 const KEY = "pk_test_51JzmyRALRgt5fdLcNrrrBXZ5PdZeC52usIQz2SwgMritEJRGbHZmjs55UMIJvd4IG8uPm6gt7WeImjxWfIeUwAeB00y71hkmwJ";
 
@@ -27,6 +29,36 @@ function MyCart() {
     }
 
     const dispatch = useDispatch();
+
+    const [mycart,setCart] = useState([]);
+    useEffect( () =>{
+        getData();
+    }, [])
+    
+    console.log("user id " + localStorage._id);
+
+    async function getData() {
+        await axios('http://localhost:2000/carts/find/' + localStorage._id)
+            .then(response => {
+                console.log("fetch ok");
+                setCart(response.data);
+            })
+            .catch(err =>{
+                console.log('error fetching');
+            })
+    }
+
+    function FilterByUserId(userId) {
+        const Filtered = mycart.filter((item) => {
+            if(item.userId.toLowerCase()==userId) {
+                return item;
+            }
+        });
+        return Filtered;
+    }
+
+    console.log(FilterByUserId(localStorage._id));
+
     
     // show cart -> de revazut de ce nu se poate pune body
     // getCart(dispatch, { token: localStorage.acessToken, userId: localStorage._id });

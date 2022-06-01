@@ -65,9 +65,10 @@ router.delete("/:id", verifyTokenAndAuthorization, async (req, res) => {
 });
 
 router.get("/find/:id", async (req, res) => {
-    console.log("find " + JSON.stringify(req.body));
+    // console.log("find " + req.params.id);
     try {
-        const cart = await Cart.findOne(req.params.id);
+        const cart = await Cart.find();
+        // console.log("my cart " + JSON.stringify(cart));
         res.status(200).json(cart);
     } catch (err) {
         res.status(500).json(err);
