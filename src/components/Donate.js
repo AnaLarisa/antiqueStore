@@ -4,6 +4,7 @@ import {Link, Navigate} from 'react-router-dom';
 import './CSS/Home.css'; 
 import "./CSS/Navbar.css";
 import "./CSS/Donate.css";
+import {Popup,Popup2} from './Popup';
 import { DateTimePickerComponent} from '@syncfusion/ej2-react-calendars';
 import cometChatMessageButton from "./cometChatButton";
 import { send } from 'emailjs-com';
@@ -17,10 +18,12 @@ function Donate() {
     const dateValue = new Date();
     const minDate = dateValue;
     const maxDate = new Date((new Date()).setMonth(dateValue.getMonth()+3));
+    const [openModal, setOpenModal] = useState(false);
+    const [openModal2, setOpenModal2] = useState(false);
     // console.log("donate " + localStorage.userRole)
-    if(localStorage.userRole === "notSet"){
-        return <Navigate to="/login"/>
-    }
+    // if(localStorage.userRole === "notSet"){
+    //     return <Navigate to="/login"/>
+    // }
     if(localStorage.userRole === "admin")
     {
         return <Navigate to="/agent"/>
@@ -42,6 +45,8 @@ function Donate() {
              Number of books:  ${nrBook}`
     };
 
+
+
     const handleClick = (e) => {
         e.preventDefault();
 
@@ -51,6 +56,7 @@ function Donate() {
             }, function(error){
                 console.log("failed .. ");
             });
+        if(localStorage.userRole === "notSet") {setOpenModal(true)}else{setOpenModal2(true)}
 
     };
 
@@ -65,12 +71,12 @@ function Donate() {
                 <div className={`nav-items ${isOpen && "open"}`}>
                     <Link to ="/">Home</Link>
                     <Link to="/mycart">My Cart</Link>
-                    <div className={`${!(localStorage.userRole === "notSet") && "hide"}`}>
+                    {(localStorage.userRole === "notSet") && 
                         <Link to="/login">Login</Link>
-                    </div>
-                    <div className={`${(localStorage.userRole === "notSet") && "hide"}`}>
+                    }
+                    {(!(localStorage.userRole === "notSet"))&&
                         <Link to="/logout">Logout</Link>
-                    </div>
+                    }
                 </div>
                 <div
                     className={`nav-toggle ${isOpen && "open"}`}
@@ -80,13 +86,14 @@ function Donate() {
                 </div>
             </div>
             <div className={`${isOpen && "hide"}`}>
-                <section class = "banner">
+                <section className = "banner">
                     <h2>SCHEDULE THE DONATION</h2>
-                    <div class = "card-container">
-                        <div class = "card-img">
+                    <div className = "card-container">
+                        <div className = "card-img">
                         </div>
-
-                        <div class = "card-content">
+                        <Popup  open={openModal}  onClose={() => setOpenModal(false)} />
+                        <Popup2  open2={openModal2}  onClose2={() => setOpenModal2(false)} />
+                        <div className = "card-content">
                             <h3>Schedule</h3>
                             <form>
                                 <div style={{paddingInline:'50px'}}>

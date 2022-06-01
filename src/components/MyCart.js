@@ -9,7 +9,7 @@ import { send } from 'emailjs-com';
 import "./CSS/MyCart.css";
 import {userRequest} from "../requestMethods";
 import book from './images/book.png';
-import Popup from './Popup';
+import {Popup,Popup2} from './Popup';
 import "./CSS/font-awesome-4.7.0/css/font-awesome.min.css";
 import cometChatMessageButton from "./cometChatButton";
 import {getCart, deleteCart} from "../redux/apiCalls";
@@ -75,6 +75,7 @@ function MyCart() {
     const [stripeToken, setStripeToken] = useState(null);
     const navigate = useNavigate();
     const [openModal, setOpenModal] = useState(false);
+    const [openModal2, setOpenModal2] = useState(false);
 
     const onToken = (token) => {
         setStripeToken(token);
@@ -122,12 +123,12 @@ function MyCart() {
                 <div className={`nav-items ${isOpen && "open"}`}>
                     <Link to ="/">Home</Link>
                     <Link to="/donate">Donate</Link>
-                    <div className={`${!(localStorage.userRole === "notSet") && "hide"}`}>
+                    {(localStorage.userRole === "notSet") && 
                         <Link to="/login">Login</Link>
-                    </div>
-                    <div className={`${(localStorage.userRole === "notSet") && "hide"}`}>
+                    }
+                    {(!(localStorage.userRole === "notSet"))&&
                         <Link to="/logout">Logout</Link>
-                    </div>
+                    }
                 </div>
                 <div
                     className={`nav-toggle ${isOpen && "open"}`}
@@ -193,18 +194,17 @@ function MyCart() {
                                                 stripeKey={KEY}>
 
 
-                                    <div classname = "check">
-                                        <button className = "checkout" onClick={() => sendEmail() } >Proceed to Checkout</button>
-                                    </div>
-                                </StripeCheckout>
-                            </div>
+                                <div classname = "check"><button className = "checkout" onClick={() => {if(localStorage.userRole === "notSet") {setOpenModal(true)}else{setOpenModal2(true)}}} >Proceed to Checkout</button></div>
+                            </StripeCheckout>
+                            <Popup  open={openModal}  onClose={() => setOpenModal(false)} />
+                            <Popup2  open2={openModal2}  onClose2={() => setOpenModal2(false)} />  
                         </div>
                     </div>
                     <div className='App'></div>
                 </div>
         </div>
     </div>
-
+    </div>
     )
 }
 

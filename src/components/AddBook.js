@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import "./CSS/AddBook.css";
 import UploadPic from "./UploadPic";
-import Tilt from 'react-vanilla-tilt'
 import {Link, Navigate} from 'react-router-dom';
 import './CSS/Home.css';
 import "./CSS/Navbar.css";
@@ -62,7 +61,7 @@ function AddBook() {
         <div className={`${isOpen && "hide"}`}>
         <form>
             <div className='main-addbook'>
-            <Tilt className='sub-main-addbook' style={{backgroundcolor:"transparent", padding:'50px'}}>
+            <div className='sub-main-addbook' style={{backgroundcolor:"transparent", padding:'50px'}}>
                     <div className="upload_pic">
                         <UploadPic/>
                         <div className='bt'>
@@ -97,7 +96,7 @@ function AddBook() {
                                 <textarea placeholder='Description' className='fill' onChange={(event) => setDescriptionlog(event.target.value) }/>
                             </div>
                         </div>
-            </Tilt>
+            </div>
             </div>
         </form>
         </div>

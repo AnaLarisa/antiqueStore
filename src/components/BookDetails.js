@@ -4,13 +4,13 @@ import {Link} from 'react-router-dom';
 import './CSS/Home.css'; 
 import "./CSS/Navbar.css";
 import "./CSS/BookDetails.css";
-import Tilt from 'react-vanilla-tilt';
 import profile from "./images/1.png"
 import settings from "./images/setting.png"
 import { TiDelete } from "react-icons/ti";
 import { useDispatch , useSelector} from "react-redux";
 import { publicRequest, userRequest } from "../requestMethods";
 
+import {Popup3} from './Popup';
 
 function BookDetails() {
     const [bookTitle, setBookTitle] = useState(" ");
@@ -43,6 +43,7 @@ function BookDetails() {
     getOnlyABook(dispatch,{ bookId: localStorage.bookId });
  
     const [isOpen, setIsOpen] = useState(false);
+    const [openModal3, setOpenModal3] = useState(false);
     return (
         <div className="under">
             <div className="over">
@@ -54,7 +55,12 @@ function BookDetails() {
                     <Link to ="/">Home</Link>
                     <Link to ="/donate">Donate</Link>
                     <Link to="/mycart">My Cart</Link>
-                    <Link to="/login">Login</Link>
+                    {(localStorage.userRole === "notSet") && 
+                        <Link to="/login">Login</Link>
+                    }
+                    {(!(localStorage.userRole === "notSet"))&&
+                        <Link to="/logout">Logout</Link>
+                    }
                 </div>
                 <div
                     className={`nav-toggle ${isOpen && "open"}`}
@@ -65,14 +71,18 @@ function BookDetails() {
             </div>
             <div className={`${isOpen && "hide"}`}>
             <div>
-                <Tilt style={{position:'relative', margin:'50px', marginLeft:'450px', marginRight:'450px', backgroundColor:'rgba(255,255,255,0.2)', padding:'40px', borderRadius: '20px'}}>
+                <div style={{position:'relative', margin:'50px', marginLeft:'450px', marginRight:'450px', backgroundColor:'rgba(255,255,255,0.2)', padding:'40px', borderRadius: '20px'}}>
+                            {(localStorage.userRole === "admin") && 
                             <div className='updateProfileIcon'>
                                 <div className='tooltip'>Edit</div>
-                                <Link to="/addbook"><img src={settings} className="setting-icon"/></Link>
+                                <Link to="/editbook"><img src={settings} className="setting-icon"/></Link>
                             </div>
+                            }   
+                            {(localStorage.userRole === "admin") && 
                             <div className='deleteBtn'>
-                                <Link to="/"><TiDelete size={32} color="white" /></Link>
+                                <TiDelete size={32} color="white" onClick={() => {if(localStorage.userRole === "notSet") {setOpenModal3(true)}}}/>
                             </div>
+                            }
                             <img src={img} className="profile-pic"/>
                             <h3>{bookTitle}</h3>
                             <p>{bookAuthor}</p>
@@ -80,8 +90,11 @@ function BookDetails() {
                             <div className="profile-bottom">
                                 <p>{desc}</p>
                             </div>
-               </Tilt>
+                            
+                            <Popup3  open3={openModal3}  onClose3={() => setOpenModal3(false)} />
                </div>
+               </div>
+              
             </div>
             </div>
         </div>

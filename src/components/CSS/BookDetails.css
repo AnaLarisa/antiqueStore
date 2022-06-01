@@ -1,4 +1,7 @@
 
+link{
+    list-style: none;
+  }
 
 .profile-pic{
     width: 150px;
@@ -42,14 +45,14 @@
 .deleteBtn {
     position: relative;
     top: -16px;
-    right: -218px;
+    right: -205px;
     cursor:pointer;
   }
 
 .tooltip{
     position:fixed;
-    left: 6px;
-    top: -40px;
+    left: 458px;
+    top: 80px;
     background: rgb(255, 255, 255);
     color:#261600;
     font-size: 20px;

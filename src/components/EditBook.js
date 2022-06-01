@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import "./CSS/AddBook.css";
 import UploadPic from "./UploadPic";
-import Tilt from 'react-vanilla-tilt'
 import {Link, Navigate} from 'react-router-dom';
 import './CSS/Home.css';
 import "./CSS/Navbar.css";

@@ -1,7 +1,7 @@
 import React, {Component, useEffect, useState, useRef} from 'react';
 import MDSpinner from "react-md-spinner";
 import 'react-router-dom'
-import {Link, Navigate} from 'react-router-dom';
+import {Link, Navigate, useNavigate} from 'react-router-dom';
 import './CSS/Home.css';
 import "./CSS/Navbar.css";
 import './CSS/styles.css'
@@ -22,7 +22,9 @@ const AUTH_KEY = process.env.REACT_APP_AUTH_KEY;
 const wid = process.env.REACT_APP_W1;
 
 function Client(){
-
+  // window.location.reload();
+  const navigate = useNavigate();
+    
   const[detaliu,setDetaliu] = useState([]);
   const dispatch = useDispatch();
   // const rez = getBooks(dispatch);
@@ -34,16 +36,20 @@ function Client(){
       return <Navigate to="/agent"/>
   }
 
-  function setName(item){
+  function setId(item){
     addCart(dispatch,{token: localStorage.acessToken, userId:localStorage._id, books :[ { bookId:item, quantity:1 } ] })
     
     console.log("Acesta este un detaliu : " + item);
   };
 
+  function seeDetails(item){
+    localStorage.setItem('bookId',item);
+    navigate('/bookdetails');
+  }
+
 
   // test de sters : 
 
-  localStorage.setItem('bookId',"62610c437305c11ce59bd093");
 
   //fetch
   const[product, setProduct] = useState([]);
@@ -106,14 +112,16 @@ function Client(){
     function MapBooks(List) {
         if(!List){List=[];}
         const Filtered = List.slice(0, visible).map((item) =>
-            <div className="card" key={item.id}>
-                <div className="card_img">
-                    <img src={item.img} />
-                </div>
+            <div className="card" key={item._id}>
+                <button className="imgButton" type="submit" onClick={() => seeDetails(item._id)}>
+                    <div className="card_img">
+                        <img src={item.img} />
+                    </div>
+                </button>
                 <div className="card_header">
                     <h2>{item.title}</h2>
                     <p className="price">{item.price}<span>{item.currency}</span></p>
-                    <button className="loadMoreBtn"  type="submit" onClick={() => setName(item.title)}>Add to cart</button>
+                    <button className="loadMoreBtn"  type="submit" onClick={() => setId(item._id)}>Add to cart</button>
                 </div>
             </div>
         );
@@ -200,12 +208,12 @@ function Client(){
           <div className={`nav-items ${isOpen && "open"}`}>
               <Link to ="/donate">Donate</Link>
               <Link to="/mycart">My Cart</Link>
-              <div className={`${!(localStorage.userRole === "notSet") && "hide"}`}>
+              {(localStorage.userRole === "notSet") && 
                   <Link to="/login">Login</Link>
-              </div>
-              <div className={`${(localStorage.userRole === "notSet") && "hide"}`}>
+              }
+              {(!(localStorage.userRole === "notSet"))&&
                   <Link to="/logout">Logout</Link>
-              </div>
+              }
           </div>
           <div className={`nav-toggle ${isOpen && "open"}`} onClick={() => setIsOpen(!isOpen)}>
               <div className="bar"></div>
@@ -317,7 +325,12 @@ function Client(){
           <div className={`nav-items ${isOpen && "open"}`}>
               <Link to ="/donate">Donate</Link>
               <Link to="/mycart">My Cart</Link>
-              <Link to="/login">Login</Link>
+              {(localStorage.userRole === "notSet") && 
+                  <Link to="/login">Login</Link>
+              }
+              {(!(localStorage.userRole === "notSet"))&&
+                  <Link to="/logout">Logout</Link>
+              }
           </div>
           <div className={`nav-toggle ${isOpen && "open"}`} onClick={() => setIsOpen(!isOpen)}>
               <div className="bar"></div>
