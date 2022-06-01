@@ -86,14 +86,14 @@ function Donate() {
                 </div>
             </div>
             <div className={`${isOpen && "hide"}`}>
-                <section class = "banner">
+                <section className = "banner">
                     <h2>SCHEDULE THE DONATION</h2>
-                    <div class = "card-container">
-                        <div class = "card-img">
+                    <div className = "card-container">
+                        <div className = "card-img">
                         </div>
                         <Popup  open={openModal}  onClose={() => setOpenModal(false)} />
                         <Popup2  open2={openModal2}  onClose2={() => setOpenModal2(false)} />
-                        <div class = "card-content">
+                        <div className = "card-content">
                             <h3>Schedule</h3>
                             <form>
                                 <div style={{paddingInline:'50px'}}>
