@@ -5,8 +5,9 @@ import Tilt from 'react-vanilla-tilt'
 import {Link, Navigate} from 'react-router-dom';
 import './CSS/Home.css';
 import "./CSS/Navbar.css";
-import { addBook, deleteBook, getBooks } from "../redux/apiCalls";
+import { addBook, deleteBook } from "../redux/apiCalls";
 import { useDispatch , useSelector} from "react-redux";
+import { publicRequest, userRequest } from "../requestMethods";
 
 
 function DeleteBook() {
@@ -19,18 +20,36 @@ function DeleteBook() {
         return <Navigate to="/"/>
     }
 
+
     const[product, setProduct] = useState([]);
 
     const { isFetching, error } = useSelector((state) => state.user);
 
     // DELETE BOOK
 
+    let array = [];
+
     const dispatch = useDispatch();
 
-    // \deleteBook(dispatch, { token: localStorage.acessToken, isAdmin:true, title: "BogdanTest30May", author: "test Bogdan", price: "555", desc: "test Bogdan", genre: "fantasy", img: "test", _id: "62950646e92978aaf94c0f1f"})
+    const getBooks = async (dispatch) => {
+        try {
+          const res = await publicRequest.get("/books");
+          const resultJson = JSON.stringify(res.data);
+          // console.log("api cals " + res.data[0].title);
+          const newItem = {
+            id: res.data.title,
+          };
+          array.push(newItem);
+          return resultJson;
+        } catch (err) {
+            console.log("could not get books");
+        }
+      };
+        
+    //  getBooks(dispatch);
 
-    // setProduct(getBooks(dispatch));
-    // console.log(product);
+    console.log("array : " + array);
+    // \deleteBook(dispatch, { token: localStorage.acessToken, isAdmin:true, title: "BogdanTest30May", author: "test Bogdan", price: "555", desc: "test Bogdan", genre: "fantasy", img: "test", _id: "62950646e92978aaf94c0f1f"})
 
     return (
         <div className="under">
