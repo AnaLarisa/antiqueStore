@@ -62,12 +62,11 @@ function AddBook() {
             <div className='main-addbook'>
             <div className='sub-main-addbook' style={{backgroundcolor:"transparent", padding:'50px'}}>
                     <div className="upload_pic">
-                        <UploadPic/>
                         <div className='bt'>
                             <button type="submit" className='btbt' onClick={handleClick}>Add Book</button>
                         </div>
                     </div>
-                    <div>
+                    <div className='inputs'>
                             <br></br>
                             <div>
                                 <input placeholder='Name' className='fill' onChange={(event) => setNamelog(event.target.value) }/> 

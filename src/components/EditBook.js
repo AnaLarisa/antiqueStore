@@ -64,10 +64,10 @@ function EditBook() {
             <div className='sub-main-addbook' style={{backgroundcolor:"transparent", padding:'50px'}}>
                     <div className="upload_pic">
                         <div className='bt'>
-                            <button type="submit" className='btbt' onClick={() => {editBookFunction();}}><Link to="/adminbooks">Edit Book</Link></button>
+                            <button type="submit" className='btbt' onClick={() => {editBookFunction();}}><Link to="/adminbooks" style={{color:"white", textDecoration: 'none'}}>Edit Book</Link></button>
                         </div>
                     </div>
-                    <div>
+                    <div className='inputsedit'>
                             <br></br>
                             <div>
                                 <input placeholder='Name' className='fill' onChange={(event) => setNamelog(event.target.value) }/> 
