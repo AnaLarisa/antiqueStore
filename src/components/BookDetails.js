@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import 'react-router-dom'
-import {Link} from 'react-router-dom';
+import {Link, Navigate} from 'react-router-dom';
 import './CSS/Home.css'; 
 import "./CSS/Navbar.css";
 import "./CSS/BookDetails.css";
@@ -21,6 +21,10 @@ function BookDetails() {
     const [price, setPrice] = useState(" ");
 
     const dispatch = useDispatch();
+
+    if(localStorage.popup3 === "true"){
+        return <Navigate to="/deletebook"/>
+    }
 
     // getOnlyABook(dispatch, { bookId: "62951b37e71b6b4556480815" });
 
@@ -68,6 +72,7 @@ function BookDetails() {
                     <div className={`nav-items ${isOpen && "open"}`}>
                         <Link to ="/addbook">Add Book</Link>
                         <Link to ="/agent">Support</Link>
+                        <Link to ="/adminbooks">All books</Link>
                         <Link to="/logout">Logout</Link>
                     </div>
                 }        

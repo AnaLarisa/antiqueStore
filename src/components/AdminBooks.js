@@ -45,7 +45,6 @@ function AdminBooks() {
             })
     }
 
-
     function seeDetails(item){
         localStorage.setItem('bookId',item);
         navigate('/bookdetails');
@@ -100,8 +99,7 @@ function AdminBooks() {
                 </button>
                 <div className="card_header">
                     <h2>{item.title}</h2>
-                    <p className="price">{item.price}<span>{item.currency}</span></p>
-                    <button className="loadMoreBtn"  type="submit" >Edit Book</button>
+                    <p className="price">{item.price}€</p>
                 </div>
             </div>
         );
