@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import "./CSS/AddBook.css";
 import UploadPic from "./UploadPic";
-import Tilt from 'react-vanilla-tilt'
 import {Link, Navigate} from 'react-router-dom';
 import './CSS/Home.css';
 import "./CSS/Navbar.css";
@@ -24,6 +23,7 @@ function AddBook() {
     const [authorlog, setAuthorlog] = useState(" ");
     const [pricelog, setPricelog] = useState(" ");
     const [cathegorylog, setCathegorylog] = useState(" ");
+    const [imgLog, setImgLog] = useState(" ");
     const [descriptionlog, setDescriptionlog] = useState("default");
 
 
@@ -35,7 +35,7 @@ function AddBook() {
 
         e.preventDefault();
 
-        addBook(dispatch, { token: localStorage.acessToken, isAdmin:true, title: namelog, author: authorlog, price: pricelog, desc: descriptionlog, genre: cathegorylog })
+        addBook(dispatch, { token: localStorage.acessToken, isAdmin:true, title: namelog, author: authorlog, price: pricelog, desc: descriptionlog, genre: cathegorylog, img:imgLog })
 
     };
 
@@ -48,8 +48,8 @@ function AddBook() {
             <span>STORE</span></span>
             <div className={`nav-items ${isOpen && "open"}`}>
                 <Link to="/agent">Support</Link>
-                <Link to="/deletebook">Delete Book</Link>
-                <Link to="/editbook">Edit Book</Link>
+                <Link to="/adminbooks">All books</Link>
+                <Link to="/logout">Logout</Link>
             </div>
             <div
                 className={`nav-toggle ${isOpen && "open"}`}
@@ -61,20 +61,21 @@ function AddBook() {
         <div className={`${isOpen && "hide"}`}>
         <form>
             <div className='main-addbook'>
-            <Tilt className='sub-main-addbook' style={{backgroundcolor:"transparent", padding:'50px'}}>
+            <div className='sub-main-addbook' style={{backgroundcolor:"transparent", padding:'50px'}}>
                     <div className="upload_pic">
-                        <UploadPic/>
                         <div className='bt'>
-                            <button type="submit" className='btbt' onClick={handleClick}>Add Book</button>
                         </div>
                     </div>
-                    <div>
+                    <div className='inputsedit'>
                             <br></br>
                             <div>
                                 <input placeholder='Name' className='fill' onChange={(event) => setNamelog(event.target.value) }/> 
                             </div>
                             <div className='second-input'>
                                 <input placeholder='Author' className='fill' onChange={(event) => setAuthorlog(event.target.value) }/>
+                            </div>
+                            <div className='second-input'>
+                                <input placeholder='Img URL' className='fill' onChange={(event) => setImgLog(event.target.value) }/>
                             </div>
                             <div className='second-input'>
                                 <input type="number" placeholder='Price' min={0} className='fill' onChange={(event) => setPricelog(event.target.value) }/>
@@ -87,7 +88,7 @@ function AddBook() {
                                         <option value="drama">Drama</option>
                                         <option value="romance">Romance</option>
                                         <option value="fantasy">Fantasy</option>
-                                        <option value="sf">Science-Fiction</option>
+                                        <option value="fiction">Science-Fiction</option>
                                         <option value="mistery">Mistery</option>
                                     </select>
                                 </label>
@@ -95,8 +96,11 @@ function AddBook() {
                             <div className='second-input'>
                                 <textarea placeholder='Description' className='fill' onChange={(event) => setDescriptionlog(event.target.value) }/>
                             </div>
-                        </div>
-            </Tilt>
+                            <button type="submit" className='btbt' onClick={handleClick}>Add Book</button>
+
+                            
+                    </div>
+            </div>
             </div>
         </form>
         </div>

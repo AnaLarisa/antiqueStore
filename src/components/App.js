@@ -12,7 +12,7 @@ import AddBook from './AddBook';
 import BookDetails from './BookDetails';
 import DeleteBook from './DeleteBook';
 import EditBook from './EditBook';
-
+import AdminBooks from './AdminBooks';
 import { useSelector } from "react-redux";
 
 import { userRole } from "../redux/apiCalls";
@@ -20,8 +20,8 @@ import Logout from './Logout';
 
 // localStorage.setItem('userRole',"notSet");
 localStorage.setItem('loginStatus', false);
-localStorage.setItem("testReg",false);
-localStorage.setItem('testIT',false);
+localStorage.setItem("registerStatus",false);
+localStorage.setItem('testIT','nimic');
 
 
 const App = () => {
@@ -44,6 +44,7 @@ const App = () => {
             <Route path='/deletebook' element={<DeleteBook />} />
             <Route path='/editbook' element={<EditBook /> } />
             <Route path='/logout' element={<Logout /> } />
+            <Route path='/adminBooks' element={<AdminBooks />} />
           </Routes>
         </div>
       </React.Fragment>

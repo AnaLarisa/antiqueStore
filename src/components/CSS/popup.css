@@ -5,7 +5,7 @@
     height:100%;
   }
   
-  .modalContainer {
+  .modalContainerPopup {
     max-width: 600px;
     width: 100%;
     position: fixed;
@@ -19,7 +19,7 @@
     border-radius: 8px;
   }
   
-  img {
+  .imgpopup {
     width: 250px;
     object-fit: cover;
     border-top-left-radius: 8px;
@@ -61,24 +61,12 @@
     /* color: #ffffff; */
   }
   
-  .btnPrimary {
+  .btnPopup {
     background-color: white;
     color: #261600;
   }
 
-  .btnPrimary:hover{
-    background-color: #261600;
-    color: white;
-  }
-  
-  .btnOutline {
-    /* background-color: #a76a99; */
-    background-color: white;
-    color: #261600;
-  }
-
-  .btnOutline:hover {
-    /* background-color: #a76a99; */
+  .btnPopup:hover{
     background-color: #261600;
     color: white;
   }

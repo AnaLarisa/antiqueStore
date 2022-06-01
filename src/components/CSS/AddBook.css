@@ -19,12 +19,21 @@
     
   }
   
+  .inputs{
+    margin-left:-185px;
+  }
+
+  .inputsedit{
+    margin-left:-185px;
+    margin-top:-30px;
+    margin-bottom: -20px;
+  }
   .sub-main-addbook{
     display: flex;
-    justify-content: right;
-    height: 550px;
-    width: 60%;
-    padding-top:40px ;
+    justify-content: left;
+    height: 580px;
+    width: 40%;
+    padding-top:20px ;
     padding-right:80px;
     padding-left: 80px;
     border-radius: 60px;
@@ -101,6 +110,7 @@
     box-shadow: inset 0px 0px 15px 0px #3b270c;
     font-size: 25px;
     border: none;
+    margin-top: 10px;;
   }
   
   .bt{

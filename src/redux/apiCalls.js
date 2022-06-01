@@ -96,8 +96,9 @@ export const getCart = async (dispatch, user) => {
 }
 
 export const deleteCart = async (dispatch, user) => {
+  console.log(JSON.stringify(user));
   try{
-    const res = await userRequest.delete("/carts/" + user.userId , { data: { user, token: user.token, id: user.userId }});
+    const res = await userRequest.delete("/carts/" + user.id , { data: { id:user.id, bookId:user.bookId, cartId:user.cartId  }});
     console.log("cart deleted");
   }catch(err) {
     console.log("cart not deleted");
@@ -121,5 +122,16 @@ export const editBook = async (dispatch, book) => {
     console.log("book edited");
   }catch(err) {
     console.log("book not edited");
+  }
+}
+
+export const getOnlyABook = async (dispatch, book) =>{
+  console.log("bookId: " + JSON.stringify(book));
+  try{
+    const res = await userRequest.get("/books/find/"+ book.bookId, book);
+    console.log("book returned " + JSON.stringify(res))
+  }catch(err)
+  {
+    console.log("book not returned");
   }
 }

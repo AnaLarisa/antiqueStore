@@ -178,3 +178,19 @@ button.checkout{
 button.checkout:hover{
     opacity: 0.9;
 }
+
+.removeBtn{
+	background-color: #261600;
+	color: #fff;
+	height: 50px;
+	width: 100px;
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	padding: 10px 10px;
+}
+
+.removeBtn:hover{
+	background-color: #fff;
+	color: #261600;
+}

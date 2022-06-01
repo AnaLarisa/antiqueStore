@@ -26,9 +26,12 @@ router.post("/", verifyToken,async (req, res) => {
 router.post("/addCart", verifyToken, async (req, res) => {
     const newCart = new Cart({
         userId:req.body.userId,
-        books:req.body.books
+        title:req.body.title,
+        author:req.body.author,
+        price:req.body.price,
+        img:req.body.img,
+        bookId: req.body.bookId
     });
-    console.log("in backend")
     try {
         const savedCart = await newCart.save();
         console.log("book added " + JSON.stringify(savedCart));
@@ -56,8 +59,9 @@ router.put("/:id", verifyTokenAndAuthorization, async (req, res) => {
 
 //DELETE
 router.delete("/:id", verifyTokenAndAuthorization, async (req, res) => {
+    console.log(JSON.stringify(req.body));
     try {
-        await Cart.findByIdAndDelete(req.body.id);
+        const cart = await Cart.findByIdAndDelete(req.body.cartId);
         res.status(200).json("Cart has been deleted...");
     } catch (err) {
         res.status(500).json(err);
@@ -65,15 +69,15 @@ router.delete("/:id", verifyTokenAndAuthorization, async (req, res) => {
 });
 
 router.get("/find/:id", async (req, res) => {
-    console.log("find " + JSON.stringify(req.body));
+    // console.log("find " + req.params.id);
     try {
-        const cart = await Cart.findOne(req.params.id);
+        const cart = await Cart.find();
+        // console.log("my cart " + JSON.stringify(cart));
         res.status(200).json(cart);
     } catch (err) {
         res.status(500).json(err);
     }
 });
-
 
 //GET ALL
 router.get("/", verifyTokenAndAdmin, async (req, res) => {

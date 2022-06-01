@@ -40,6 +40,10 @@ function Client(){
   };
 
 
+  // test de sters : 
+
+  localStorage.setItem('bookId',"62610c437305c11ce59bd093");
+
   const[items, setItems] =useState([]);
     const[visible, setVisible] = useState(3);
     const showMoreItems = () => {
@@ -175,12 +179,12 @@ function Client(){
           <div className={`nav-items ${isOpen && "open"}`}>
               <Link to ="/donate">Donate</Link>
               <Link to="/mycart">My Cart</Link>
-              <div className={`${!(localStorage.userRole === "notSet") && "hide"}`}>
-                  <Link to="/login">Login</Link>
-              </div>
-              <div className={`${(localStorage.userRole === "notSet") && "hide"}`}>
-                  <Link to="/logout">Logout</Link>
-              </div>
+              {(localStorage.userRole === "notSet") && 
+                <Link to="/login">Login</Link>
+              }
+              {(!(localStorage.userRole === "notSet"))&&
+                <Link to="/logout">Logout</Link>
+              }
           </div>
           <div className={`nav-toggle ${isOpen && "open"}`} onClick={() => setIsOpen(!isOpen)}>
               <div className="bar"></div>

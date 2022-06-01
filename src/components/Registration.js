@@ -6,6 +6,7 @@ import mail from "./images/email.png";
 import lock from "./images/lock.png";
 import profile from "./images/icon.jpg";
 import './CSS/App.css';
+import {Popup5} from './Popup';
 
 
 function Registration() {
@@ -17,6 +18,7 @@ function Registration() {
     const [username, setName] = useState(false);
     const [email, setEmail] = useState(false);
     const [password, setPassword] = useState(false);
+    const [openModal5, setOpenModal5] = useState(false);
 
 
     const handleSubmit = (e) =>{
@@ -33,9 +35,17 @@ function Registration() {
         }
 
         register(dispatch, {username:username, email:email, password:password});
+
         if(localStorage.registerStatus === "true"){
             setModal(true);
-            localStorage.setItem("testReg",true);
+        }else{
+            register(dispatch, {username:username, email:email, password:password});
+            if(localStorage.registerStatus === "true"){
+                setModal(true);
+            }
+            else{
+                setOpenModal5(true);
+            }
         }
     }
 
@@ -66,7 +76,8 @@ function Registration() {
                                     </div>
                                 }
                             </div>
-                            {!modal &&
+                            <Popup5  open5={openModal5}  onClose5={() => setOpenModal5(false)} />
+                            <h1 className='RHeader'>Registration</h1>
                             <div>
                                 <h1 className='RHeader'>Registration</h1>
                                 <div>
@@ -88,7 +99,6 @@ function Registration() {
                                     <p>If Account exist then <Link className='link' to='/login'>Login!!!</Link></p>
                                 </div>
                             </div>
-                            }
                         </div>
                     </div>
                 </div>
