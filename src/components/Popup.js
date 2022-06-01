@@ -100,3 +100,53 @@ export const  Popup3 = ({ open3, onClose3 }) => {
     </div>
   );
 };
+
+export const  Popup4 = ({ open4, onClose4 }) => {
+  if (!open4) return null;
+  return (
+    <div onClick={onClose4} >
+      <div
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
+        className='modalContainerPopup'
+      >
+        <img src={nft} alt='/' className='imgpopup'/>
+        <div className='modalRight'>
+          <div className='closeBtn' onClick={onClose4}>
+          <IoIosCloseCircleOutline size={28} color="#261600" />
+          </div>
+          <div className='content'>
+            <p>Email or password is wrong or maybe press again the button!.</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export const  Popup5 = ({ open5, onClose5}) => {
+  if (!open5) return null;
+  return (
+    <div onClick={onClose5} >
+      <div
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
+        className='modalContainerPopup'
+      >
+        <img src={nft} alt='/' className='imgpopup'/>
+        <div className='modalRight'>
+          <div className='closeBtn' onClick={onClose5}>
+          <IoIosCloseCircleOutline size={28} color="#261600" />
+          </div>
+          <div className='content'>
+            <p>Username or email is already used!.</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};

@@ -7,6 +7,7 @@ import email from "./images/email.png";
 import lock from "./images/lock.png";
 import profile from "./images/icon.jpg";
 import "./CSS/Authentification.css";
+import {Popup4} from './Popup';
 
 
 function Login() {
@@ -17,25 +18,27 @@ function Login() {
 
     const [modal, setModal] = useState(false);
     
-    console.log(localStorage.loginStatus);
+    console.log(localStorage.testIT);
+    const [openModal4, setOpenModal4] = useState(false);
 
 
-    if(localStorage.testIT === "true")
-    {
-
-        console.log("please press again");
-        localStorage.setItem('testIT',false);
-    }
 
     const handleClick = (e) => {
         e.preventDefault();
-        login(dispatch, { email: emaillog, password: passwordlog });
-        //if(e.value!=null) // nu stiu ce conditie sa spun aici ca sa verifice daca e okay logarea (daca returneaza ceva serverul nostru)
+        login(dispatch, { email: emaillog, password: passwordlog })
         if(localStorage.loginStatus === "true"){
             setModal(true);
-            localStorage.setItem('testIT',true);
+        }else{
+            login(dispatch, { email: emaillog, password: passwordlog })
+            if(localStorage.loginStatus === "true"){
+                setModal(true);
+            }
+            else{
+                setOpenModal4(true);
+            }
         }
     };
+
 
     return (
         <form>
@@ -70,6 +73,7 @@ function Login() {
                                 <img src={profile} alt='profile' className='profile'/>
                             </div>
                         </div>
+                        <Popup4  open4={openModal4}  onClose4={() => setOpenModal4(false)} />
                         <div>
                             <h1 className='LHeader'>Login</h1>
                             <div>

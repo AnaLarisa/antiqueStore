@@ -20,8 +20,8 @@ import Logout from './Logout';
 
 // localStorage.setItem('userRole',"notSet");
 localStorage.setItem('loginStatus', false);
-localStorage.setItem("testReg",false);
-localStorage.setItem('testIT',false);
+localStorage.setItem("registerStatus",false);
+localStorage.setItem('testIT','nimic');
 
 
 const App = () => {
