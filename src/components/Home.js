@@ -175,10 +175,10 @@ function Client(){
           <div className={`nav-items ${isOpen && "open"}`}>
               <Link to ="/donate">Donate</Link>
               <Link to="/mycart">My Cart</Link>
-              {(!(localStorage.userRole === "notSet")) && 
+              {(localStorage.userRole === "notSet") && 
                 <Link to="/login">Login</Link>
               }
-              {(localStorage.userRole === "notSet")&&
+              {(!(localStorage.userRole === "notSet"))&&
                 <Link to="/logout">Logout</Link>
               }
           </div>

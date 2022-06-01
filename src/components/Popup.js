@@ -4,7 +4,7 @@ import './CSS/popup.css';
 import { IoIosCloseCircleOutline} from "react-icons/io";
 import {Link} from 'react-router-dom';
 
-const  Popup = ({ open, onClose }) => {
+export const  Popup = ({ open, onClose }) => {
   if (!open) return null;
   return (
     <div onClick={onClose} >
@@ -38,4 +38,28 @@ const  Popup = ({ open, onClose }) => {
   );
 };
 
-export default Popup;
+
+export const  Popup2 = ({ open2, onClose2 }) => {
+  if (!open2) return null;
+  return (
+    <div onClick={onClose2} >
+      <div
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
+        className='modalContainer'
+      >
+        <img src={nft} alt='/' />
+        <div className='modalRight'>
+          <div className='closeBtn' onClick={onClose2}>
+          <IoIosCloseCircleOutline size={28} color="#261600" />
+          </div>
+          <div className='content'>
+            <p>If the operation is successful you will receive a confirmation email.</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};

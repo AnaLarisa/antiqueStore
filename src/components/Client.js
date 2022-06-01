@@ -175,11 +175,11 @@ function Client(){
           <div className={`nav-items ${isOpen && "open"}`}>
               <Link to ="/donate">Donate</Link>
               <Link to="/mycart">My Cart</Link>
-              {(!(localStorage.userRole === "notSet")) && 
-                <Link to="/login">Login</Link>
+              {(localStorage.userRole === "notSet") && 
+                  <Link to="/login">Login</Link>
               }
-              {(localStorage.userRole === "notSet")&&
-                <Link to="/logout">Logout</Link>
+              {(!(localStorage.userRole === "notSet"))&&
+                  <Link to="/logout">Logout</Link>
               }
           </div>
           <div className={`nav-toggle ${isOpen && "open"}`} onClick={() => setIsOpen(!isOpen)}>
@@ -292,7 +292,12 @@ function Client(){
           <div className={`nav-items ${isOpen && "open"}`}>
               <Link to ="/donate">Donate</Link>
               <Link to="/mycart">My Cart</Link>
-              <Link to="/login">Login</Link>
+              {(localStorage.userRole === "notSet") && 
+                  <Link to="/login">Login</Link>
+              }
+              {(!(localStorage.userRole === "notSet"))&&
+                  <Link to="/logout">Logout</Link>
+              }
           </div>
           <div className={`nav-toggle ${isOpen && "open"}`} onClick={() => setIsOpen(!isOpen)}>
               <div className="bar"></div>

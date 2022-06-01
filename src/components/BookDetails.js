@@ -22,10 +22,10 @@ function BookDetails() {
                     <Link to ="/">Home</Link>
                     <Link to ="/donate">Donate</Link>
                     <Link to="/mycart">My Cart</Link>
-                    {(!(localStorage.userRole === "notSet")) && 
+                    {(localStorage.userRole === "notSet") && 
                         <Link to="/login">Login</Link>
                     }
-                    {(localStorage.userRole === "notSet")&&
+                    {(!(localStorage.userRole === "notSet"))&&
                         <Link to="/logout">Logout</Link>
                     }
                 </div>
