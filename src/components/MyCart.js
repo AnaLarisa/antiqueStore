@@ -73,7 +73,12 @@ function MyCart() {
                 <div className={`nav-items ${isOpen && "open"}`}>
                     <Link to ="/">Home</Link>
                     <Link to="/donate">Donate</Link>
-                    <Link to="/login">Login</Link>
+                    {(!(localStorage.userRole === "notSet")) && 
+                        <Link to="/login">Login</Link>
+                    }
+                    {(localStorage.userRole === "notSet")&&
+                        <Link to="/logout">Logout</Link>
+                    }
                 </div>
                 <div
                     className={`nav-toggle ${isOpen && "open"}`}
